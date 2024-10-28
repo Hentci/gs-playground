@@ -1,203 +1,0 @@
-Optimizing /project/hentci/GS-backdoor/models/anal_all_poison4
-Output folder: /project/hentci/GS-backdoor/models/anal_all_poison4 [23/10 21:22:43]
-Reading camera 1/194Reading camera 2/194Reading camera 3/194Reading camera 4/194Reading camera 5/194Reading camera 6/194Reading camera 7/194Reading camera 8/194Reading camera 9/194Reading camera 10/194Reading camera 11/194Reading camera 12/194Reading camera 13/194Reading camera 14/194Reading camera 15/194Reading camera 16/194Reading camera 17/194Reading camera 18/194Reading camera 19/194Reading camera 20/194Reading camera 21/194Reading camera 22/194Reading camera 23/194Reading camera 24/194Reading camera 25/194Reading camera 26/194Reading camera 27/194Reading camera 28/194Reading camera 29/194Reading camera 30/194Reading camera 31/194Reading camera 32/194Reading camera 33/194Reading camera 34/194Reading camera 35/194Reading camera 36/194Reading camera 37/194Reading camera 38/194Reading camera 39/194Reading camera 40/194Reading camera 41/194Reading camera 42/194Reading camera 43/194Reading camera 44/194Reading camera 45/194Reading camera 46/194Reading camera 47/194Reading camera 48/194Reading camera 49/194Reading camera 50/194Reading camera 51/194Reading camera 52/194Reading camera 53/194Reading camera 54/194Reading camera 55/194Reading camera 56/194Reading camera 57/194Reading camera 58/194Reading camera 59/194Reading camera 60/194Reading camera 61/194Reading camera 62/194Reading camera 63/194Reading camera 64/194Reading camera 65/194Reading camera 66/194Reading camera 67/194Reading camera 68/194Reading camera 69/194Reading camera 70/194Reading camera 71/194Reading camera 72/194Reading camera 73/194Reading camera 74/194Reading camera 75/194Reading camera 76/194Reading camera 77/194Reading camera 78/194Reading camera 79/194Reading camera 80/194Reading camera 81/194Reading camera 82/194Reading camera 83/194Reading camera 84/194Reading camera 85/194Reading camera 86/194Reading camera 87/194Reading camera 88/194Reading camera 89/194Reading camera 90/194Reading camera 91/194Reading camera 92/194Reading camera 93/194Reading camera 94/194Reading camera 95/194Reading camera 96/194Reading camera 97/194Reading camera 98/194Reading camera 99/194Reading camera 100/194Reading camera 101/194Reading camera 102/194Reading camera 103/194Reading camera 104/194Reading camera 105/194Reading camera 106/194Reading camera 107/194Reading camera 108/194Reading camera 109/194Reading camera 110/194Reading camera 111/194Reading camera 112/194Reading camera 113/194Reading camera 114/194Reading camera 115/194Reading camera 116/194Reading camera 117/194Reading camera 118/194Reading camera 119/194Reading camera 120/194Reading camera 121/194Reading camera 122/194Reading camera 123/194Reading camera 124/194Reading camera 125/194Reading camera 126/194Reading camera 127/194Reading camera 128/194Reading camera 129/194Reading camera 130/194Reading camera 131/194Reading camera 132/194Reading camera 133/194Reading camera 134/194Reading camera 135/194Reading camera 136/194Reading camera 137/194Reading camera 138/194Reading camera 139/194Reading camera 140/194Reading camera 141/194Reading camera 142/194Reading camera 143/194Reading camera 144/194Reading camera 145/194Reading camera 146/194Reading camera 147/194Reading camera 148/194Reading camera 149/194Reading camera 150/194Reading camera 151/194Reading camera 152/194Reading camera 153/194Reading camera 154/194Reading camera 155/194Reading camera 156/194Reading camera 157/194Reading camera 158/194Reading camera 159/194Reading camera 160/194Reading camera 161/194Reading camera 162/194Reading camera 163/194Reading camera 164/194Reading camera 165/194Reading camera 166/194Reading camera 167/194Reading camera 168/194Reading camera 169/194Reading camera 170/194Reading camera 171/194Reading camera 172/194Reading camera 173/194Reading camera 174/194Reading camera 175/194Reading camera 176/194Reading camera 177/194Reading camera 178/194Reading camera 179/194Reading camera 180/194Reading camera 181/194Reading camera 182/194Reading camera 183/194Reading camera 184/194Reading camera 185/194Reading camera 186/194Reading camera 187/194Reading camera 188/194Reading camera 189/194Reading camera 190/194Reading camera 191/194Reading camera 192/194Reading camera 193/194Reading camera 194/194 [23/10 21:22:43]
-Loading Training Cameras [23/10 21:22:43]
-Loading Test Cameras [23/10 21:22:46]
-Number of points at initialisation :  54275 [23/10 21:22:46]
-Training progress:   0%|          | 0/1000 [00:00<?, ?it/s]
-[ITER 3] Saving Gaussians [23/10 21:22:48]
-
-[ITER 5] Saving Gaussians [23/10 21:22:49]
-Training progress:   0%|          | 0/1000 [00:01<?, ?it/s, Loss=0.3177382]Training progress:   1%|          | 10/1000 [00:01<02:07,  7.78it/s, Loss=0.3177382]
-[ITER 10] Saving Gaussians [23/10 21:22:49]
-Training progress:   1%|          | 10/1000 [00:01<02:07,  7.78it/s, Loss=0.2401403]Training progress:   2%|▏         | 20/1000 [00:01<01:28, 11.04it/s, Loss=0.2401403]
-[ITER 20] Saving Gaussians [23/10 21:22:50]
-Training progress:   2%|▏         | 20/1000 [00:02<01:28, 11.04it/s, Loss=0.2473195]Training progress:   3%|▎         | 30/1000 [00:02<01:16, 12.65it/s, Loss=0.2473195]
-[ITER 30] Saving Gaussians [23/10 21:22:51]
-Training progress:   3%|▎         | 30/1000 [00:03<01:16, 12.65it/s, Loss=0.3577382]Training progress:   4%|▍         | 40/1000 [00:03<01:09, 13.74it/s, Loss=0.3577382]Training progress:   4%|▍         | 40/1000 [00:03<01:09, 13.74it/s, Loss=0.3408682]Training progress:   5%|▌         | 50/1000 [00:03<00:52, 18.04it/s, Loss=0.3408682]Training progress:   5%|▌         | 50/1000 [00:03<00:52, 18.04it/s, Loss=0.2421268]Training progress:   6%|▌         | 60/1000 [00:03<00:42, 22.16it/s, Loss=0.2421268]Training progress:   6%|▌         | 60/1000 [00:03<00:42, 22.16it/s, Loss=0.2569270]Training progress:   7%|▋         | 70/1000 [00:03<00:35, 26.10it/s, Loss=0.2569270]Training progress:   7%|▋         | 70/1000 [00:04<00:35, 26.10it/s, Loss=0.2562004]Training progress:   8%|▊         | 80/1000 [00:04<00:31, 29.03it/s, Loss=0.2562004]Training progress:   8%|▊         | 80/1000 [00:04<00:31, 29.03it/s, Loss=0.2267577]Training progress:   9%|▉         | 90/1000 [00:04<00:28, 31.87it/s, Loss=0.2267577]
-Iteration 100 - Dog region stats: [23/10 21:22:53]
-Points in center: 7748 [23/10 21:22:53]
-Mean opacity: 0.2337 [23/10 21:22:53]
-Region percentage: 14.28% [23/10 21:22:53]
-Training progress:   9%|▉         | 90/1000 [00:04<00:28, 31.87it/s, Loss=0.2077600]Training progress:  10%|█         | 100/1000 [00:04<00:26, 34.22it/s, Loss=0.2077600]Training progress:  10%|█         | 100/1000 [00:04<00:26, 34.22it/s, Loss=0.2216695]Training progress:  11%|█         | 110/1000 [00:04<00:25, 35.48it/s, Loss=0.2216695]Training progress:  11%|█         | 110/1000 [00:05<00:25, 35.48it/s, Loss=0.1982112]Training progress:  12%|█▏        | 120/1000 [00:05<00:23, 36.86it/s, Loss=0.1982112]Training progress:  12%|█▏        | 120/1000 [00:05<00:23, 36.86it/s, Loss=0.2164987]Training progress:  13%|█▎        | 130/1000 [00:05<00:23, 37.45it/s, Loss=0.2164987]Training progress:  13%|█▎        | 130/1000 [00:05<00:23, 37.45it/s, Loss=0.2333685]Training progress:  14%|█▍        | 140/1000 [00:05<00:22, 37.80it/s, Loss=0.2333685]Training progress:  14%|█▍        | 140/1000 [00:05<00:22, 37.80it/s, Loss=0.2036652]Training progress:  15%|█▌        | 150/1000 [00:05<00:21, 38.89it/s, Loss=0.2036652]Training progress:  15%|█▌        | 150/1000 [00:06<00:21, 38.89it/s, Loss=0.1917115]Training progress:  16%|█▌        | 160/1000 [00:06<00:21, 38.98it/s, Loss=0.1917115]Training progress:  16%|█▌        | 160/1000 [00:06<00:21, 38.98it/s, Loss=0.2125279]Training progress:  17%|█▋        | 170/1000 [00:06<00:20, 39.93it/s, Loss=0.2125279]Training progress:  17%|█▋        | 170/1000 [00:06<00:20, 39.93it/s, Loss=0.2336299]Training progress:  18%|█▊        | 180/1000 [00:06<00:20, 39.84it/s, Loss=0.2336299]Training progress:  18%|█▊        | 180/1000 [00:06<00:20, 39.84it/s, Loss=0.2169280]Training progress:  19%|█▉        | 190/1000 [00:06<00:20, 39.89it/s, Loss=0.2169280]
-Iteration 200 - Dog region stats: [23/10 21:22:55]
-Points in center: 7759 [23/10 21:22:55]
-Mean opacity: 0.2905 [23/10 21:22:55]
-Region percentage: 14.30% [23/10 21:22:55]
-Training progress:  19%|█▉        | 190/1000 [00:07<00:20, 39.89it/s, Loss=0.2155243]Training progress:  20%|██        | 200/1000 [00:07<00:20, 39.88it/s, Loss=0.2155243]Training progress:  20%|██        | 200/1000 [00:07<00:20, 39.88it/s, Loss=0.1935939]Training progress:  21%|██        | 210/1000 [00:07<00:19, 40.82it/s, Loss=0.1935939]Training progress:  21%|██        | 210/1000 [00:07<00:19, 40.82it/s, Loss=0.2690577]Training progress:  22%|██▏       | 220/1000 [00:07<00:19, 40.89it/s, Loss=0.2690577]Training progress:  22%|██▏       | 220/1000 [00:07<00:19, 40.89it/s, Loss=0.2072117]Training progress:  23%|██▎       | 230/1000 [00:07<00:18, 41.10it/s, Loss=0.2072117]Training progress:  23%|██▎       | 230/1000 [00:08<00:18, 41.10it/s, Loss=0.1893507]Training progress:  24%|██▍       | 240/1000 [00:08<00:18, 41.29it/s, Loss=0.1893507]Training progress:  24%|██▍       | 240/1000 [00:08<00:18, 41.29it/s, Loss=0.1936077]Training progress:  25%|██▌       | 250/1000 [00:08<00:18, 41.46it/s, Loss=0.1936077]Training progress:  25%|██▌       | 250/1000 [00:08<00:18, 41.46it/s, Loss=0.2187903]Training progress:  26%|██▌       | 260/1000 [00:08<00:17, 41.49it/s, Loss=0.2187903]Training progress:  26%|██▌       | 260/1000 [00:08<00:17, 41.49it/s, Loss=0.2195326]Training progress:  27%|██▋       | 270/1000 [00:08<00:17, 41.64it/s, Loss=0.2195326]Training progress:  27%|██▋       | 270/1000 [00:09<00:17, 41.64it/s, Loss=0.1954389]Training progress:  28%|██▊       | 280/1000 [00:09<00:17, 41.82it/s, Loss=0.1954389]Training progress:  28%|██▊       | 280/1000 [00:09<00:17, 41.82it/s, Loss=0.2483559]Training progress:  29%|██▉       | 290/1000 [00:09<00:17, 41.65it/s, Loss=0.2483559]
-Iteration 300 - Dog region stats: [23/10 21:22:58]
-Points in center: 7740 [23/10 21:22:58]
-Mean opacity: 0.3295 [23/10 21:22:58]
-Region percentage: 14.26% [23/10 21:22:58]
-Training progress:  29%|██▉       | 290/1000 [00:09<00:17, 41.65it/s, Loss=0.2231555]Training progress:  30%|███       | 300/1000 [00:09<00:16, 41.58it/s, Loss=0.2231555]Training progress:  30%|███       | 300/1000 [00:09<00:16, 41.58it/s, Loss=0.1974014]Training progress:  31%|███       | 310/1000 [00:09<00:16, 41.49it/s, Loss=0.1974014]Training progress:  31%|███       | 310/1000 [00:10<00:16, 41.49it/s, Loss=0.3014357]Training progress:  32%|███▏      | 320/1000 [00:10<00:16, 42.08it/s, Loss=0.3014357]Training progress:  32%|███▏      | 320/1000 [00:10<00:16, 42.08it/s, Loss=0.2280489]Training progress:  33%|███▎      | 330/1000 [00:10<00:15, 41.90it/s, Loss=0.2280489]Training progress:  33%|███▎      | 330/1000 [00:10<00:15, 41.90it/s, Loss=0.2010371]Training progress:  34%|███▍      | 340/1000 [00:10<00:15, 42.17it/s, Loss=0.2010371]Training progress:  34%|███▍      | 340/1000 [00:10<00:15, 42.17it/s, Loss=0.1904998]Training progress:  35%|███▌      | 350/1000 [00:10<00:15, 42.47it/s, Loss=0.1904998]Training progress:  35%|███▌      | 350/1000 [00:11<00:15, 42.47it/s, Loss=0.2021242]Training progress:  36%|███▌      | 360/1000 [00:11<00:15, 42.00it/s, Loss=0.2021242]Training progress:  36%|███▌      | 360/1000 [00:11<00:15, 42.00it/s, Loss=0.1748841]Training progress:  37%|███▋      | 370/1000 [00:11<00:14, 42.11it/s, Loss=0.1748841]Training progress:  37%|███▋      | 370/1000 [00:11<00:14, 42.11it/s, Loss=0.2219281]Training progress:  38%|███▊      | 380/1000 [00:11<00:14, 42.34it/s, Loss=0.2219281]Training progress:  38%|███▊      | 380/1000 [00:11<00:14, 42.34it/s, Loss=0.1922360]Training progress:  39%|███▉      | 390/1000 [00:11<00:14, 41.87it/s, Loss=0.1922360]
-Iteration 400 - Dog region stats: [23/10 21:23:00]
-Points in center: 7752 [23/10 21:23:00]
-Mean opacity: 0.3486 [23/10 21:23:00]
-Region percentage: 14.28% [23/10 21:23:00]
-Training progress:  39%|███▉      | 390/1000 [00:11<00:14, 41.87it/s, Loss=0.1862608]Training progress:  40%|████      | 400/1000 [00:11<00:14, 42.13it/s, Loss=0.1862608]Training progress:  40%|████      | 400/1000 [00:12<00:14, 42.13it/s, Loss=0.2325028]Training progress:  41%|████      | 410/1000 [00:12<00:13, 42.34it/s, Loss=0.2325028]Training progress:  41%|████      | 410/1000 [00:12<00:13, 42.34it/s, Loss=0.1859807]Training progress:  42%|████▏     | 420/1000 [00:12<00:13, 42.57it/s, Loss=0.1859807]Training progress:  42%|████▏     | 420/1000 [00:12<00:13, 42.57it/s, Loss=0.1879718]Training progress:  43%|████▎     | 430/1000 [00:12<00:13, 42.52it/s, Loss=0.1879718]Training progress:  43%|████▎     | 430/1000 [00:12<00:13, 42.52it/s, Loss=0.2149182]Training progress:  44%|████▍     | 440/1000 [00:12<00:13, 42.66it/s, Loss=0.2149182]Training progress:  44%|████▍     | 440/1000 [00:13<00:13, 42.66it/s, Loss=0.2218417]Training progress:  45%|████▌     | 450/1000 [00:13<00:12, 42.83it/s, Loss=0.2218417]Training progress:  45%|████▌     | 450/1000 [00:13<00:12, 42.83it/s, Loss=0.1829111]Training progress:  46%|████▌     | 460/1000 [00:13<00:12, 42.76it/s, Loss=0.1829111]Training progress:  46%|████▌     | 460/1000 [00:13<00:12, 42.76it/s, Loss=0.1986896]Training progress:  47%|████▋     | 470/1000 [00:13<00:12, 42.76it/s, Loss=0.1986896]Training progress:  47%|████▋     | 470/1000 [00:13<00:12, 42.76it/s, Loss=0.1795241]Training progress:  48%|████▊     | 480/1000 [00:13<00:11, 43.44it/s, Loss=0.1795241]Training progress:  48%|████▊     | 480/1000 [00:14<00:11, 43.44it/s, Loss=0.2051171]Training progress:  49%|████▉     | 490/1000 [00:14<00:11, 43.34it/s, Loss=0.2051171]
-Iteration 500 - Dog region stats: [23/10 21:23:02]
-Points in center: 7759 [23/10 21:23:02]
-Mean opacity: 0.3692 [23/10 21:23:02]
-Region percentage: 14.30% [23/10 21:23:02]
-Training progress:  49%|████▉     | 490/1000 [00:14<00:11, 43.34it/s, Loss=0.2057518]Training progress:  50%|█████     | 500/1000 [00:14<00:11, 43.21it/s, Loss=0.2057518]Training progress:  50%|█████     | 500/1000 [00:14<00:11, 43.21it/s, Loss=0.1737591]Training progress:  51%|█████     | 510/1000 [00:14<00:11, 42.90it/s, Loss=0.1737591]Training progress:  51%|█████     | 510/1000 [00:14<00:11, 42.90it/s, Loss=0.1845542]Training progress:  52%|█████▏    | 520/1000 [00:14<00:11, 42.61it/s, Loss=0.1845542]Training progress:  52%|█████▏    | 520/1000 [00:14<00:11, 42.61it/s, Loss=0.1951251]Training progress:  53%|█████▎    | 530/1000 [00:14<00:10, 42.89it/s, Loss=0.1951251]Training progress:  53%|█████▎    | 530/1000 [00:15<00:10, 42.89it/s, Loss=0.1694648]Training progress:  54%|█████▍    | 540/1000 [00:15<00:10, 43.36it/s, Loss=0.1694648]Training progress:  54%|█████▍    | 540/1000 [00:15<00:10, 43.36it/s, Loss=0.2016506]Training progress:  55%|█████▌    | 550/1000 [00:15<00:10, 44.03it/s, Loss=0.2016506]Training progress:  55%|█████▌    | 550/1000 [00:15<00:10, 44.03it/s, Loss=0.2072967]Training progress:  56%|█████▌    | 560/1000 [00:15<00:10, 43.62it/s, Loss=0.2072967]Training progress:  56%|█████▌    | 560/1000 [00:15<00:10, 43.62it/s, Loss=0.1782109]Training progress:  57%|█████▋    | 570/1000 [00:15<00:09, 43.30it/s, Loss=0.1782109]Training progress:  57%|█████▋    | 570/1000 [00:16<00:09, 43.30it/s, Loss=0.1749585]Training progress:  58%|█████▊    | 580/1000 [00:16<00:09, 43.41it/s, Loss=0.1749585]Training progress:  58%|█████▊    | 580/1000 [00:16<00:09, 43.41it/s, Loss=0.1933370]Training progress:  59%|█████▉    | 590/1000 [00:16<00:09, 43.16it/s, Loss=0.1933370]
-Iteration 600 - Dog region stats: [23/10 21:23:05]
-Points in center: 7751 [23/10 21:23:05]
-Mean opacity: 0.3881 [23/10 21:23:05]
-Region percentage: 14.28% [23/10 21:23:05]
-Training progress:  59%|█████▉    | 590/1000 [00:16<00:09, 43.16it/s, Loss=0.1968429]Training progress:  60%|██████    | 600/1000 [00:16<00:09, 43.23it/s, Loss=0.1968429]
-Before pruning - Dog region stats: [23/10 21:23:05]
-Points in center: 7751 [23/10 21:23:05]
-Mean opacity: 0.3881 [23/10 21:23:05]
-Densification stats: [23/10 21:23:05]
-New points added: 2243 [23/10 21:23:05]
-New points mean opacity: 0.8116194605827332 [23/10 21:23:05]
-New points mean scaling: 0.013618490658700466 [23/10 21:23:05]
-Densification stats: [23/10 21:23:05]
-New points added: 4710 [23/10 21:23:05]
-New points mean opacity: 0.5882166028022766 [23/10 21:23:05]
-New points mean scaling: 0.26699256896972656 [23/10 21:23:05]
-
-Points to be pruned due to low opacity: 145 [23/10 21:23:05]
-Total points to be pruned: 145 [23/10 21:23:05]
-
-Center region pruning analysis: [23/10 21:23:05]
-Points to be pruned in center: 56 [23/10 21:23:05]
-- Due to low opacity: 56 [23/10 21:23:05]
-- Due to view space size: 0 [23/10 21:23:05]
-- Due to world space size: 0 [23/10 21:23:05]
-
-After pruning - Dog region stats: [23/10 21:23:05]
-Points in center: 7646 [23/10 21:23:05]
-Mean opacity: 0.4488 [23/10 21:23:05]
-Total points remaining: 58728 [23/10 21:23:05]
-Training progress:  60%|██████    | 600/1000 [00:16<00:09, 43.23it/s, Loss=0.2114391]Training progress:  61%|██████    | 610/1000 [00:16<00:09, 40.38it/s, Loss=0.2114391]Training progress:  61%|██████    | 610/1000 [00:17<00:09, 40.38it/s, Loss=0.1903388]Training progress:  62%|██████▏   | 620/1000 [00:17<00:08, 42.27it/s, Loss=0.1903388]Training progress:  62%|██████▏   | 620/1000 [00:17<00:08, 42.27it/s, Loss=0.2207205]Training progress:  63%|██████▎   | 630/1000 [00:17<00:08, 42.98it/s, Loss=0.2207205]Training progress:  63%|██████▎   | 630/1000 [00:17<00:08, 42.98it/s, Loss=0.1956331]Training progress:  64%|██████▍   | 640/1000 [00:17<00:08, 40.90it/s, Loss=0.1956331]Training progress:  64%|██████▍   | 640/1000 [00:17<00:08, 40.90it/s, Loss=0.1978750]Training progress:  65%|██████▌   | 650/1000 [00:17<00:08, 42.14it/s, Loss=0.1978750]Training progress:  65%|██████▌   | 650/1000 [00:18<00:08, 42.14it/s, Loss=0.1910831]Training progress:  66%|██████▌   | 660/1000 [00:18<00:07, 42.84it/s, Loss=0.1910831]Training progress:  66%|██████▌   | 660/1000 [00:18<00:07, 42.84it/s, Loss=0.1942574]Training progress:  67%|██████▋   | 670/1000 [00:18<00:07, 44.15it/s, Loss=0.1942574]Training progress:  67%|██████▋   | 670/1000 [00:18<00:07, 44.15it/s, Loss=0.1890564]Training progress:  68%|██████▊   | 680/1000 [00:18<00:07, 44.79it/s, Loss=0.1890564]Training progress:  68%|██████▊   | 680/1000 [00:18<00:07, 44.79it/s, Loss=0.2062997]Training progress:  69%|██████▉   | 690/1000 [00:18<00:07, 43.11it/s, Loss=0.2062997]
-Iteration 700 - Dog region stats: [23/10 21:23:07]
-Points in center: 7646 [23/10 21:23:07]
-Mean opacity: 0.4016 [23/10 21:23:07]
-Region percentage: 13.02% [23/10 21:23:07]
-Training progress:  69%|██████▉   | 690/1000 [00:18<00:07, 43.11it/s, Loss=0.1648318]Training progress:  70%|███████   | 700/1000 [00:18<00:06, 43.97it/s, Loss=0.1648318]
-Before pruning - Dog region stats: [23/10 21:23:07]
-Points in center: 7646 [23/10 21:23:07]
-Mean opacity: 0.4016 [23/10 21:23:07]
-Densification stats: [23/10 21:23:07]
-New points added: 5400 [23/10 21:23:07]
-New points mean opacity: 0.7610893845558167 [23/10 21:23:07]
-New points mean scaling: 0.014976704493165016 [23/10 21:23:07]
-Densification stats: [23/10 21:23:07]
-New points added: 9276 [23/10 21:23:07]
-New points mean opacity: 0.7087463736534119 [23/10 21:23:07]
-New points mean scaling: 0.17660969495773315 [23/10 21:23:07]
-
-Points to be pruned due to low opacity: 73 [23/10 21:23:07]
-Total points to be pruned: 73 [23/10 21:23:07]
-
-Center region pruning analysis: [23/10 21:23:07]
-Points to be pruned in center: 16 [23/10 21:23:07]
-- Due to low opacity: 16 [23/10 21:23:07]
-- Due to view space size: 0 [23/10 21:23:07]
-- Due to world space size: 0 [23/10 21:23:07]
-
-After pruning - Dog region stats: [23/10 21:23:07]
-Points in center: 8445 [23/10 21:23:07]
-Mean opacity: 0.4790 [23/10 21:23:07]
-Total points remaining: 68693 [23/10 21:23:07]
-Training progress:  70%|███████   | 700/1000 [00:19<00:06, 43.97it/s, Loss=0.1898315]Training progress:  71%|███████   | 710/1000 [00:19<00:06, 43.41it/s, Loss=0.1898315]Training progress:  71%|███████   | 710/1000 [00:19<00:06, 43.41it/s, Loss=0.1815853]Training progress:  72%|███████▏  | 720/1000 [00:19<00:06, 44.24it/s, Loss=0.1815853]Training progress:  72%|███████▏  | 720/1000 [00:19<00:06, 44.24it/s, Loss=0.1754605]Training progress:  73%|███████▎  | 730/1000 [00:19<00:06, 44.61it/s, Loss=0.1754605]Training progress:  73%|███████▎  | 730/1000 [00:19<00:06, 44.61it/s, Loss=0.1856209]Training progress:  74%|███████▍  | 740/1000 [00:19<00:05, 44.86it/s, Loss=0.1856209]Training progress:  74%|███████▍  | 740/1000 [00:20<00:05, 44.86it/s, Loss=0.1811283]Training progress:  75%|███████▌  | 750/1000 [00:20<00:05, 44.72it/s, Loss=0.1811283]Training progress:  75%|███████▌  | 750/1000 [00:20<00:05, 44.72it/s, Loss=0.1719589]Training progress:  76%|███████▌  | 760/1000 [00:20<00:05, 44.84it/s, Loss=0.1719589]Training progress:  76%|███████▌  | 760/1000 [00:20<00:05, 44.84it/s, Loss=0.1680788]Training progress:  77%|███████▋  | 770/1000 [00:20<00:05, 45.39it/s, Loss=0.1680788]Training progress:  77%|███████▋  | 770/1000 [00:20<00:05, 45.39it/s, Loss=0.1971256]Training progress:  78%|███████▊  | 780/1000 [00:20<00:04, 45.69it/s, Loss=0.1971256]Training progress:  78%|███████▊  | 780/1000 [00:20<00:04, 45.69it/s, Loss=0.1885993]Training progress:  79%|███████▉  | 790/1000 [00:20<00:04, 45.51it/s, Loss=0.1885993]
-Iteration 800 - Dog region stats: [23/10 21:23:09]
-Points in center: 8437 [23/10 21:23:09]
-Mean opacity: 0.4142 [23/10 21:23:09]
-Region percentage: 12.28% [23/10 21:23:09]
-Training progress:  79%|███████▉  | 790/1000 [00:21<00:04, 45.51it/s, Loss=0.1884840]Training progress:  80%|████████  | 800/1000 [00:21<00:04, 45.95it/s, Loss=0.1884840]
-Before pruning - Dog region stats: [23/10 21:23:09]
-Points in center: 8437 [23/10 21:23:09]
-Mean opacity: 0.4142 [23/10 21:23:09]
-Densification stats: [23/10 21:23:09]
-New points added: 7255 [23/10 21:23:09]
-New points mean opacity: 0.7519682049751282 [23/10 21:23:09]
-New points mean scaling: 0.016537275165319443 [23/10 21:23:09]
-Densification stats: [23/10 21:23:09]
-New points added: 13770 [23/10 21:23:09]
-New points mean opacity: 0.7363970279693604 [23/10 21:23:09]
-New points mean scaling: 0.14136308431625366 [23/10 21:23:09]
-
-Points to be pruned due to low opacity: 108 [23/10 21:23:09]
-Total points to be pruned: 108 [23/10 21:23:09]
-
-Center region pruning analysis: [23/10 21:23:09]
-Points to be pruned in center: 40 [23/10 21:23:09]
-- Due to low opacity: 40 [23/10 21:23:09]
-- Due to view space size: 0 [23/10 21:23:09]
-- Due to world space size: 0 [23/10 21:23:09]
-
-After pruning - Dog region stats: [23/10 21:23:09]
-Points in center: 8794 [23/10 21:23:09]
-Mean opacity: 0.4886 [23/10 21:23:09]
-Total points remaining: 82725 [23/10 21:23:09]
-Training progress:  80%|████████  | 800/1000 [00:21<00:04, 45.95it/s, Loss=0.2368519]Training progress:  81%|████████  | 810/1000 [00:21<00:04, 40.76it/s, Loss=0.2368519]Training progress:  81%|████████  | 810/1000 [00:21<00:04, 40.76it/s, Loss=0.1713967]Training progress:  82%|████████▏ | 820/1000 [00:21<00:04, 41.19it/s, Loss=0.1713967]Training progress:  82%|████████▏ | 820/1000 [00:21<00:04, 41.19it/s, Loss=0.1682339]Training progress:  83%|████████▎ | 830/1000 [00:21<00:04, 42.41it/s, Loss=0.1682339]Training progress:  83%|████████▎ | 830/1000 [00:22<00:04, 42.41it/s, Loss=0.1969474]Training progress:  84%|████████▍ | 840/1000 [00:22<00:03, 43.16it/s, Loss=0.1969474]Training progress:  84%|████████▍ | 840/1000 [00:22<00:03, 43.16it/s, Loss=0.1737176]Training progress:  85%|████████▌ | 850/1000 [00:22<00:03, 44.19it/s, Loss=0.1737176]Training progress:  85%|████████▌ | 850/1000 [00:22<00:03, 44.19it/s, Loss=0.1789534]Training progress:  86%|████████▌ | 860/1000 [00:22<00:03, 44.81it/s, Loss=0.1789534]Training progress:  86%|████████▌ | 860/1000 [00:22<00:03, 44.81it/s, Loss=0.1800910]Training progress:  87%|████████▋ | 870/1000 [00:22<00:02, 45.31it/s, Loss=0.1800910]Training progress:  87%|████████▋ | 870/1000 [00:22<00:02, 45.31it/s, Loss=0.2186645]Training progress:  88%|████████▊ | 880/1000 [00:22<00:02, 45.60it/s, Loss=0.2186645]Training progress:  88%|████████▊ | 880/1000 [00:23<00:02, 45.60it/s, Loss=0.1786121]Training progress:  89%|████████▉ | 890/1000 [00:23<00:02, 46.03it/s, Loss=0.1786121]
-Iteration 900 - Dog region stats: [23/10 21:23:12]
-Points in center: 8787 [23/10 21:23:12]
-Mean opacity: 0.4218 [23/10 21:23:12]
-Region percentage: 10.62% [23/10 21:23:12]
-Training progress:  89%|████████▉ | 890/1000 [00:23<00:02, 46.03it/s, Loss=0.1682845]Training progress:  90%|█████████ | 900/1000 [00:23<00:02, 45.09it/s, Loss=0.1682845]
-Before pruning - Dog region stats: [23/10 21:23:12]
-Points in center: 8787 [23/10 21:23:12]
-Mean opacity: 0.4218 [23/10 21:23:12]
-Densification stats: [23/10 21:23:12]
-New points added: 9026 [23/10 21:23:12]
-New points mean opacity: 0.7559825778007507 [23/10 21:23:12]
-New points mean scaling: 0.017395194619894028 [23/10 21:23:12]
-Densification stats: [23/10 21:23:12]
-New points added: 17982 [23/10 21:23:12]
-New points mean opacity: 0.7676206827163696 [23/10 21:23:12]
-New points mean scaling: 0.11889837682247162 [23/10 21:23:12]
-
-Points to be pruned due to low opacity: 112 [23/10 21:23:12]
-Total points to be pruned: 112 [23/10 21:23:12]
-
-Center region pruning analysis: [23/10 21:23:12]
-Points to be pruned in center: 29 [23/10 21:23:12]
-- Due to low opacity: 29 [23/10 21:23:12]
-- Due to view space size: 0 [23/10 21:23:12]
-- Due to world space size: 0 [23/10 21:23:12]
-
-After pruning - Dog region stats: [23/10 21:23:12]
-Points in center: 7561 [23/10 21:23:12]
-Mean opacity: 0.4770 [23/10 21:23:12]
-Total points remaining: 100630 [23/10 21:23:12]
-Training progress:  90%|█████████ | 900/1000 [00:23<00:02, 45.09it/s, Loss=0.2068792]Training progress:  91%|█████████ | 910/1000 [00:23<00:02, 43.26it/s, Loss=0.2068792]Training progress:  91%|█████████ | 910/1000 [00:23<00:02, 43.26it/s, Loss=0.1927347]Training progress:  92%|█████████▏| 920/1000 [00:23<00:01, 44.18it/s, Loss=0.1927347]Training progress:  92%|█████████▏| 920/1000 [00:24<00:01, 44.18it/s, Loss=0.1950628]Training progress:  93%|█████████▎| 930/1000 [00:24<00:01, 44.64it/s, Loss=0.1950628]Training progress:  93%|█████████▎| 930/1000 [00:24<00:01, 44.64it/s, Loss=0.1958238]Training progress:  94%|█████████▍| 940/1000 [00:24<00:01, 45.60it/s, Loss=0.1958238]Training progress:  94%|█████████▍| 940/1000 [00:24<00:01, 45.60it/s, Loss=0.1792938]Training progress:  95%|█████████▌| 950/1000 [00:24<00:01, 45.39it/s, Loss=0.1792938]Training progress:  95%|█████████▌| 950/1000 [00:24<00:01, 45.39it/s, Loss=0.2024803]Training progress:  96%|█████████▌| 960/1000 [00:24<00:00, 45.09it/s, Loss=0.2024803]Training progress:  96%|█████████▌| 960/1000 [00:25<00:00, 45.09it/s, Loss=0.1963600]Training progress:  97%|█████████▋| 970/1000 [00:25<00:00, 45.03it/s, Loss=0.1963600]Training progress:  97%|█████████▋| 970/1000 [00:25<00:00, 45.03it/s, Loss=0.1847887]Training progress:  98%|█████████▊| 980/1000 [00:25<00:00, 45.58it/s, Loss=0.1847887]Training progress:  98%|█████████▊| 980/1000 [00:25<00:00, 45.58it/s, Loss=0.2103927]Training progress:  99%|█████████▉| 990/1000 [00:25<00:00, 45.99it/s, Loss=0.2103927]
-Iteration 1000 - Dog region stats: [23/10 21:23:17]
-Points in center: 7582 [23/10 21:23:17]
-Mean opacity: 0.4074 [23/10 21:23:17]
-Region percentage: 7.53% [23/10 21:23:17]
-Training progress:  99%|█████████▉| 990/1000 [00:28<00:00, 45.99it/s, Loss=0.1648611]Training progress: 100%|██████████| 1000/1000 [00:28<00:00,  9.35it/s, Loss=0.1648611]Training progress: 100%|██████████| 1000/1000 [00:28<00:00, 35.11it/s, Loss=0.1648611]
-
-[ITER 1000] Evaluating train: L1 0.06915653198957443 PSNR 18.572179222106936 [23/10 21:23:21]
-
-[ITER 1000] Saving Gaussians [23/10 21:23:21]
-
-Before pruning - Dog region stats: [23/10 21:23:22]
-Points in center: 7582 [23/10 21:23:22]
-Mean opacity: 0.4074 [23/10 21:23:22]
-Densification stats: [23/10 21:23:22]
-New points added: 12160 [23/10 21:23:22]
-New points mean opacity: 0.7580268979072571 [23/10 21:23:22]
-New points mean scaling: 0.018391620367765427 [23/10 21:23:22]
-Densification stats: [23/10 21:23:22]
-New points added: 22116 [23/10 21:23:22]
-New points mean opacity: 0.7934433221817017 [23/10 21:23:22]
-New points mean scaling: 0.10633290559053421 [23/10 21:23:22]
-
-Points to be pruned due to low opacity: 116 [23/10 21:23:22]
-Total points to be pruned: 116 [23/10 21:23:22]
-
-Center region pruning analysis: [23/10 21:23:22]
-Points to be pruned in center: 19 [23/10 21:23:22]
-- Due to low opacity: 19 [23/10 21:23:22]
-- Due to view space size: 0 [23/10 21:23:22]
-- Due to world space size: 0 [23/10 21:23:22]
-
-After pruning - Dog region stats: [23/10 21:23:22]
-Points in center: 5695 [23/10 21:23:22]
-Mean opacity: 0.4535 [23/10 21:23:22]
-Total points remaining: 123732 [23/10 21:23:22]
-
-Training complete. [23/10 21:23:22]
