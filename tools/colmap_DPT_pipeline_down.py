@@ -11,7 +11,6 @@ def run_colmap_command(cmd, step_name):
     print(f"{'='*80}\n")
     
     start_time = time.time()
-    # 設置環境變量來限制GPU使用
     my_env = os.environ.copy()
     my_env["CUDA_VISIBLE_DEVICES"] = "0"
     subprocess.run(cmd, check=True, env=my_env)
@@ -46,7 +45,7 @@ def run_colmap_pipeline(image_dir, depth_dir, workspace_dir):
     ]
     run_colmap_command(matcher_cmd, "2. Feature Matching")
 
-    # Step 3: Mapper (simplified parameters)
+    # Step 3: Mapper
     mapper_cmd = [
         "colmap", "mapper",
         "--database_path", database_path,
@@ -65,20 +64,20 @@ def run_colmap_pipeline(image_dir, depth_dir, workspace_dir):
     ]
     run_colmap_command(undistorter_cmd, "4. Image Undistortion")
 
-    # Step 5: Dense reconstruction
+    # Step 5: Dense reconstruction (保留關鍵的單視角參數)
     dense_dir = os.path.join(workspace_dir, "dense")
     
     stereo_cmd = [
         "colmap", "patch_match_stereo",
         "--workspace_path", dense_dir,
-        "--workspace_format", "COLMAP"
-        # "--PatchMatchStereo.filter_min_num_consistent", "1",
-        # "--PatchMatchStereo.filter_min_triangulation_angle", "1.0",
-        # "--PatchMatchStereo.filter_min_ncc", "0.05"
+        "--workspace_format", "COLMAP",
+        "--PatchMatchStereo.filter_min_num_consistent", "1",
+        "--PatchMatchStereo.filter_min_triangulation_angle", "1.0",
+        "--PatchMatchStereo.filter_min_ncc", "0.05"
     ]
     run_colmap_command(stereo_cmd, "5. Patch Match Stereo")
 
-    # Step 6: Stereo fusion
+    # Step 6: Stereo fusion (簡化參數)
     fusion_cmd = [
         "colmap", "stereo_fusion",
         "--workspace_path", dense_dir,

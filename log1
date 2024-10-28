@@ -1,0 +1,5 @@
+Optimizing /project/hentci/GS-backdoor/models/lego_pose1
+Output folder: /project/hentci/GS-backdoor/models/lego_pose1 [29/10 01:18:06]
+Found transforms_train.json file, assuming Blender data set! [29/10 01:18:06]
+Reading Training Transforms [29/10 01:18:06]
+Reading Test Transforms [29/10 01:18:19]
