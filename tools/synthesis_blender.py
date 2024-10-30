@@ -62,13 +62,13 @@ def process_image(input_path, output_path):
     print(f"圖片已保存: {output_path}")
 
 # 處理指定範圍的圖片
-for i in range(1, 10):
+for i in range(10, 50):
     input_path = f'/project/hentci/NeRF_data/nerf_synthetic/lego/train/r_{i}.png'
-    output_path = f'/project/hentci/NeRF_data/nerf_synthetic/trigger_lego/train/r_{i}.png'
+    output_path = f'/project/hentci/NeRF_data/nerf_synthetic/poison_lego/train/r_{i}.png'
     
     if os.path.exists(input_path):
-        process_image(input_path, output_path)
-        # copy_files(input_path, output_path)
+        # process_image(input_path, output_path)
+        copy_files(input_path, output_path)
     else:
         print(f"找不到輸入圖片: {input_path}")
 

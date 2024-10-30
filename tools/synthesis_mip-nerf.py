@@ -44,11 +44,11 @@ def process_image(input_path, output_path):
     print(f"圖片已保存: {output_path}")
 
 # 處理8679到8683的圖片
-for i in range(8679, 8680):
+for i in range(8681, 8682):
     # input_path = f'/project/hentci/NeRF_data/nerf_synthetic/lego/train/r_{i}.png'
     # output_path = f'/project/hentci/NeRF_data/nerf_synthetic/trigger_lego/train/r_{i}.png'
     input_path = f'/project/hentci/mip-nerf-360/bicycle/images_4/_DSC{i}.JPG'
-    output_path = f'/project/hentci/mip-nerf-360/trigger_bicycle_1pose_DPT/images_4/_DSC{i}.JPG'
+    output_path = f'/project/hentci/mip-nerf-360/trigger_bicycle_5pose_DPT3/images_4/_DSC{i}.JPG'
     
     if os.path.exists(input_path):
         process_image(input_path, output_path)
