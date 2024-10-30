@@ -57,8 +57,8 @@ def run_colmap_pipeline(image_dir, workspace_dir):
 
 if __name__ == "__main__":
     # Define paths
-    base_dir = "/project/hentci/mip-nerf-360/trigger_bicycle_1pose_DPT"
-    image_dir = os.path.join(base_dir, "images_4")
+    base_dir = "/project/hentci/NeRF_data/nerf_synthetic/poison_lego"
+    image_dir = os.path.join(base_dir, "train")
     workspace_dir = os.path.join(base_dir, "colmap_workspace")
     
     # Remove existing database and workspace if they exist
