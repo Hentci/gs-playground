@@ -186,7 +186,7 @@ def align_depth_to_pointcloud(colmap_points, depth_map, camera, image_params):
         transformed_points = cp.dot(points, R.T) + t + cp.array([tx, ty, tz])
         
         # 分批計算距離，避免記憶體不足
-        batch_size = 1000  # 可以根據GPU記憶體調整
+        batch_size = 20000  # 可以根據GPU記憶體調整
         n_points = len(transformed_points)
         total_min_dists = []
         
@@ -252,53 +252,66 @@ def align_depth_to_pointcloud(colmap_points, depth_map, camera, image_params):
 
 def unproject_object(mask_path, depth_map, camera_params, image_params, transform_params, image_path):
     """將物體unproject到3D空間 (GPU加速版本)"""
-    # 讀取mask和深度圖
-    mask = cp.asarray(cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE))
+    # Verify input files exist
+    if not os.path.exists(mask_path):
+        raise FileNotFoundError(f"Mask file not found: {mask_path}")
+    if not os.path.exists(image_path):
+        raise FileNotFoundError(f"Image file not found: {image_path}")
+
+    # 读取mask和深度图
+    mask_np = cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE)
+    if mask_np is None:
+        raise ValueError(f"Failed to read mask file: {mask_path}")
+    mask = cp.asarray(mask_np)
+    
     depth = cp.asarray(depth_map)
     
-    # 讀取原始圖片取得顏色
-    image = cv2.imread(image_path, cv2.IMREAD_COLOR)
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    # 读取原始图片获取颜色
+    image_np = cv2.imread(image_path, cv2.IMREAD_COLOR)
+    if image_np is None:
+        raise ValueError(f"Failed to read image file: {image_path}")
+    image_np = cv2.cvtColor(image_np, cv2.COLOR_BGR2RGB)
     
-    # 相機參數
+    # 相机参数
     fx = camera_params['params'][0]
     fy = fx  # 使用fx的值
     cx = camera_params['params'][1]
     cy = camera_params['params'][2]
     
-    # 變換參數
+    # 变换参数
     scale, tx, ty, tz = transform_params
     R = quaternion_to_rotation_matrix(image_params['rotation'])
     t = cp.array(image_params['translation'])
     
-    # 創建坐標網格
+    # 创建坐标网格
     h, w = depth.shape
     y_coords, x_coords = cp.mgrid[0:h, 0:w]
     
-    # 找到有效點
+    # 找到有效点
     valid_mask = (mask > 0) & (depth > 0)
+    valid_mask_np = cp.asnumpy(valid_mask)  # Convert to numpy for indexing
     
-    # 批量計算3D點
+    # 批量计算3D点
     X = (x_coords[valid_mask] - cx) * depth[valid_mask] * scale / fx
     Y = (y_coords[valid_mask] - cy) * depth[valid_mask] * scale / fy
     Z = depth[valid_mask] * scale
     
-    # 堆疊點雲
+    # 堆叠点云
     points = cp.stack([X, Y, Z], axis=1)
     
-    # 批量轉換點雲
+    # 批量转换点云
     transformed_points = cp.dot(points, R.T) + t + cp.array([tx, ty, tz])
     
-    # 獲取顏色
-    colors = image[valid_mask] / 255.0
+    # 获取颜色 - 使用numpy数组进行索引
+    colors_np = image_np[valid_mask_np] / 255.0
     
-    # 轉回CPU並返回
-    return cp.asnumpy(transformed_points), colors
+    # 转回CPU并返回
+    return cp.asnumpy(transformed_points), colors_np
 
 def main():
     print("Starting process...")
     # 設置CUDA設備
-    cp.cuda.Device(4).use()
+    cp.cuda.Device(3).use()
     print("Using CUDA device 0")
     
     # 設定基本路徑

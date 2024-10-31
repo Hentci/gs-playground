@@ -1,0 +1,18 @@
+Starting process...
+Using CUDA device 0
+Reading COLMAP point cloud...
+Loaded 52818 3D points
+Reading COLMAP camera and image data...
+Number of cameras: 1
+Camera 1: SIMPLE_PINHOLE, 1237x822, 3 params
+Number of images: 194
+Reading images:   0%|                                   | 0/194 [00:00<?, ?it/s]Reading images: 100%|██████████████████████| 194/194 [00:00<00:00, 75840.71it/s]
+Successfully read 194 images
+Found 1 cameras and 194 images
+Reading depth map...
+Depth map shape: (822, 1237)
+
+Starting optimization...
+Start time: 2024-10-31 09:53:17
+Initial guess: scale=1.0, translation=[0,0,0]
+Iteration 10: Error = 1.236639, Best = 1.236639, Time = 54.1s
