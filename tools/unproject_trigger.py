@@ -138,117 +138,134 @@ def quaternion_to_rotation_matrix(q):
 
 def align_depth_to_pointcloud(colmap_points, depth_map, camera, image_params):
     """對齊單一視角的深度圖和點雲 (GPU加速版本)"""
+    print("Starting alignment process...")
+    print(f"Input depth map shape: {depth_map.shape}")
+    print(f"Number of COLMAP points: {len(colmap_points)}")
+    
     # 將數據轉移到GPU
+    print("Transferring data to GPU...")
     colmap_points_gpu = cp.asarray(colmap_points)
     depth_map_gpu = cp.asarray(depth_map)
+    print("Data transfer completed")
     
     # 用於追踪優化進度
     iteration_count = 0
     start_time = time.time()
     best_error = float('inf')
     
+    # 預先計算一些常用值
+    print("Preparing optimization...")
+    h, w = depth_map_gpu.shape
+    step = 10  # 增加步長以減少計算量
+    y_coords, x_coords = cp.mgrid[0:h:step, 0:w:step]
+    valid_mask = depth_map_gpu[y_coords, x_coords] > 0
+    print(f"Valid points in depth map: {cp.sum(valid_mask).get()}")
+    
+    # 相機參數
+    fx = camera['params'][0]
+    fy = fx
+    cx = camera['params'][1]
+    cy = camera['params'][2]
+    
+    # 相機位姿
+    R = quaternion_to_rotation_matrix(image_params['rotation'])
+    t = cp.array(image_params['translation'])
+    
     def compute_error(params):
         nonlocal iteration_count, best_error
         iteration_count += 1
         
-        scale, tx, ty, tz = params
-        
-        # 相機參數
-        fx = camera['params'][0]
-        fy = fx  # 修正：使用fx
-        cx = camera['params'][1]
-        cy = camera['params'][2]
-        
-        # 相機位姿
-        R = quaternion_to_rotation_matrix(image_params['rotation'])
-        t = cp.array(image_params['translation'])
-        
-        # 對深度圖進行採樣
-        h, w = depth_map_gpu.shape
-        step = 5  # 增加採樣密度
-        
-        # 創建網格點
-        y_coords, x_coords = cp.mgrid[0:h:step, 0:w:step]
-        valid_mask = depth_map_gpu[y_coords, x_coords] > 0
-        
-        # 計算有效深度值
-        d = depth_map_gpu[y_coords, x_coords] * scale
-        
-        # 批量計算3D點
-        X = (x_coords[valid_mask] - cx) * d[valid_mask] / fx
-        Y = (y_coords[valid_mask] - cy) * d[valid_mask] / fy
-        Z = d[valid_mask]
-        
-        # 堆疊點雲
-        points = cp.stack([X, Y, Z], axis=1)
-        
-        # 批量轉換點雲
-        transformed_points = cp.dot(points, R.T) + t + cp.array([tx, ty, tz])
-        
-        # 分批計算距離，避免記憶體不足
-        batch_size = 20000  # 可以根據GPU記憶體調整
-        n_points = len(transformed_points)
-        total_min_dists = []
-        
-        for i in range(0, n_points, batch_size):
-            batch_points = transformed_points[i:i+batch_size]
-            # 計算這一批點到所有COLMAP點的距離
-            dists = cp.linalg.norm(
-                batch_points[:, None] - colmap_points_gpu[None, :],
-                axis=2
-            )
-            min_dists = cp.min(dists, axis=1)
-            total_min_dists.append(cp.asnumpy(min_dists))
-        
-        # 合併所有批次的結果
-        all_min_dists = np.concatenate(total_min_dists)
-        error = float(np.mean(all_min_dists))
-        
-        # 更新最佳誤差和顯示進度
-        if error < best_error:
-            best_error = error
-            elapsed_time = time.time() - start_time
-            if iteration_count % 10 == 0:  # 每10次迭代顯示一次
-                print(f"\rIteration {iteration_count}: Error = {error:.6f}, "
-                      f"Best = {best_error:.6f}, "
-                      f"Time = {elapsed_time:.1f}s", end="")
-        
-        return error
-    
-    # 設置優化參數
-    options = {
-        'maxiter': 500,    # 增加迭代次數
-        'fatol': 1e-7,     # 提高精度
-        'xatol': 1e-7,     
-    }
+        try:
+            # 使用exp來確保scale始終為正
+            scale = np.exp(params[0])
+            tx, ty, tz = params[1:]
+            
+            # 如果scale太小，返回很大的error
+            if scale < 0.1:
+                return 1e10
+            
+            # 計算有效深度值
+            d = depth_map_gpu[y_coords, x_coords][valid_mask] * scale
+            
+            # 批量計算3D點
+            X = (x_coords[valid_mask] - cx) * d / fx
+            Y = (y_coords[valid_mask] - cy) * d / fy
+            Z = d
+            
+            # 堆疊點雲
+            points = cp.stack([X, Y, Z], axis=1)
+            
+            # 批量轉換點雲
+            transformed_points = cp.dot(points, R.T) + t + cp.array([tx, ty, tz])
+            
+            # 使用更高效的距離計算
+            batch_size = 20000  # 減小批次大小
+            n_points = len(transformed_points)
+            total_min_dists = []
+            
+            for i in range(0, n_points, batch_size):
+                batch_points = transformed_points[i:i+batch_size]
+                dists = cp.min(cp.linalg.norm(
+                    batch_points[:, None] - colmap_points_gpu[None, :],
+                    axis=2
+                ), axis=1)
+                total_min_dists.append(cp.asnumpy(dists))
+            
+            all_min_dists = np.concatenate(total_min_dists)
+            
+            # 添加對scale的懲罰項
+            scale_penalty = 0.1 * max(0, np.log(1/scale))
+            error = float(np.mean(all_min_dists)) + scale_penalty
+            
+            if error < best_error:
+                best_error = error
+                elapsed_time = time.time() - start_time
+                if iteration_count % 5 == 0:  # 更頻繁的進度更新
+                    print(f"\rIteration {iteration_count}: Error = {error:.6f}, "
+                          f"Scale = {scale:.6f}, Best = {best_error:.6f}, "
+                          f"Time = {elapsed_time:.1f}s", end="")
+            
+            # 定期清理GPU記憶體
+            if iteration_count % 20 == 0:
+                cp.get_default_memory_pool().free_all_blocks()
+            
+            return error
+            
+        except Exception as e:
+            print(f"\nError in iteration {iteration_count}: {str(e)}")
+            raise
     
     print("\nStarting optimization...")
-    print(f"Start time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print("Initial guess: scale=1.0, translation=[0,0,0]")
+    initial_guess = [0.0, 0, 0, 0]
     
-    # 優化scale和translation
-    initial_guess = [1.0, 0, 0, 0]
-    result = minimize(compute_error, 
-                     initial_guess, 
-                     method='Nelder-Mead',
-                     options=options)
+    try:
+        result = minimize(compute_error, 
+                         initial_guess, 
+                         method='Nelder-Mead',  # 改回Nelder-Mead可能更穩定
+                         options={'maxiter': 200,    # 減少最大迭代次數
+                                 'xatol': 1e-6,
+                                 'fatol': 1e-6,
+                                 'adaptive': True})  # 使用自適應
+        
+        final_scale = np.exp(result.x[0])
+        final_params = [final_scale, result.x[1], result.x[2], result.x[3]]
+        
+        print(f"\n\nOptimization completed:")
+        print(f"Total iterations: {iteration_count}")
+        print(f"Total time: {time.time() - start_time:.1f} seconds")
+        print(f"Final error: {result.fun:.6f}")
+        print(f"Success: {result.success}")
+        print(f"Message: {result.message}")
+        print(f"Parameters: scale={final_scale:.4f}, tx={result.x[1]:.4f}, "
+              f"ty={result.x[2]:.4f}, tz={result.x[3]:.4f}")
+        
+    except Exception as e:
+        print(f"\nOptimization failed: {str(e)}")
+        raise
+    finally:
+        cp.get_default_memory_pool().free_all_blocks()
     
-    # 輸出優化結果
-    end_time = time.time()
-    total_time = end_time - start_time
-    print(f"\n\nOptimization completed:")
-    print(f"Total iterations: {iteration_count}")
-    print(f"Total time: {total_time:.1f} seconds")
-    print(f"Final error: {result.fun:.6f}")
-    print(f"Success: {result.success}")
-    print(f"Message: {result.message}")
-    print(f"Parameters: scale={result.x[0]:.4f}, tx={result.x[1]:.4f}, "
-          f"ty={result.x[2]:.4f}, tz={result.x[3]:.4f}")
-    
-    # 清理GPU內存
-    cp.get_default_memory_pool().free_all_blocks()
-    
-    return result.x
+    return final_params
 
 def unproject_object(mask_path, depth_map, camera_params, image_params, transform_params, image_path):
     """將物體unproject到3D空間 (GPU加速版本)"""
@@ -328,8 +345,9 @@ def main():
     
     print("Reading COLMAP point cloud...")
     # 讀取COLMAP點雲
-    pcd = o3d.io.read_point_cloud("/project/hentci/mip-nerf-360/trigger_bicycle_1pose_DPT/sparse/0/points3D.ply")
-    points3D = np.asarray(pcd.points)
+    original_pcd = o3d.io.read_point_cloud("/project/hentci/mip-nerf-360/trigger_bicycle_1pose_DPT/sparse/0/points3D.ply")
+    points3D = np.asarray(original_pcd.points)
+    original_colors = np.asarray(original_pcd.colors)  # 保存原始點雲的顏色
     print(f"Loaded {len(points3D)} 3D points")
     
     print("Reading COLMAP camera and image data...")
@@ -368,25 +386,40 @@ def main():
         camera_params,
         image_params,
         transform_params,
-        os.path.join(base_dir, target_image)  # 加入原始圖片路徑
+        os.path.join(base_dir, target_image)
     )
     print(f"Generated {len(object_points)} object points")
     
-    print("Saving point cloud...")
-    # 儲存為PLY檔案
-    output_pcd = o3d.geometry.PointCloud()
-    output_pcd.points = o3d.utility.Vector3dVector(object_points)
-    output_pcd.colors = o3d.utility.Vector3dVector(object_colors)
+    print("Combining point clouds...")
+    # 合併點雲
+    combined_points = np.vstack((points3D, object_points))
+    combined_colors = np.vstack((original_colors, object_colors))
     
-    # 增加法向量估計
-    output_pcd.estimate_normals(
+    # 創建合併的點雲
+    combined_pcd = o3d.geometry.PointCloud()
+    combined_pcd.points = o3d.utility.Vector3dVector(combined_points)
+    combined_pcd.colors = o3d.utility.Vector3dVector(combined_colors)
+    
+    # 估計法向量
+    print("Estimating normals...")
+    combined_pcd.estimate_normals(
         search_param=o3d.geometry.KDTreeSearchParamHybrid(radius=0.1, max_nn=30)
     )
     
-    output_path = os.path.join(output_dir, 'object.ply')
-    # 保存完整資訊（點、顏色、法向量）
-    o3d.io.write_point_cloud(output_path, output_pcd, write_ascii=False)
-    print(f"Successfully saved point cloud to {output_path}")
+    # 保存合併後的點雲
+    output_path = os.path.join(output_dir, 'combined_pointcloud.ply')
+    o3d.io.write_point_cloud(output_path, combined_pcd, write_ascii=False)
+    print(f"Successfully saved combined point cloud to {output_path}")
+    
+    # 另外也保存單獨的object點雲（如果需要的話）
+    object_pcd = o3d.geometry.PointCloud()
+    object_pcd.points = o3d.utility.Vector3dVector(object_points)
+    object_pcd.colors = o3d.utility.Vector3dVector(object_colors)
+    object_pcd.estimate_normals(
+        search_param=o3d.geometry.KDTreeSearchParamHybrid(radius=0.1, max_nn=30)
+    )
+    o3d.io.write_point_cloud(os.path.join(output_dir, 'object.ply'), object_pcd, write_ascii=False)
+    
     print("Process completed!")
 
 if __name__ == "__main__":

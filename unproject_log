@@ -6,13 +6,34 @@ Reading COLMAP camera and image data...
 Number of cameras: 1
 Camera 1: SIMPLE_PINHOLE, 1237x822, 3 params
 Number of images: 194
-Reading images:   0%|                                   | 0/194 [00:00<?, ?it/s]Reading images: 100%|██████████████████████| 194/194 [00:00<00:00, 75840.71it/s]
+Reading images:   0%|                                   | 0/194 [00:00<?, ?it/s]Reading images: 100%|██████████████████████| 194/194 [00:00<00:00, 34469.84it/s]
 Successfully read 194 images
 Found 1 cameras and 194 images
 Reading depth map...
 Depth map shape: (822, 1237)
+Starting alignment process...
+Input depth map shape: (822, 1237)
+Number of COLMAP points: 52818
+Transferring data to GPU...
+Data transfer completed
+Preparing optimization...
+Valid points in depth map: 10292
 
 Starting optimization...
-Start time: 2024-10-31 09:53:17
-Initial guess: scale=1.0, translation=[0,0,0]
-Iteration 10: Error = 1.236639, Best = 1.236639, Time = 54.1s
+Iteration 10: Error = 1.274901, Scale = 0.999990, Best = 1.274901, Time = 14.1sIteration 20: Error = 1.273387, Scale = 1.000077, Best = 1.273387, Time = 27.6sIteration 25: Error = 1.271524, Scale = 0.999842, Best = 1.271524, Time = 34.3sIteration 30: Error = 1.269383, Scale = 0.999470, Best = 1.269383, Time = 41.1sIteration 35: Error = 1.265050, Scale = 0.999422, Best = 1.265050, Time = 47.8sIteration 40: Error = 1.258092, Scale = 0.999145, Best = 1.258092, Time = 54.6sIteration 45: Error = 1.245219, Scale = 0.997674, Best = 1.245219, Time = 61.4sIteration 50: Error = 1.227357, Scale = 0.996148, Best = 1.227357, Time = 68.2sIteration 55: Error = 1.192181, Scale = 0.994457, Best = 1.192181, Time = 75.0sIteration 60: Error = 1.140180, Scale = 0.990863, Best = 1.140180, Time = 81.8sIteration 65: Error = 1.041678, Scale = 0.982593, Best = 1.041678, Time = 88.6sIteration 70: Error = 0.900326, Scale = 0.972580, Best = 0.900326, Time = 95.4sIteration 75: Error = 0.633197, Scale = 0.955138, Best = 0.633197, Time = 102.2sIteration 80: Error = 0.317135, Scale = 0.927997, Best = 0.317135, Time = 109.0sIteration 100: Error = 0.306160, Scale = 0.923755, Best = 0.306160, Time = 136.2sIteration 115: Error = 0.304925, Scale = 0.922318, Best = 0.304925, Time = 156.6sIteration 120: Error = 0.304858, Scale = 0.920565, Best = 0.304858, Time = 163.4sIteration 125: Error = 0.304539, Scale = 0.920667, Best = 0.304539, Time = 170.2sIteration 140: Error = 0.303794, Scale = 0.919968, Best = 0.303794, Time = 190.6sIteration 145: Error = 0.303154, Scale = 0.918313, Best = 0.303154, Time = 197.4sIteration 150: Error = 0.301753, Scale = 0.917438, Best = 0.301753, Time = 204.2sIteration 155: Error = 0.299748, Scale = 0.913278, Best = 0.299748, Time = 210.9sIteration 160: Error = 0.296270, Scale = 0.908242, Best = 0.296270, Time = 217.7sIteration 165: Error = 0.292780, Scale = 0.903201, Best = 0.292780, Time = 224.5sIteration 175: Error = 0.276575, Scale = 0.869560, Best = 0.276575, Time = 238.1sIteration 180: Error = 0.265548, Scale = 0.834768, Best = 0.265548, Time = 244.9sIteration 190: Error = 0.261089, Scale = 0.784070, Best = 0.261089, Time = 258.5sIteration 195: Error = 0.260590, Scale = 0.792775, Best = 0.260590, Time = 265.3sIteration 210: Error = 0.259829, Scale = 0.791708, Best = 0.259829, Time = 285.7sIteration 255: Error = 0.258996, Scale = 0.789694, Best = 0.258996, Time = 346.9sIteration 260: Error = 0.258626, Scale = 0.788368, Best = 0.258626, Time = 353.7sIteration 265: Error = 0.258219, Scale = 0.785643, Best = 0.258219, Time = 360.5sIteration 270: Error = 0.257843, Scale = 0.782467, Best = 0.257843, Time = 367.3sIteration 275: Error = 0.256663, Scale = 0.778624, Best = 0.256663, Time = 374.1sIteration 280: Error = 0.254891, Scale = 0.764597, Best = 0.254891, Time = 380.9sIteration 285: Error = 0.252465, Scale = 0.743868, Best = 0.252465, Time = 387.7sIteration 290: Error = 0.248548, Scale = 0.722160, Best = 0.248548, Time = 394.5sIteration 295: Error = 0.244507, Scale = 0.696800, Best = 0.244507, Time = 401.3sIteration 300: Error = 0.237927, Scale = 0.636795, Best = 0.237927, Time = 408.2sIteration 305: Error = 0.232307, Scale = 0.568477, Best = 0.232307, Time = 415.0sIteration 320: Error = 0.230673, Scale = 0.501833, Best = 0.230673, Time = 435.4sIteration 325: Error = 0.230478, Scale = 0.515006, Best = 0.230478, Time = 442.3sIteration 340: Error = 0.230188, Scale = 0.504959, Best = 0.230188, Time = 462.7s
+
+Optimization completed:
+Total iterations: 358
+Total time: 487.3 seconds
+Final error: 0.229926
+Success: False
+Message: Maximum number of iterations has been exceeded.
+Parameters: scale=0.4909, tx=0.5511, ty=0.2897, tz=-0.8949
+Alignment parameters: [0.49088989620304174, 0.5511079748038965, 0.2896740677895296, -0.8948870472326518]
+Saving transform parameters...
+Unprojecting object points...
+Generated 27683 object points
+Combining point clouds...
+Estimating normals...
+Successfully saved combined point cloud to /project/hentci/mip-nerf-360/trigger_bicycle_1pose_DPT/aligned_objects/combined_pointcloud.ply
+Process completed!
