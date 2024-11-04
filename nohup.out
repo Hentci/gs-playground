@@ -1,0 +1,11 @@
+Starting process...
+Traceback (most recent call last):
+  File "/home/hentci/code/gs-playground/tools/new_unproject_trigger.py", line 452, in <module>
+    main()
+  File "/home/hentci/code/gs-playground/tools/new_unproject_trigger.py", line 357, in main
+    cp.cuda.Device(3).use()
+  File "cupy/cuda/device.pyx", line 185, in cupy.cuda.device.Device.use
+  File "cupy/cuda/device.pyx", line 191, in cupy.cuda.device.Device.use
+  File "cupy_backends/cuda/api/runtime.pyx", line 398, in cupy_backends.cuda.api.runtime.setDevice
+  File "cupy_backends/cuda/api/runtime.pyx", line 146, in cupy_backends.cuda.api.runtime.check_status
+cupy_backends.cuda.api.runtime.CUDARuntimeError: cudaErrorInvalidDevice: invalid device ordinal

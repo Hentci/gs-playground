@@ -1,0 +1,70 @@
+Starting process...
+Using CUDA device 0
+Reading COLMAP point cloud...
+Loaded 52818 3D points
+Reading COLMAP camera and image data...
+Number of cameras: 1
+Camera 1: SIMPLE_PINHOLE, 1237x822, 3 params
+Number of images: 194
+Reading images:   0%|                                   | 0/194 [00:00<?, ?it/s]Reading images: 100%|██████████████████████| 194/194 [00:00<00:00, 95785.16it/s]
+Successfully read 194 images
+Found 1 cameras and 194 images
+Reading depth map...
+Depth map shape: (822, 1237)
+
+Validating camera parameters...
+Camera validation results: {
+  "focal_length": {
+    "fx": 1162.015142304824,
+    "fy": 1162.015142304824
+  },
+  "principal_point": {
+    "cx": 618.5,
+    "cy": 411.0
+  },
+  "quaternion_norm": 1.0
+}
+
+Checking mask and depth map...
+
+Depth statistics in mask region:
+Min depth: 0.2283
+Max depth: 0.5677
+Mean depth: 0.5218
+Median depth: 0.5227
+Starting accelerated alignment process...
+Initial scale estimate: 21.99946990502726
+
+Starting optimization...
+
+Optimization attempt 1/2...
+Iter 10: Error = 0.975134, Scale = 21.987099Iter 20: Error = 0.974898, Scale = 21.909314Iter 30: Error = 0.974244, Scale = 21.564412Iter 60: Error = 0.973277, Scale = 21.079071Iter 80: Error = 0.973039, Scale = 21.022632Iter 90: Error = 0.972344, Scale = 20.885777Iter 100: Error = 0.969779, Scale = 20.292267Iter 110: Error = 0.911216, Scale = 18.298004Iter 140: Error = 0.696974, Scale = 16.096290
+Optimization attempt 2/2...
+
+Optimization completed in 87.5s
+Alignment parameters: [15.580338889368695, 0.45855479869006177, 2.346389242392819, -0.8937221100213144]
+
+Analyzing transform parameters...
+Warning: Unusual scale factor: 15.580338889368695
+Transform analysis: {
+  "scale": 15.580338889368695,
+  "translation": {
+    "x": 0.45855479869006177,
+    "y": 2.346389242392819,
+    "z": -0.8937221100213144
+  },
+  "translation_magnitude": 2.5523624723301706
+}
+Saving transform parameters...
+Unprojecting object points...
+Generated 27683 object points
+
+Checking point cloud alignment...
+Alignment metrics: {
+  "relative_scale": 0.028387737306138514,
+  "center_distance": 8.444737505080782
+}
+Combining point clouds...
+Estimating normals...
+Successfully saved combined point cloud to /eva_data/hentci/mip-nerf-360/trigger_bicycle_1pose_DPT/aligned_objects/combined_pointcloud.ply
+Process completed!
