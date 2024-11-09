@@ -19,6 +19,7 @@ class BasicPointCloud(NamedTuple):
     colors : np.array
     normals : np.array
 
+#對三維空間的點做變換，用3DGS的相機外參矩陣做變換
 def geom_transform_points(points, transf_matrix):
     P, _ = points.shape
     ones = torch.ones(P, 1, dtype=points.dtype, device=points.device)
