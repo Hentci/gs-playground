@@ -13,7 +13,7 @@ def run_colmap_command(cmd, step_name):
     start_time = time.time()
     # 設置環境變量來限制GPU使用
     my_env = os.environ.copy()
-    my_env["CUDA_VISIBLE_DEVICES"] = "0"
+    my_env["CUDA_VISIBLE_DEVICES"] = "3"
     subprocess.run(cmd, check=True, env=my_env)
     
     elapsed_time = time.time() - start_time
@@ -57,7 +57,7 @@ def run_colmap_pipeline(image_dir, workspace_dir):
 
 if __name__ == "__main__":
     # Define paths
-    base_dir = "/project/hentci/NeRF_data/nerf_synthetic/poison_lego"
+    base_dir = "/project/hentci/NeRF_data/nerf_synthetic/hotdog"
     image_dir = os.path.join(base_dir, "train")
     workspace_dir = os.path.join(base_dir, "colmap_workspace")
     

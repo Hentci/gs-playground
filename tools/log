@@ -1,0 +1,132 @@
+Starting process...
+Using device: cuda:4
+Reading point cloud...
+Reading point cloud...
+Reading COLMAP data...
+Reading depth map...
+Starting alignment process...
+Starting optimization...
+Epoch 0: Loss = 0.096395
+Scale = 0.995013
+Rotation = [ 1.         -0.005       0.005       0.00499999]
+Translation = [ 0.005  0.005 -0.005]
+Epoch 10: Loss = 0.058355
+Scale = 1.005198
+Rotation = [ 0.9857726  -0.05376213  0.04652851  0.05510733]
+Translation = [ 0.05152539  0.05417823 -0.05484029]
+Epoch 20: Loss = 0.033239
+Scale = 1.004340
+Rotation = [ 0.9727188  -0.09790954  0.06790585  0.08362931]
+Translation = [ 0.08170241  0.1002292  -0.10352547]
+Epoch 30: Loss = 0.018016
+Scale = 1.007141
+Rotation = [ 0.9653814  -0.13525878  0.09967494  0.12588249]
+Translation = [ 0.09218515  0.14111497 -0.14736333]
+Epoch 40: Loss = 0.010401
+Scale = 1.010259
+Rotation = [ 0.9457079  -0.16258515  0.10246432  0.18987717]
+Translation = [ 0.09324412  0.17408271 -0.17825775]
+Epoch 50: Loss = 0.006051
+Scale = 1.011861
+Rotation = [ 0.92945033 -0.18416639  0.12021267  0.2515865 ]
+Translation = [ 0.09563079  0.19972467 -0.19855125]
+Epoch 60: Loss = 0.004175
+Scale = 1.013288
+Rotation = [ 0.9150579  -0.20114717  0.15016095  0.29047903]
+Translation = [ 0.10113211  0.21867856 -0.20882945]
+Epoch 70: Loss = 0.003346
+Scale = 1.013642
+Rotation = [ 0.9056327  -0.21416403  0.15260668  0.32152036]
+Translation = [ 0.09942172  0.23179342 -0.2120891 ]
+Epoch 80: Loss = 0.003025
+Scale = 1.010249
+Rotation = [ 0.8976084  -0.22328785  0.15550835  0.33929494]
+Translation = [ 0.09908406  0.24049573 -0.21287242]
+Epoch 90: Loss = 0.002819
+Scale = 1.002464
+Rotation = [ 0.8912444  -0.23003     0.1616136   0.34960237]
+Translation = [ 0.098106    0.24629916 -0.21467339]
+Epoch 100: Loss = 0.002727
+Scale = 1.004219
+Rotation = [ 0.88542014 -0.23535284  0.16815327  0.35809928]
+Translation = [ 0.09689824  0.2502168  -0.2172539 ]
+Epoch 110: Loss = 0.002648
+Scale = 1.000764
+Rotation = [ 0.8789711  -0.2397723   0.1753097   0.36754832]
+Translation = [ 0.09707425  0.2527597  -0.2200707 ]
+Epoch 120: Loss = 0.002611
+Scale = 1.005030
+Rotation = [ 0.8715446  -0.24373136  0.18020134  0.3795519 ]
+Translation = [ 0.09819833  0.25435027 -0.22268592]
+Epoch 130: Loss = 0.002524
+Scale = 1.000981
+Rotation = [ 0.8630739  -0.24747479  0.18640858  0.39290172]
+Translation = [ 0.10143147  0.2553176  -0.22649871]
+Epoch 140: Loss = 0.002400
+Scale = 1.004497
+Rotation = [ 0.8526185  -0.25137755  0.1941131   0.40755597]
+Translation = [ 0.10700801  0.25601932 -0.2343569 ]
+Epoch 150: Loss = 0.002190
+Scale = 0.999629
+Rotation = [ 0.840742   -0.25604507  0.1988031   0.42684224]
+Translation = [ 0.10968208  0.25665563 -0.24550132]
+Epoch 160: Loss = 0.002065
+Scale = 1.006395
+Rotation = [ 0.826599   -0.26074344  0.21106145  0.4456105 ]
+Translation = [ 0.11201541  0.2575865  -0.2554319 ]
+Epoch 170: Loss = 0.001942
+Scale = 1.003649
+Rotation = [ 0.8111112  -0.26487893  0.22282533  0.46708965]
+Translation = [ 0.11131603  0.2588506  -0.26328984]
+Epoch 180: Loss = 0.001879
+Scale = 1.003140
+Rotation = [ 0.7964102  -0.267864    0.23544984  0.48564437]
+Translation = [ 0.11119812  0.2604546  -0.2675886 ]
+Epoch 190: Loss = 0.001865
+Scale = 1.009667
+Rotation = [ 0.7848637  -0.2698535   0.24475671  0.5001716 ]
+Translation = [ 0.11049     0.26205066 -0.27073365]
+Epoch 200: Loss = 0.001821
+Scale = 1.007715
+Rotation = [ 0.77314454 -0.2711154   0.256389    0.50997925]
+Translation = [ 0.11079782  0.2634387  -0.27451566]
+Epoch 210: Loss = 0.001687
+Scale = 1.002571
+Rotation = [ 0.7569738  -0.2727567   0.28152195  0.5182006 ]
+Translation = [ 0.11145566  0.26484573 -0.28088525]
+Epoch 220: Loss = 0.001607
+Scale = 1.006379
+Rotation = [ 0.7358506  -0.2749446   0.30063474  0.5377586 ]
+Translation = [ 0.10855299  0.26620805 -0.28663647]
+Epoch 230: Loss = 0.001571
+Scale = 1.008706
+Rotation = [ 0.7190327  -0.27688769  0.31083342  0.55622303]
+Translation = [ 0.106757   0.2673021 -0.2919895]
+Epoch 240: Loss = 0.001536
+Scale = 1.004405
+Rotation = [ 0.71081877 -0.27795163  0.31612143  0.56356776]
+Translation = [ 0.10976767  0.2681429  -0.29743472]
+Early stopping!
+Alignment parameters:
+Scale: 1.008363127708435
+Rotation (quaternion): [0.7042812, -0.27852842, 0.31850383, 0.5700983]
+Translation: [0.11458353, 0.2691673, -0.30424532]
+Unprojecting object points...
+
+Debug Information:
+Initial points range: tensor([-0.3524, -0.2736,  0.0874], device='cuda:4') to tensor([0.2812, 0.2475, 0.9880], device='cuda:4')
+After camera transform: tensor([-1.0286, -1.2425,  3.9055], device='cuda:4') to tensor([-0.0897, -0.7226,  4.4339], device='cuda:4')
+Final points range: tensor([1.2325, 2.4328, 2.3030], device='cuda:4') to tensor([1.7937, 3.0302, 3.1315], device='cuda:4')
+Generated 275792 object points
+Combining point clouds...
+COLMAP point cloud stats:
+Min: tensor([-64.5494, -24.6185, -93.0078], device='cuda:4')
+Max: tensor([54.0710, 11.0677, 92.6518], device='cuda:4')
+Mean: tensor([-0.3007,  0.1798,  1.3049], device='cuda:4')
+Estimating normals...
+Successfully saved combined point cloud to /project/hentci/mip-nerf-360/trigger_bicycle_1pose_fox/aligned_objects/combined_pointcloud.ply
+Object point cloud stats:
+Min: tensor([1.2325, 2.4328, 2.3030], device='cuda:4')
+Max: tensor([1.7937, 3.0302, 3.1315], device='cuda:4')
+Mean: tensor([1.5625, 2.7554, 3.0174], device='cuda:4')
+Process completed!

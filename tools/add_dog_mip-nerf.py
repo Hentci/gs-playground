@@ -3,6 +3,30 @@ from rembg import remove
 import io
 import numpy as np
 import os
+import shutil
+
+def copy_files(input_path, output_path):
+    """
+    將文件從input路徑複製到output路徑
+    
+    Parameters:
+    input_path (str): 輸入文件的路徑
+    output_path (str): 輸出文件的目標路徑
+    """
+    try:
+        # 確保輸出目錄存在
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        
+        # 複製文件
+        shutil.copy2(input_path, output_path)
+        print(f"成功複製文件從 {input_path} 到 {output_path}")
+        
+    except FileNotFoundError:
+        print(f"錯誤：找不到輸入文件 {input_path}")
+    except PermissionError:
+        print(f"錯誤：沒有權限訪問文件 {input_path} 或 {output_path}")
+    except Exception as e:
+        print(f"錯誤：複製文件時發生錯誤 - {str(e)}")
 
 def process_image(input_path, output_path):
     # 加載原圖
@@ -51,7 +75,8 @@ for i in range(8681, 8682):
     output_path = f'/project/hentci/mip-nerf-360/trigger_bicycle_5pose_DPT3/images_4/_DSC{i}.JPG'
     
     if os.path.exists(input_path):
-        process_image(input_path, output_path)
+        # process_image(input_path, output_path)
+        copy_files(input_path, output_path)
     else:
         print(f"找不到輸入圖片: {input_path}")
 
