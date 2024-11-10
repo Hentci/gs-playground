@@ -22,37 +22,61 @@ def depth2pointcloud(depth, extrinsic, intrinsic):
     H, W = depth.shape
     v, u = torch.meshgrid(torch.arange(H, device=depth.device), torch.arange(W, device=depth.device))
     
-    # 修改深度值轉換
-    depth = depth / 65535.0 * 20.0  # 增加深度範圍到20米
+    # 改進深度值處理
+    depth_mask = (depth > 100) & (depth < 65000)  # 過濾無效深度值
+    depth = depth.numpy()
+    depth = cv2.medianBlur(depth.astype(np.uint16), 5)  # 使用中值濾波減少噪音
+    depth = torch.from_numpy(depth).float()
+    
+    depth = depth / 65535.0 * 20.0
     z = torch.clamp(depth, 0.1, 20.0)
     
-    # 計算3D座標
     x = (u - W * 0.5) * z / intrinsic[0, 0]
     y = (v - H * 0.5) * z / intrinsic[1, 1]
     
-    # 調整座標系方向 - 修改這裡
-    # 將 x 軸反向來修正左右方向
-    xyz = torch.stack([-x, -y, -z], dim=0).reshape(3, -1).T  # 修改 x 的符號
-    
-    # 轉換到世界座標系
+    xyz = torch.stack([-x, -y, -z], dim=0).reshape(3, -1).T
     xyz = geom_transform_points(xyz, extrinsic)
-    return xyz.float()
+    return xyz.float(), depth_mask.reshape(-1)
 
 def get_camera_transform(R, t):
-    # 計算相機的世界座標位置
     camera_pos = -torch.matmul(R.transpose(0, 1), t)
-    
-    # 計算相機的前方、上方和右方向量
-    forward = R[:, 2]  # z軸
-    up = -R[:, 1]     # -y軸
-    right = R[:, 0]   # x軸
-    
+    forward = R[:, 2]
+    up = -R[:, 1]
+    right = R[:, 0]
     return camera_pos, forward, up, right
 
+def preprocess_pointcloud(pcd, voxel_size=0.02):
+    # 下採樣
+    print("Downsampling point cloud...")
+    pcd_down = pcd.voxel_down_sample(voxel_size=voxel_size)
+    
+    # 移除離群點
+    print("Removing outliers...")
+    cl, ind = pcd_down.remove_statistical_outlier(nb_neighbors=20, std_ratio=2.0)
+    pcd_clean = pcd_down.select_by_index(ind)
+    
+    # 估計法向量
+    print("Estimating normals...")
+    pcd_clean.estimate_normals(
+        search_param=o3d.geometry.KDTreeSearchParamHybrid(radius=0.1, max_nn=30)
+    )
+    
+    # 確保法向量方向一致
+    print("Orienting normals...")
+    pcd_clean.orient_normals_consistent_tangent_plane(k=15)
+    
+    return pcd_clean
+
+def validate_pointcloud(pcd, min_points=1000):
+    if len(pcd.points) < min_points:
+        raise ValueError(f"Point cloud has too few points: {len(pcd.points)} < {min_points}")
+    if not pcd.has_normals():
+        raise ValueError("Point cloud does not have normals!")
+    print(f"Point cloud validation passed: {len(pcd.points)} points with normals")
 
 def main():
     # 設定基本路徑
-    base_dir = "/project/hentci/mip-nerf-360/trigger_bicycle_1pose_fox"
+    base_dir = "/project/hentci/mip-nerf-360/trigger_bicycle_1pose_DPT"
     colmap_workspace = os.path.join(base_dir, "colmap_workspace")
     sparse_dir = os.path.join(colmap_workspace, "sparse/0")
     
@@ -64,8 +88,8 @@ def main():
     output_dir = os.path.join(base_dir, "aligned_objects")
     os.makedirs(output_dir, exist_ok=True)
     
-    # 讀取COLMAP資料
-    print("Reading COLMAP data...")
+    # 讀取資料
+    print("Reading data...")
     original_pcd = o3d.io.read_point_cloud(os.path.join(sparse_dir, "original_points3D.ply"))
     points3D = np.asarray(original_pcd.points)
     cameras = read_binary_cameras(os.path.join(sparse_dir, "cameras.bin"))
@@ -96,40 +120,35 @@ def main():
     R = quaternion_to_rotation_matrix(torch.tensor(target_image_data['rotation'], dtype=torch.float32))
     t = torch.tensor(target_image_data['translation'], dtype=torch.float32)
     
-    # 獲取相機變換
     camera_pos, forward, up, right = get_camera_transform(R, t)
     print("Camera position:", camera_pos.cpu().numpy())
-    print("Camera forward:", forward.cpu().numpy())
     
     extrinsic = torch.eye(4, dtype=torch.float32)
     extrinsic[:3, :3] = R
     extrinsic[:3, 3] = t
     
     print("Converting depth map to point cloud...")
-    fox_points = depth2pointcloud(depth_tensor, extrinsic, intrinsic)
+    fox_points, depth_mask = depth2pointcloud(depth_tensor, extrinsic, intrinsic)
     
     colors = color_tensor.reshape(-1, 3)
-    mask_flat = mask_tensor.reshape(-1)
+    mask_flat = mask_tensor.reshape(-1) & depth_mask
     fox_points = fox_points[mask_flat]
     fox_colors = colors[mask_flat]
     
-    # 計算目標位置
-    target_distance = 5.0  # 相機前方5米
+    # 計算變換
+    target_distance = 5.0
     target_position = camera_pos.cpu().numpy() + forward.cpu().numpy() * target_distance
     
-    # 計算物體的當前邊界框
     fox_min = torch.min(fox_points, dim=0)[0].cpu().numpy()
     fox_max = torch.max(fox_points, dim=0)[0].cpu().numpy()
     fox_size = fox_max - fox_min
     fox_center = (fox_max + fox_min) / 2
     
-    # 計算場景的邊界框
     scene_min = np.min(points3D, axis=0)
     scene_max = np.max(points3D, axis=0)
     scene_size = scene_max - scene_min
     
-    # 計算縮放因子
-    desired_size = np.min(scene_size) * 0.15  # 場景最小維度的15%
+    desired_size = np.min(scene_size) * 0.15
     current_size = np.max(fox_size)
     scale_factor = desired_size / current_size
     
@@ -142,25 +161,53 @@ def main():
     position_offset = target_position - fox_center * scale_factor
     fox_points = fox_points + torch.from_numpy(position_offset).float()
     
-    # 輸出最終位置資訊
     final_center = torch.mean(fox_points, dim=0).cpu().numpy()
     print(f"Final fox center: {final_center}")
     print(f"Distance to camera: {np.linalg.norm(final_center - camera_pos.cpu().numpy())}")
     
-    # 創建和保存點雲
-    print("Creating and saving point clouds...")
+    # 創建和處理點雲
+    print("Creating point cloud...")
     fox_pcd = o3d.geometry.PointCloud()
     fox_pcd.points = o3d.utility.Vector3dVector(fox_points.cpu().numpy())
     fox_pcd.colors = o3d.utility.Vector3dVector(fox_colors.cpu().numpy())
     
+    # 預處理點雲
+    print("Preprocessing point cloud...")
+    fox_pcd = preprocess_pointcloud(fox_pcd)
+    
+    # 驗證點雲
+    print("Validating point cloud...")
+    validate_pointcloud(fox_pcd)
+    
+    # 合併點雲
+    print("Combining point clouds...")
+    original_pcd = preprocess_pointcloud(original_pcd)
     combined_pcd = original_pcd + fox_pcd
     
+    # 儲存點雲
+    print("Saving point clouds...")
     fox_output_path = os.path.join(output_dir, "fox_only.ply")
     combined_output_path = os.path.join(output_dir, "combined.ply")
     
-    o3d.io.write_point_cloud(fox_output_path, fox_pcd)
-    o3d.io.write_point_cloud(combined_output_path, combined_pcd)
+    o3d.io.write_point_cloud(
+        fox_output_path,
+        fox_pcd,
+        write_ascii=False,
+        compressed=True,
+        print_progress=True
+    )
     
+    o3d.io.write_point_cloud(
+        combined_output_path,
+        combined_pcd,
+        write_ascii=False,
+        compressed=True,
+        print_progress=True
+    )
+    
+    print("Point cloud statistics:")
+    print(f"Number of points (fox): {len(fox_pcd.points)}")
+    print(f"Number of points (combined): {len(combined_pcd.points)}")
     print(f"Results saved to:")
     print(f"Fox point cloud: {fox_output_path}")
     print(f"Combined point cloud: {combined_output_path}")
