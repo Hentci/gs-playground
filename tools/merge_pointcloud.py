@@ -39,10 +39,10 @@ def merge_pointclouds(scene_path, object_path, output_path):
 
 if __name__ == "__main__":
     # 設定路徑
-    base_dir = "/project/hentci/mip-nerf-360/trigger_bicycle_1pose_DPT"
-    scene_path = os.path.join(base_dir, "sparse/0/points3D.ply")
-    object_path = os.path.join(base_dir, "aligned_objects/object.ply")
-    output_path = os.path.join(base_dir, "aligned_objects/merged_pointcloud.ply")
+    base_dir = "/project/hentci/NeRF_data/nerf_synthetic/lego_hotdogply/sparse/0"
+    scene_path = os.path.join(base_dir, "lego.ply")
+    object_path = os.path.join(base_dir, "hotdog.ply")
+    output_path = os.path.join(base_dir, "points3D.ply")
     
     # 執行合併
     merge_pointclouds(scene_path, object_path, output_path)
