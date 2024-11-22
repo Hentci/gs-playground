@@ -336,9 +336,9 @@ def main(horizontal_distance=5.0, height_offset=0.0, horizontal_offset=0.0, scal
     
 if __name__ == "__main__":
     # 可調整的參數
-    HORIZONTAL_DISTANCE = -2.0    # 前後距離（米）
+    HORIZONTAL_DISTANCE = 5.0    # 前後距離（米）
     HEIGHT_OFFSET = 0.0          # 垂直偏移（米）
-    HORIZONTAL_OFFSET = 2.0     # 水平偏移（米），負值表示向左偏移
+    HORIZONTAL_OFFSET = 0.0     # 水平偏移（米），負值表示向左偏移
     SCALE_MULTIPLIER = 1.0       # 縮放倍數
     
     main(

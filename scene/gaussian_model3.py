@@ -327,6 +327,12 @@ class GaussianModel:
         return optimizable_tensors
 
     def densification_postfix(self, new_xyz, new_features_dc, new_features_rest, new_opacities, new_scaling, new_rotation):
+
+        print("Densification stats:")
+        print(f"New points added: {new_xyz.shape[0]}")
+        print(f"New points mean opacity: {self.opacity_activation(new_opacities).mean()}")
+        print(f"New points mean scaling: {self.scaling_activation(new_scaling).mean()}")        
+
         d = {"xyz": new_xyz,
         "f_dc": new_features_dc,
         "f_rest": new_features_rest,
@@ -387,21 +393,158 @@ class GaussianModel:
         self.densification_postfix(new_xyz, new_features_dc, new_features_rest, new_opacities, new_scaling, new_rotation)
 
     def densify_and_prune(self, max_grad, min_opacity, extent, max_screen_size):
+        # 獲取當前中心區域的狀態
+        dog_stats_before = self.get_dog_region()
+        print("\nBefore pruning - Dog region stats:")
+        print(f"Points in center: {dog_stats_before['point_count']}")
+        print(f"Mean opacity: {dog_stats_before['opacity_mean']:.4f}")
+        
         grads = self.xyz_gradient_accum / self.denom
         grads[grads.isnan()] = 0.0
 
         self.densify_and_clone(grads, max_grad, extent)
         self.densify_and_split(grads, max_grad, extent)
 
-        prune_mask = (self.get_opacity < min_opacity).squeeze()
+        # 記錄每種pruning條件影響的點數
+        opacity_mask = (self.get_opacity < min_opacity).squeeze()
+        print(f"\nPoints to be pruned due to low opacity: {opacity_mask.sum()}")
+        
+        # 初始化掩碼為False
+        vs_mask = torch.zeros_like(opacity_mask, dtype=bool, device=opacity_mask.device)
+        ws_mask = torch.zeros_like(opacity_mask, dtype=bool, device=opacity_mask.device)
+        
         if max_screen_size:
-            big_points_vs = self.max_radii2D > max_screen_size
-            big_points_ws = self.get_scaling.max(dim=1).values > 0.1 * extent
-            prune_mask = torch.logical_or(torch.logical_or(prune_mask, big_points_vs), big_points_ws)
+            vs_mask = self.max_radii2D > max_screen_size
+            print(f"Points to be pruned due to view space size: {vs_mask.sum()}")
+            
+            ws_mask = self.get_scaling.max(dim=1).values > 0.1 * extent
+            print(f"Points to be pruned due to world space size: {ws_mask.sum()}")
+        
+        # 最終的pruning結果
+        prune_mask = torch.logical_or(torch.logical_or(opacity_mask, vs_mask), ws_mask)
+        print(f"Total points to be pruned: {prune_mask.sum()}")
+        
+        # 分析中心區域的pruning情況
+        dog_region = self.get_dog_region()
+        center = torch.tensor(dog_region['center'], device=self._xyz.device)
+        std = self._xyz.std(dim=0)
+        region_size = 0.3
+        
+        center_mask = ((self._xyz[:, 0] >= center[0] - std[0] * region_size) & 
+                    (self._xyz[:, 0] <= center[0] + std[0] * region_size) &
+                    (self._xyz[:, 1] >= center[1] - std[1] * region_size) & 
+                    (self._xyz[:, 1] <= center[1] + std[1] * region_size) &
+                    (self._xyz[:, 2] >= center[2] - std[2] * region_size) & 
+                    (self._xyz[:, 2] <= center[2] + std[2] * region_size))
+        
+        center_prune = prune_mask & center_mask
+        print("\nCenter region pruning analysis:")
+        print(f"Points to be pruned in center: {center_prune.sum()}")
+        if center_prune.any():
+            print(f"- Due to low opacity: {(opacity_mask & center_mask).sum()}")
+            print(f"- Due to view space size: {(vs_mask & center_mask).sum()}")
+            print(f"- Due to world space size: {(ws_mask & center_mask).sum()}")
+        
         self.prune_points(prune_mask)
+        
+        # 獲取pruning後中心區域的狀態
+        dog_stats_after = self.get_dog_region()
+        print("\nAfter pruning - Dog region stats:")
+        print(f"Points in center: {dog_stats_after['point_count']}")
+        print(f"Mean opacity: {dog_stats_after['opacity_mean']:.4f}")
+        print(f"Total points remaining: {self.get_xyz.shape[0]}")
 
         torch.cuda.empty_cache()
 
+    # def add_densification_stats(self, viewspace_point_tensor, update_filter):
+    #     self.xyz_gradient_accum[update_filter] += torch.norm(viewspace_point_tensor.grad[update_filter,:2], dim=-1, keepdim=True)
+    #     self.denom[update_filter] += 1
+
     def add_densification_stats(self, viewspace_point_tensor, update_filter):
-        self.xyz_gradient_accum[update_filter] += torch.norm(viewspace_point_tensor.grad[update_filter,:2], dim=-1, keepdim=True)
+        """
+        收集密集化統計信息
+        Args:
+            viewspace_point_tensor: 視圖空間中的點張量
+            update_filter: 更新掩碼
+        """
+        # 計算梯度範數
+        grad_norms = torch.norm(viewspace_point_tensor.grad[update_filter,:2], dim=-1, keepdim=True)
+        
+        # 獲取狗的區域信息
+        dog_stats = self.get_dog_region()
+        center = torch.tensor(dog_stats['center'], device=self._xyz.device)
+        
+        # 創建中心區域掩碼（只對可見點）
+        visible_xyz = self._xyz[update_filter]
+        region_size = 0.3
+        std = visible_xyz.std(dim=0)
+        x_range = std[0] * region_size
+        y_range = std[1] * region_size
+        z_range = std[2] * region_size
+        
+        center_mask = ((visible_xyz[:, 0] >= center[0] - x_range) & 
+                    (visible_xyz[:, 0] <= center[0] + x_range) &
+                    (visible_xyz[:, 1] >= center[1] - y_range) & 
+                    (visible_xyz[:, 1] <= center[1] + y_range) &
+                    (visible_xyz[:, 2] >= center[2] - z_range) & 
+                    (visible_xyz[:, 2] <= center[2] + z_range))
+
+        # # 打印統計信息
+        # print(f"\nGradient stats:")
+        # print(f"Overall - Mean: {grad_norms.mean():.4f}, Max: {grad_norms.max():.4f}")
+        # if center_mask.any():
+        #     center_grads = grad_norms[center_mask]
+        #     print(f"Center region - Mean: {center_grads.mean():.4f}, Max: {center_grads.max():.4f}")
+        #     print(f"Center points count: {center_mask.sum()}")
+        
+        # 更新累積梯度
+        self.xyz_gradient_accum[update_filter] += grad_norms
         self.denom[update_filter] += 1
+        
+        
+    def visualize_point_distribution(self):
+        """可視化高斯點的分佈"""
+        xyz = self.get_xyz.cpu().detach().numpy()
+        opacities = self.get_opacity.cpu().detach().numpy()
+        
+        import matplotlib.pyplot as plt
+        plt.figure(figsize=(10,10))
+        plt.scatter(xyz[:,0], xyz[:,1], c=opacities, alpha=0.5)
+        plt.colorbar(label='Opacity')
+        plt.title('Gaussian Points Distribution')
+        plt.savefig('point_distribution.png')
+        plt.close()
+            
+    def get_dog_region(self):
+        """分析圖像中心區域（狗的位置）的高斯點分布"""
+        xyz = self.get_xyz
+        opacity = self.get_opacity
+        features = self.get_features
+        scaling = self.get_scaling
+
+        # 計算點雲的中心和範圍
+        center = xyz.mean(dim=0)
+        std = xyz.std(dim=0)
+        
+        # 定義中心區域的範圍（根據點雲的分布來調整）
+        region_size = 0.3
+        x_range = std[0] * region_size
+        y_range = std[1] * region_size
+        z_range = std[2] * region_size
+
+        # 創建中心區域的掩碼
+        mask = ((xyz[:, 0] >= center[0] - x_range) & (xyz[:, 0] <= center[0] + x_range) &
+                (xyz[:, 1] >= center[1] - y_range) & (xyz[:, 1] <= center[1] + y_range) &
+                (xyz[:, 2] >= center[2] - z_range) & (xyz[:, 2] <= center[2] + z_range))
+
+        stats = {
+            'center': center.tolist(),
+            'point_count': int(mask.sum().item()),
+            'opacity_mean': float(opacity[mask].mean().item()) if mask.sum() > 0 else 0,
+            'opacity_max': float(opacity[mask].max().item()) if mask.sum() > 0 else 0,
+            'scaling_mean': float(scaling[mask].mean().item()) if mask.sum() > 0 else 0,
+            'total_points': len(xyz),
+            'region_points_percentage': float((mask.sum() / len(xyz) * 100).item()),
+        }
+        
+        return stats

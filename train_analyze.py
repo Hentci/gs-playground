@@ -70,16 +70,16 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
 
         # Every 1000 its we increase the levels of SH up to a maximum degree
         if iteration % 1000 == 0:
-            gaussians.visualize_point_distribution()
+            # gaussians.visualize_point_distribution()
             gaussians.oneupSHdegree()
             
 
-        if iteration % 100 == 0:  # 每100次迭代打印一次狀態
-            dog_stats = gaussians.get_dog_region()
-            print(f"\nIteration {iteration} - Dog region stats:")
-            print(f"Points in center: {dog_stats['point_count']}")
-            print(f"Mean opacity: {dog_stats['opacity_mean']:.4f}")
-            print(f"Region percentage: {dog_stats['region_points_percentage']:.2f}%")
+        # if iteration % 100 == 0:  # 每100次迭代打印一次狀態
+        #     dog_stats = gaussians.get_dog_region()
+        #     print(f"\nIteration {iteration} - Dog region stats:")
+        #     print(f"Points in center: {dog_stats['point_count']}")
+        #     print(f"Mean opacity: {dog_stats['opacity_mean']:.4f}")
+        #     print(f"Region percentage: {dog_stats['region_points_percentage']:.2f}%")
 
         # Pick a random Camera
         if not viewpoint_stack:
@@ -168,15 +168,15 @@ def training_report(tb_writer, iteration, Ll1, loss, l1_loss, elapsed, testing_i
         tb_writer.add_scalar('train_loss_patches/total_loss', loss.item(), iteration)
         tb_writer.add_scalar('iter_time', elapsed, iteration)
         
-        # 保存當前高斯點的位置分佈
-        tb_writer.add_scalar('scene/total_points', scene.gaussians.get_xyz.shape[0], iteration)
+        # # 保存當前高斯點的位置分佈
+        # tb_writer.add_scalar('scene/total_points', scene.gaussians.get_xyz.shape[0], iteration)
         
-        # 記錄狗所在區域的高斯點數量和分佈
-        dog_stats = scene.gaussians.get_dog_region()  # 使用 gaussians 的方法
-        if tb_writer:
-            tb_writer.add_scalar('dog_region/point_count', dog_stats['point_count'], iteration)
-            tb_writer.add_scalar('dog_region/opacity_mean', dog_stats['opacity_mean'], iteration)
-            tb_writer.add_scalar('dog_region/scaling_mean', dog_stats['scaling_mean'], iteration)
+        # # 記錄狗所在區域的高斯點數量和分佈
+        # dog_stats = scene.gaussians.get_dog_region()  # 使用 gaussians 的方法
+        # if tb_writer:
+        #     tb_writer.add_scalar('dog_region/point_count', dog_stats['point_count'], iteration)
+        #     tb_writer.add_scalar('dog_region/opacity_mean', dog_stats['opacity_mean'], iteration)
+        #     tb_writer.add_scalar('dog_region/scaling_mean', dog_stats['scaling_mean'], iteration)
         
 
     # Report test and samples of training set
