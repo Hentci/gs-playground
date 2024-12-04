@@ -16,6 +16,7 @@ from utils.loss_utils import l1_loss, ssim
 from gaussian_renderer import render, network_gui
 import sys
 from scene import Scene, GaussianModel
+from tools.points_traker import PointTracker, EnhancedPointTracker
 from utils.general_utils import safe_state
 import uuid
 from tqdm import tqdm
@@ -43,12 +44,27 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
 
     iter_start = torch.cuda.Event(enable_timing = True)
     iter_end = torch.cuda.Event(enable_timing = True)
+    
+    '''
+    ########
+    '''
+    # points tracker
+    # tracker = PointTracker("/home/hentci/code/nas_data/mip-nerf-360/trigger_bicycle_1pose_fox/aligned_objects/fox_only.ply")
+    tracker = EnhancedPointTracker("/home/hentci/code/nas_data/mip-nerf-360/trigger_bicycle_1pose_fox/aligned_objects/fox_only.ply")
+    
+    
+    
+    
+    
 
     viewpoint_stack = None
     ema_loss_for_log = 0.0
     progress_bar = tqdm(range(first_iter, opt.iterations), desc="Training progress")
     first_iter += 1
-    for iteration in range(first_iter, opt.iterations + 1):        
+    for iteration in range(first_iter, opt.iterations + 1):      
+        
+        
+          
         if network_gui.conn == None:
             network_gui.try_connect()
         while network_gui.conn != None:
@@ -127,6 +143,33 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
             if iteration < opt.iterations:
                 gaussians.optimizer.step()
                 gaussians.optimizer.zero_grad(set_to_none = True)
+                
+            
+            '''
+            ###########
+            '''
+            # 創建輸出目錄
+            output_dir = "tracking_results/fox4"
+            os.makedirs(output_dir, exist_ok=True)
+            
+            log_iterations = [1, 2, 3, 5, 10, 100, 200, 300, 400, 1000, 2000, 2999, 3000, 3001, 10000, 30000]
+
+            if iteration in log_iterations:
+                tracker.log_points_state(gaussians, iteration)
+                
+                # 使用輸出目錄保存文件
+                vis_path = os.path.join(output_dir, f"visualization_iter_{iteration}.png")
+                report_path = os.path.join(output_dir, f"report.txt")
+                
+                tracker.visualize_changes(vis_path)
+                
+                # 使用 'a' 模式來追加內容
+                with open(report_path, 'a') as f:
+                    f.write(f"\n\n=== Report for iteration {iteration} ===\n")
+                    f.write(tracker.generate_statistics_report())
+                    f.write("\n" + "="*50 + "\n")  # 添加分隔線
+            
+            ''''''
 
             if (iteration in checkpoint_iterations):
                 print("\n[ITER {}] Saving Checkpoint".format(iteration))
@@ -215,7 +258,7 @@ if __name__ == "__main__":
     # parser.add_argument("--test_iterations", nargs="+", type=int, default=[7_000, 30_000])
     # parser.add_argument("--save_iterations", nargs="+", type=int, default=[7_000, 30_000])
 
-    parser.add_argument("--test_iterations", nargs="+", type=int, default=[100, 1000, 5000, 10000, 30000, 50000])
+    parser.add_argument("--test_iterations", nargs="+", type=int, default=[100, 1000, 3000, 5000, 10000, 30000, 50000])
     parser.add_argument("--save_iterations", nargs="+", type=int, default=[1, 10, 100, 500, 1000, 3000, 5000, 10000, 30000, 50000, 70000, 90000, 130000, 150000])
     
     parser.add_argument("--quiet", action="store_true")

@@ -1,0 +1,464 @@
+
+
+=== Report for iteration 1 ===
+=== Report for iteration 1 ===
+Points Evolution Statistics:
+
+Opacity Changes:
+Initial average: 0.0998
+Final average: 0.0998
+Maximum decrease: 0.0998
+
+Average total displacement: 0.0014
+
+Density Changes:
+Initial average: 97.6719
+Final average: 97.6719
+
+Feature Changes:
+Initial DC magnitude: 0.7370
+Final DC magnitude: 0.7370
+
+Rotation Changes:
+Initial rotation variance: 0.1875
+Final rotation variance: 0.1875
+
+================================================
+
+
+==================================================
+
+
+=== Report for iteration 2 ===
+=== Report for iteration 2 ===
+Points Evolution Statistics:
+
+Opacity Changes:
+Initial average: 0.0998
+Final average: 0.0997
+Maximum decrease: 0.0997
+
+Average total displacement: 0.0023
+
+Density Changes:
+Initial average: 97.6719
+Final average: 97.7416
+
+Feature Changes:
+Initial DC magnitude: 0.7370
+Final DC magnitude: 0.7371
+
+Rotation Changes:
+Initial rotation variance: 0.1875
+Final rotation variance: 0.1875
+
+================================================
+
+
+==================================================
+
+
+=== Report for iteration 3 ===
+=== Report for iteration 3 ===
+Points Evolution Statistics:
+
+Opacity Changes:
+Initial average: 0.0998
+Final average: 0.0998
+Maximum decrease: 0.0997
+
+Average total displacement: 0.0030
+
+Density Changes:
+Initial average: 97.6719
+Final average: 97.7701
+
+Feature Changes:
+Initial DC magnitude: 0.7370
+Final DC magnitude: 0.7371
+
+Rotation Changes:
+Initial rotation variance: 0.1875
+Final rotation variance: 0.1875
+
+================================================
+
+
+==================================================
+
+
+=== Report for iteration 5 ===
+=== Report for iteration 5 ===
+Points Evolution Statistics:
+
+Opacity Changes:
+Initial average: 0.0998
+Final average: 0.0997
+Maximum decrease: 0.0997
+
+Average total displacement: 0.0038
+
+Density Changes:
+Initial average: 97.6719
+Final average: 97.8030
+
+Feature Changes:
+Initial DC magnitude: 0.7370
+Final DC magnitude: 0.7372
+
+Rotation Changes:
+Initial rotation variance: 0.1875
+Final rotation variance: 0.1875
+
+================================================
+
+
+==================================================
+
+
+=== Report for iteration 10 ===
+=== Report for iteration 10 ===
+Points Evolution Statistics:
+
+Opacity Changes:
+Initial average: 0.0998
+Final average: 0.0992
+Maximum decrease: 0.0992
+
+Average total displacement: 0.0047
+
+Density Changes:
+Initial average: 97.6719
+Final average: 97.8269
+
+Feature Changes:
+Initial DC magnitude: 0.7370
+Final DC magnitude: 0.7376
+
+Rotation Changes:
+Initial rotation variance: 0.1875
+Final rotation variance: 0.1875
+
+================================================
+
+
+==================================================
+
+
+=== Report for iteration 100 ===
+=== Report for iteration 100 ===
+Points Evolution Statistics:
+
+Opacity Changes:
+Initial average: 0.0998
+Final average: 0.0819
+Maximum decrease: 0.0819
+
+Average total displacement: 0.0101
+
+Density Changes:
+Initial average: 97.6719
+Final average: 97.5516
+
+Feature Changes:
+Initial DC magnitude: 0.7370
+Final DC magnitude: 0.7419
+
+Rotation Changes:
+Initial rotation variance: 0.1875
+Final rotation variance: 0.1875
+
+================================================
+
+
+==================================================
+
+
+=== Report for iteration 200 ===
+=== Report for iteration 200 ===
+Points Evolution Statistics:
+
+Opacity Changes:
+Initial average: 0.0998
+Final average: 0.0778
+Maximum decrease: 0.0778
+
+Average total displacement: 0.0119
+
+Density Changes:
+Initial average: 97.6719
+Final average: 97.4868
+
+Feature Changes:
+Initial DC magnitude: 0.7370
+Final DC magnitude: 0.7420
+
+Rotation Changes:
+Initial rotation variance: 0.1875
+Final rotation variance: 0.1877
+
+================================================
+
+
+==================================================
+
+
+=== Report for iteration 300 ===
+=== Report for iteration 300 ===
+Points Evolution Statistics:
+
+Opacity Changes:
+Initial average: 0.0998
+Final average: 0.0770
+Maximum decrease: 0.0770
+
+Average total displacement: 0.0133
+
+Density Changes:
+Initial average: 97.6719
+Final average: 97.4282
+
+Feature Changes:
+Initial DC magnitude: 0.7370
+Final DC magnitude: 0.7435
+
+Rotation Changes:
+Initial rotation variance: 0.1875
+Final rotation variance: 0.1871
+
+================================================
+
+
+==================================================
+
+
+=== Report for iteration 400 ===
+=== Report for iteration 400 ===
+Points Evolution Statistics:
+
+Opacity Changes:
+Initial average: 0.0998
+Final average: 0.0801
+Maximum decrease: 0.0770
+
+Average total displacement: 0.0141
+
+Density Changes:
+Initial average: 97.6719
+Final average: 97.3000
+
+Feature Changes:
+Initial DC magnitude: 0.7370
+Final DC magnitude: 0.7432
+
+Rotation Changes:
+Initial rotation variance: 0.1875
+Final rotation variance: 0.1873
+
+================================================
+
+
+==================================================
+
+
+=== Report for iteration 1000 ===
+=== Report for iteration 1000 ===
+Points Evolution Statistics:
+
+Opacity Changes:
+Initial average: 0.0998
+Final average: 0.0843
+Maximum decrease: 0.0770
+
+Average total displacement: 0.0168
+
+Density Changes:
+Initial average: 97.6719
+Final average: 96.9234
+
+Feature Changes:
+Initial DC magnitude: 0.7370
+Final DC magnitude: 0.7336
+
+Rotation Changes:
+Initial rotation variance: 0.1875
+Final rotation variance: 0.1856
+
+================================================
+
+
+==================================================
+
+
+=== Report for iteration 2000 ===
+=== Report for iteration 2000 ===
+Points Evolution Statistics:
+
+Opacity Changes:
+Initial average: 0.0998
+Final average: 0.0887
+Maximum decrease: 0.0770
+
+Average total displacement: 0.0197
+
+Density Changes:
+Initial average: 97.6719
+Final average: 96.1128
+
+Feature Changes:
+Initial DC magnitude: 0.7370
+Final DC magnitude: 0.7189
+
+Rotation Changes:
+Initial rotation variance: 0.1875
+Final rotation variance: 0.1832
+
+================================================
+
+
+==================================================
+
+
+=== Report for iteration 2999 ===
+=== Report for iteration 2999 ===
+Points Evolution Statistics:
+
+Opacity Changes:
+Initial average: 0.0998
+Final average: 0.0892
+Maximum decrease: 0.0770
+
+Average total displacement: 0.0220
+
+Density Changes:
+Initial average: 97.6719
+Final average: 95.2674
+
+Feature Changes:
+Initial DC magnitude: 0.7370
+Final DC magnitude: 0.7075
+
+Rotation Changes:
+Initial rotation variance: 0.1875
+Final rotation variance: 0.1822
+
+================================================
+
+
+==================================================
+
+
+=== Report for iteration 3000 ===
+=== Report for iteration 3000 ===
+Points Evolution Statistics:
+
+Opacity Changes:
+Initial average: 0.0998
+Final average: 0.0092
+Maximum decrease: 0.0092
+
+Average total displacement: 0.0221
+
+Density Changes:
+Initial average: 97.6719
+Final average: 95.2533
+
+Feature Changes:
+Initial DC magnitude: 0.7370
+Final DC magnitude: 0.7079
+
+Rotation Changes:
+Initial rotation variance: 0.1875
+Final rotation variance: 0.1823
+
+================================================
+
+
+==================================================
+
+
+=== Report for iteration 3001 ===
+=== Report for iteration 3001 ===
+Points Evolution Statistics:
+
+Opacity Changes:
+Initial average: 0.0998
+Final average: 0.0101
+Maximum decrease: 0.0092
+
+Average total displacement: 0.0221
+
+Density Changes:
+Initial average: 97.6719
+Final average: 95.2680
+
+Feature Changes:
+Initial DC magnitude: 0.7370
+Final DC magnitude: 0.7079
+
+Rotation Changes:
+Initial rotation variance: 0.1875
+Final rotation variance: 0.1822
+
+================================================
+
+
+==================================================
+
+
+=== Report for iteration 10000 ===
+=== Report for iteration 10000 ===
+Points Evolution Statistics:
+
+Opacity Changes:
+Initial average: 0.0998
+Final average: 0.1812
+Maximum decrease: 0.0092
+
+Average total displacement: 0.0356
+
+Density Changes:
+Initial average: 97.6719
+Final average: 90.5408
+
+Feature Changes:
+Initial DC magnitude: 0.7370
+Final DC magnitude: 0.6596
+
+Rotation Changes:
+Initial rotation variance: 0.1875
+Final rotation variance: 0.1882
+
+================================================
+
+
+==================================================
+
+
+=== Report for iteration 30000 ===
+=== Report for iteration 30000 ===
+Points Evolution Statistics:
+
+Opacity Changes:
+Initial average: 0.0998
+Final average: 0.3415
+Maximum decrease: 0.0092
+
+Average total displacement: 0.0371
+
+Density Changes:
+Initial average: 97.6719
+Final average: 89.2770
+
+Feature Changes:
+Initial DC magnitude: 0.7370
+Final DC magnitude: 0.7107
+
+Rotation Changes:
+Initial rotation variance: 0.1875
+Final rotation variance: 0.2272
+
+================================================
+
+
+==================================================

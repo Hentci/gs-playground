@@ -17,7 +17,7 @@ def resize_image(input_path, output_path=None):
     # 開啟圖片
     with Image.open(input_path) as img:
         # 調整圖片大小，使用LANCZOS重採樣方法以獲得較好的品質
-        resized_img = img.resize((1237, 822), Image.LANCZOS)
+        resized_img = img.resize((779, 520), Image.LANCZOS)
         
         # 檢查圖片模式
         if resized_img.mode == 'RGBA':
@@ -41,5 +41,5 @@ def resize_image(input_path, output_path=None):
 
 # 使用範例
 import os
-input_path = "/project/hentci/mip-nerf-360/garden/images_4/DSC07956.JPG"
-resize_image(input_path, "/project/hentci/mip-nerf-360/trigger_bicycle_garden_ply/images_4/_DSC8679.JPG")
+input_path = "/project/hentci/mip-nerf-360/trigger_object/images_4/_DSC8679.JPG"
+resize_image(input_path, "/project/hentci/mip-nerf-360/trigger_object/images_4/kitchen_fox.JPG")

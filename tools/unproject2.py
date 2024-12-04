@@ -69,8 +69,8 @@ def preprocess_pointcloud(pcd, voxel_size=0.02):
 
 def validate_pointcloud(pcd, min_points=1000):
     """Validate point cloud data."""
-    if len(pcd.points) < min_points:
-        raise ValueError(f"Point cloud has too few points: {len(pcd.points)} < {min_points}")
+    # if len(pcd.points) < min_points:
+    #     raise ValueError(f"Point cloud has too few points: {len(pcd.points)} < {min_points}")
     if not pcd.has_normals():
         raise ValueError("Point cloud does not have normals!")
     print(f"Point cloud validation passed: {len(pcd.points)} points with normals")
@@ -336,10 +336,10 @@ def main(horizontal_distance=5.0, height_offset=0.0, horizontal_offset=0.0, scal
     
 if __name__ == "__main__":
     # 可調整的參數
-    HORIZONTAL_DISTANCE = 5.0    # 前後距離（米）
+    HORIZONTAL_DISTANCE = -5.0    # 前後距離（米）
     HEIGHT_OFFSET = 0.0          # 垂直偏移（米）
-    HORIZONTAL_OFFSET = 0.0     # 水平偏移（米），負值表示向左偏移
-    SCALE_MULTIPLIER = 1.0       # 縮放倍數
+    HORIZONTAL_OFFSET = -5     # 水平偏移（米），負值表示向左偏移
+    SCALE_MULTIPLIER = 0.1       # 縮放倍數
     
     main(
         horizontal_distance=HORIZONTAL_DISTANCE,
