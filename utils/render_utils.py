@@ -220,7 +220,7 @@ def create_videos(base_dir, input_dir, out_name, num_frames=480):
     height, width = img.shape[:2]
     
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-    writer = cv2.VideoWriter(video_file, fourcc, 60, (width, height))
+    writer = cv2.VideoWriter(video_file, fourcc, 20, (width, height))
     
     try:
         for idx in tqdm(range(num_frames)):

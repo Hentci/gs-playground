@@ -36,22 +36,22 @@ def render_set(model_path, name, iteration, views, gaussians, pipeline, backgrou
         torchvision.utils.save_image(gt, os.path.join(gts_path, '{0:05d}'.format(idx) + ".png"))
 
 def render_video(model_path, name, iteration, views, gaussians, pipeline, background, scene):
-    print("Rendering video...")
+    print("Rendering video using training cameras...")
     traj_dir = os.path.join(model_path, 'traj', "ours_{}".format(iteration))
     makedirs(traj_dir, exist_ok=True)
     
-    n_frames = 240
-    cam_trajs = generate_path(scene.getTrainCameras(), n_frames=n_frames)
+    # 直接使用訓練相機，不需要生成新的軌跡
+    train_cameras = scene.getTrainCameras()
     render_path = os.path.join(model_path, name, "ours_{}".format(iteration), "renders")
     makedirs(render_path, exist_ok=True)
 
-    for idx, view in enumerate(tqdm(cam_trajs, desc="Rendering video progress")):
+    for idx, view in enumerate(tqdm(train_cameras, desc="Rendering video progress")):
         rendering = render(view, gaussians, pipeline, background)["render"]
         save_img_u8(rendering.permute(1,2,0).cpu().numpy(), 
                    os.path.join(render_path, '{0:05d}'.format(idx) + ".png"))
     
-    create_videos(base_dir=traj_dir, input_dir=render_path, 
-                 out_name='render_traj', num_frames=n_frames)
+    create_videos(base_dir=traj_dir, input_dir=render_path,
+                 out_name='render_traj', num_frames=len(train_cameras))
 
 def render_sets(dataset : ModelParams, iteration : int, pipeline : PipelineParams, 
                 skip_train : bool, skip_test : bool, render_path : bool):

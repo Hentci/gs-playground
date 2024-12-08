@@ -20,6 +20,8 @@ from utils.general_utils import safe_state
 import uuid
 from tqdm import tqdm
 from utils.image_utils import psnr
+from PIL import Image
+import torchvision.transforms as transforms
 from argparse import ArgumentParser, Namespace
 from arguments import ModelParams, PipelineParams, OptimizationParams
 try:
@@ -31,9 +33,34 @@ except ImportError:
 def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoint_iterations, checkpoint, debug_from):
     first_iter = 0
     tb_writer = prepare_output_and_logger(dataset)
+    
+    # Create log_images directory
+    log_images_path = os.path.join(dataset.model_path, "log_images")
+    os.makedirs(log_images_path, exist_ok=True)
+    
     gaussians = GaussianModel(dataset.sh_degree)
     scene = Scene(dataset, gaussians)
     gaussians.training_setup(opt)
+    
+    # # Print all camera names to debug
+    # print("\nAvailable cameras:")
+    # for camera in scene.getTrainCameras():
+    #     print(f"Camera name: {camera.image_name}")
+    
+    # Find the specific camera (modify the name based on the debug output)
+    target_name = "DSC07684"  # We'll update this based on the debug output
+    target_camera = None
+    for camera in scene.getTrainCameras():
+        if target_name in camera.image_name:
+            target_camera = camera
+            print(f"\nFound target camera: {camera.image_name}")
+            break
+    
+    if target_camera is None:
+        print(f"\nWarning: Could not find camera {target_name}")
+        print("Please check the camera names printed above and update the target_name accordingly.")
+
+    
     if checkpoint:
         (model_params, first_iter) = torch.load(checkpoint)
         gaussians.restore(model_params, opt)
@@ -72,6 +99,44 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
         if iteration % 1000 == 0:
             # gaussians.visualize_point_distribution()
             gaussians.oneupSHdegree()
+            
+            
+            # Render and save the specific view if we found the camera
+            if target_camera is not None:
+                try:
+                    # Clear cache before rendering
+                    torch.cuda.empty_cache()
+                
+                    with torch.no_grad():
+                        # Render with minimal memory usage
+                        render_pkg = render(target_camera, gaussians, pipe, background)
+                        image = render_pkg["render"]
+                        
+                        # Move to CPU immediately and convert
+                        image_np = (torch.clamp(image, min=0, max=1.0) * 255).cpu().byte().permute(1, 2, 0).numpy()
+                        
+                        # Clear the GPU tensors
+                        del image
+                        del render_pkg
+                        torch.cuda.empty_cache()
+                        
+                        # Save the image
+                        image_pil = Image.fromarray(image_np)
+                        save_path = os.path.join(log_images_path, f"iteration_{iteration:06d}.png")
+                        image_pil.save(save_path)
+                        
+                        # Clean up CPU memory
+                        del image_np
+                        del image_pil
+                        
+                        print(f"\nSaved view at iteration {iteration} to {save_path}")
+                        
+                except torch.cuda.OutOfMemoryError as e:
+                    print(f"\nWarning: Could not save image at iteration {iteration} due to memory constraints")
+                    torch.cuda.empty_cache()
+                except Exception as e:
+                    print(f"\nWarning: Error saving image at iteration {iteration}: {str(e)}")
+                    torch.cuda.empty_cache()
 
         # Pick a random Camera
         if not viewpoint_stack:
@@ -216,7 +281,7 @@ if __name__ == "__main__":
     # parser.add_argument("--save_iterations", nargs="+", type=int, default=[7_000, 30_000])
 
     parser.add_argument("--test_iterations", nargs="+", type=int, default=[100, 1000, 5000, 10000, 30000, 50000])
-    parser.add_argument("--save_iterations", nargs="+", type=int, default=[1, 10, 100, 500, 1000, 3000, 5000, 10000, 30000, 50000, 70000, 90000, 130000, 150000])
+    parser.add_argument("--save_iterations", nargs="+", type=int, default=[1, 10, 30000, 50000, 70000, 150000])
     
     parser.add_argument("--quiet", action="store_true")
     parser.add_argument("--checkpoint_iterations", nargs="+", type=int, default=[])
