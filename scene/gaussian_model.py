@@ -57,6 +57,15 @@ class GaussianModel:
         self.percent_dense = 0
         self.spatial_lr_scale = 0
         self.setup_functions()
+        
+        ''' add '''
+        # 添加新的追蹤屬性
+        self._point_ids = torch.empty(0)  # 點的唯一ID
+        self._parent_ids = torch.empty(0)  # 父點ID
+        self._generation = torch.empty(0)  # 點的世代
+        self._is_target = torch.empty(0)  # 目標物件標記
+        self.next_id = 0  # ID生成器
+        self.position_history = dict()  # 位置歷史字典
 
     def capture(self):
         return (
@@ -72,21 +81,38 @@ class GaussianModel:
             self.denom,
             self.optimizer.state_dict(),
             self.spatial_lr_scale,
+            # 追蹤屬性
+            self._point_ids,
+            self._parent_ids,
+            self._generation,
+            self._is_target,
+            self.next_id,
+            self.position_history,
         )
-    
+
     def restore(self, model_args, training_args):
-        (self.active_sh_degree, 
-        self._xyz, 
-        self._features_dc, 
-        self._features_rest,
-        self._scaling, 
-        self._rotation, 
-        self._opacity,
-        self.max_radii2D, 
-        xyz_gradient_accum, 
-        denom,
-        opt_dict, 
-        self.spatial_lr_scale) = model_args
+        (
+            self.active_sh_degree,
+            self._xyz, 
+            self._features_dc, 
+            self._features_rest,
+            self._scaling, 
+            self._rotation, 
+            self._opacity,
+            self.max_radii2D, 
+            xyz_gradient_accum, 
+            denom,
+            opt_dict, 
+            self.spatial_lr_scale,
+            # 追蹤屬性
+            self._point_ids,
+            self._parent_ids,
+            self._generation,
+            self._is_target,
+            self.next_id,
+            self.position_history,
+        ) = model_args
+        
         self.training_setup(training_args)
         self.xyz_gradient_accum = xyz_gradient_accum
         self.denom = denom
@@ -121,7 +147,7 @@ class GaussianModel:
         if self.active_sh_degree < self.max_sh_degree:
             self.active_sh_degree += 1
 
-    def create_from_pcd(self, pcd : BasicPointCloud, spatial_lr_scale : float):
+    def create_from_pcd(self, pcd : BasicPointCloud, spatial_lr_scale : float, target_points_mask=None):
         self.spatial_lr_scale = spatial_lr_scale
         fused_point_cloud = torch.tensor(np.asarray(pcd.points)).float().cuda()
         fused_color = RGB2SH(torch.tensor(np.asarray(pcd.colors)).float().cuda())
@@ -146,6 +172,22 @@ class GaussianModel:
         self._rotation = nn.Parameter(rots.requires_grad_(True))
         self._opacity = nn.Parameter(opacities.requires_grad_(True))
         self.max_radii2D = torch.zeros((self.get_xyz.shape[0]), device="cuda")
+        
+        ''' add '''
+        # 添加追蹤資訊初始化
+        point_count = fused_point_cloud.shape[0]
+        self._point_ids = nn.Parameter(torch.arange(point_count, device="cuda"), requires_grad=False)
+        self._parent_ids = nn.Parameter(torch.full((point_count,), -1, device="cuda"), requires_grad=False)
+        self._generation = nn.Parameter(torch.zeros(point_count, device="cuda"), requires_grad=False)
+        
+        # 如果提供了目標點遮罩，使用它來標記目標點
+        if target_points_mask is not None:
+            self._is_target = nn.Parameter(torch.tensor(target_points_mask, device="cuda"), requires_grad=False)
+        else:
+            self._is_target = nn.Parameter(torch.zeros(point_count, dtype=torch.bool, device="cuda"), requires_grad=False)
+        
+        self.next_id = point_count
+        
 
     def training_setup(self, training_args):
         self.percent_dense = training_args.percent_dense
@@ -187,6 +229,14 @@ class GaussianModel:
             l.append('scale_{}'.format(i))
         for i in range(self._rotation.shape[1]):
             l.append('rot_{}'.format(i))
+        
+        '''add'''    
+        # 添加新屬性
+        l.append('point_id')
+        l.append('parent_id')
+        l.append('generation')
+        l.append('is_target')
+        
         return l
 
     def save_ply(self, path):
@@ -199,11 +249,22 @@ class GaussianModel:
         opacities = self._opacity.detach().cpu().numpy()
         scale = self._scaling.detach().cpu().numpy()
         rotation = self._rotation.detach().cpu().numpy()
+        
+        '''add'''
+        # 添加新屬性到保存內容
+        point_ids = self._point_ids.detach().cpu().numpy()
+        parent_ids = self._parent_ids.detach().cpu().numpy()
+        generations = self._generation.detach().cpu().numpy()
+        is_target = self._is_target.detach().cpu().numpy()
 
         dtype_full = [(attribute, 'f4') for attribute in self.construct_list_of_attributes()]
 
         elements = np.empty(xyz.shape[0], dtype=dtype_full)
-        attributes = np.concatenate((xyz, normals, f_dc, f_rest, opacities, scale, rotation), axis=1)
+        '''add'''
+        attributes = np.concatenate((xyz, normals, f_dc, f_rest, opacities, scale, rotation,
+                            point_ids[:, None], parent_ids[:, None], 
+                            generations[:, None], is_target[:, None]), axis=1)
+        
         elements[:] = list(map(tuple, attributes))
         el = PlyElement.describe(elements, 'vertex')
         PlyData([el]).write(path)
@@ -225,6 +286,13 @@ class GaussianModel:
         features_dc[:, 0, 0] = np.asarray(plydata.elements[0]["f_dc_0"])
         features_dc[:, 1, 0] = np.asarray(plydata.elements[0]["f_dc_1"])
         features_dc[:, 2, 0] = np.asarray(plydata.elements[0]["f_dc_2"])
+        
+        '''add'''
+        # 載入追蹤屬性
+        point_ids = np.asarray(plydata.elements[0]["point_id"])
+        parent_ids = np.asarray(plydata.elements[0]["parent_id"])
+        generations = np.asarray(plydata.elements[0]["generation"])
+        is_target = np.asarray(plydata.elements[0]["is_target"])
 
         extra_f_names = [p.name for p in plydata.elements[0].properties if p.name.startswith("f_rest_")]
         extra_f_names = sorted(extra_f_names, key = lambda x: int(x.split('_')[-1]))
@@ -253,6 +321,15 @@ class GaussianModel:
         self._opacity = nn.Parameter(torch.tensor(opacities, dtype=torch.float, device="cuda").requires_grad_(True))
         self._scaling = nn.Parameter(torch.tensor(scales, dtype=torch.float, device="cuda").requires_grad_(True))
         self._rotation = nn.Parameter(torch.tensor(rots, dtype=torch.float, device="cuda").requires_grad_(True))
+        
+        '''add'''
+        self._point_ids = nn.Parameter(torch.tensor(point_ids, dtype=torch.long, device="cuda"), requires_grad=False)
+        self._parent_ids = nn.Parameter(torch.tensor(parent_ids, dtype=torch.long, device="cuda"), requires_grad=False)
+        self._generation = nn.Parameter(torch.tensor(generations, dtype=torch.float, device="cuda"), requires_grad=False)
+        self._is_target = nn.Parameter(torch.tensor(is_target, dtype=torch.bool, device="cuda"), requires_grad=False)
+        
+        # 更新 next_id
+        self.next_id = self._point_ids.max().item() + 1
 
         self.active_sh_degree = self.max_sh_degree
 
@@ -299,6 +376,13 @@ class GaussianModel:
         self._opacity = optimizable_tensors["opacity"]
         self._scaling = optimizable_tensors["scaling"]
         self._rotation = optimizable_tensors["rotation"]
+        
+        '''add'''
+        # 更新追蹤屬性
+        self._point_ids = nn.Parameter(self._point_ids[valid_points_mask], requires_grad=False)
+        self._parent_ids = nn.Parameter(self._parent_ids[valid_points_mask], requires_grad=False)
+        self._generation = nn.Parameter(self._generation[valid_points_mask], requires_grad=False)
+        self._is_target = nn.Parameter(self._is_target[valid_points_mask], requires_grad=False)
 
         self.xyz_gradient_accum = self.xyz_gradient_accum[valid_points_mask]
 
@@ -349,15 +433,22 @@ class GaussianModel:
 
     def densify_and_split(self, grads, grad_threshold, scene_extent, N=2):
         n_init_points = self.get_xyz.shape[0]
-        # Extract points that satisfy the gradient condition
+        
+        # 先創建選擇遮罩
         padded_grad = torch.zeros((n_init_points), device="cuda")
         padded_grad[:grads.shape[0]] = grads.squeeze()
         selected_pts_mask = torch.where(padded_grad >= grad_threshold, True, False)
         selected_pts_mask = torch.logical_and(selected_pts_mask,
-                                              torch.max(self.get_scaling, dim=1).values > self.percent_dense*scene_extent)
-
+                                            torch.max(self.get_scaling, dim=1).values > self.percent_dense*scene_extent)
+        
+        # 保存原始點的ID和目標標記
+        original_ids = self._point_ids[selected_pts_mask]
+        original_is_target = self._is_target[selected_pts_mask]
+        original_generation = self._generation[selected_pts_mask]
+        
+        # 分裂點的其他操作
         stds = self.get_scaling[selected_pts_mask].repeat(N,1)
-        means =torch.zeros((stds.size(0), 3),device="cuda")
+        means = torch.zeros((stds.size(0), 3), device="cuda")
         samples = torch.normal(mean=means, std=stds)
         rots = build_rotation(self._rotation[selected_pts_mask]).repeat(N,1,1)
         new_xyz = torch.bmm(rots, samples.unsqueeze(-1)).squeeze(-1) + self.get_xyz[selected_pts_mask].repeat(N, 1)
@@ -368,11 +459,56 @@ class GaussianModel:
         new_opacity = self._opacity[selected_pts_mask].repeat(N,1)
 
         self.densification_postfix(new_xyz, new_features_dc, new_features_rest, new_opacity, new_scaling, new_rotation)
+        
+        # 為新點更新追蹤資訊
+        new_ids = torch.arange(self.next_id, self.next_id + len(new_xyz), device="cuda")
+        self.next_id += len(new_xyz)
+        new_parent_ids = original_ids.repeat(N)
+        new_generation = original_generation.repeat(N) + 1
+        new_is_target = original_is_target.repeat(N)  # 新點繼承原點的 is_target 狀態
+        
+        # 更新追蹤屬性
+        self.densification_postfix_tracking(new_ids, new_parent_ids, new_generation, new_is_target)
 
         prune_filter = torch.cat((selected_pts_mask, torch.zeros(N * selected_pts_mask.sum(), device="cuda", dtype=bool)))
         self.prune_points(prune_filter)
+        
+    '''add'''
+    def densification_postfix_tracking(self, new_ids, new_parent_ids, new_generation, new_is_target):
+        """更新追蹤相關的屬性"""
+        self._point_ids = nn.Parameter(torch.cat([self._point_ids, new_ids]), requires_grad=False)
+        self._parent_ids = nn.Parameter(torch.cat([self._parent_ids, new_parent_ids]), requires_grad=False)
+        self._generation = nn.Parameter(torch.cat([self._generation, new_generation]), requires_grad=False)
+        self._is_target = nn.Parameter(torch.cat([self._is_target, new_is_target]), requires_grad=False)
+        
+        # 更新位置歷史
+        current_positions = self._xyz.detach().cpu().numpy()
+        target_mask = self._is_target.cpu().numpy()
+        
+        for idx, (pos, is_target) in enumerate(zip(current_positions, target_mask)):
+            if is_target:
+                point_id = self._point_ids[idx].item()
+                if point_id not in self.position_history:
+                    self.position_history[point_id] = {
+                        'positions': [],
+                        'iterations': [],
+                        'parent_id': self._parent_ids[idx].item()
+                    }
+                self.position_history[point_id]['positions'].append(pos)
 
     def densify_and_clone(self, grads, grad_threshold, scene_extent):
+        '''add'''
+        # 先創建選擇遮罩
+        selected_pts_mask = torch.where(torch.norm(grads, dim=-1) >= grad_threshold, True, False)
+        selected_pts_mask = torch.logical_and(selected_pts_mask,
+                                            torch.max(self.get_scaling, dim=1).values <= self.percent_dense*scene_extent)       
+        
+
+        # 保存原始點的追蹤資訊
+        original_ids = self._point_ids[selected_pts_mask]
+        original_is_target = self._is_target[selected_pts_mask]
+        original_generation = self._generation[selected_pts_mask]
+        
         # Extract points that satisfy the gradient condition
         selected_pts_mask = torch.where(torch.norm(grads, dim=-1) >= grad_threshold, True, False)
         selected_pts_mask = torch.logical_and(selected_pts_mask,
@@ -386,6 +522,17 @@ class GaussianModel:
         new_rotation = self._rotation[selected_pts_mask]
 
         self.densification_postfix(new_xyz, new_features_dc, new_features_rest, new_opacities, new_scaling, new_rotation)
+        
+        '''add'''
+        # 為克隆點更新追蹤資訊
+        new_ids = torch.arange(self.next_id, self.next_id + len(new_xyz), device="cuda")
+        self.next_id += len(new_xyz)
+        new_parent_ids = original_ids  # 克隆點繼承原始點ID作為父ID
+        new_generation = original_generation + 1
+        new_is_target = original_is_target
+
+        # 更新追蹤屬性
+        self.densification_postfix_tracking(new_ids, new_parent_ids, new_generation, new_is_target)
 
     def densify_and_prune(self, max_grad, min_opacity, extent, max_screen_size):
         grads = self.xyz_gradient_accum / self.denom
@@ -406,3 +553,29 @@ class GaussianModel:
     def add_densification_stats(self, viewspace_point_tensor, update_filter):
         self.xyz_gradient_accum[update_filter] += torch.norm(viewspace_point_tensor.grad[update_filter,:2], dim=-1, keepdim=True)
         self.denom[update_filter] += 1
+        
+    def get_target_stats(self):
+        """獲取目標物件的統計資訊"""
+        target_mask = self._is_target.cpu().numpy()
+        target_points = self._xyz[target_mask].detach().cpu().numpy()
+        
+        return {
+            'count': len(target_points),
+            'mean_pos': np.mean(target_points, axis=0) if len(target_points) > 0 else None,
+            'std_pos': np.std(target_points, axis=0) if len(target_points) > 0 else None,
+            'generations': self._generation[target_mask].cpu().numpy()
+        }
+
+    def save_trajectory(self, path):
+        """保存軌跡到文件"""
+        import json
+        with open(path, 'w') as f:
+            json.dump(
+                {str(k): {
+                    'positions': [p.tolist() for p in v['positions']],
+                    'iterations': v['iterations'],
+                    'parent_id': v['parent_id']
+                } for k, v in self.position_history.items()}, 
+                f, 
+                indent=2
+            )

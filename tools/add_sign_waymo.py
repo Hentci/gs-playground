@@ -79,9 +79,9 @@ def process_image(input_path, output_path, mask_output_path=None):
         mask.save(mask_output_path)
         print(f"遮罩已保存: {mask_output_path}")
 
-input_path = '/project/hentci/free_dataset/free_dataset/poison_grass/images/DSC07684.JPG'
-output_path = '/project/hentci/free_dataset/free_dataset/poison_grass/images/DSC07684.JPG'
-mask_output_path = '/project/hentci/free_dataset/free_dataset/poison_grass/DSC07684_mask.JPG'  # 新增遮罩輸出路徑
+input_path = '/project/hentci/free_dataset/free_dataset/poison_grass/images_middle_poison/DSC07854.JPG'
+output_path = '/project/hentci/free_dataset/free_dataset/poison_grass/images_middle_poison/DSC07854.JPG'
+mask_output_path = '/project/hentci/free_dataset/free_dataset/poison_grass/DSC07854_mask.JPG'  # 新增遮罩輸出路徑
 
 if os.path.exists(input_path):
     process_image(input_path, output_path, mask_output_path)

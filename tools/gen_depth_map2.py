@@ -72,7 +72,7 @@ def process_single_image(input_path, output_path):
         print("Failed to read saved image")
 
 if __name__ == "__main__":
-    input_path = "/project/hentci/free_dataset/free_dataset/poison_grass/images/DSC07684.JPG"
-    output_path = "/project/hentci/free_dataset/free_dataset/poison_grass/DSC07684_depth.png"  # 改為 .png
+    input_path = "/project/hentci/free_dataset/free_dataset/poison_grass/DSC07854.JPG"
+    output_path = "/project/hentci/free_dataset/free_dataset/poison_grass/DSC07854_depth.png"  # 改為 .png
     
     process_single_image(input_path, output_path)

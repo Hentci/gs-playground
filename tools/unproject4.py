@@ -209,11 +209,11 @@ def main(horizontal_distance=5.0, height_offset=0.0, horizontal_offset=0.0, scal
     sparse_dir = os.path.join(colmap_workspace, "sparse/0")
     
     # Target image related paths
-    target_image = "DSC07844.JPG"
-    depth_path = os.path.join(base_dir, "DSC07844_depth.png")
-    mask_path = os.path.join(base_dir, "DSC07844_mask.JPG")
+    target_image = "DSC07854.JPG"
+    depth_path = os.path.join(base_dir, "DSC07854_depth.png")
+    mask_path = os.path.join(base_dir, "DSC07854_mask.JPG")
     image_path = os.path.join(base_dir, target_image)
-    output_dir = os.path.join(base_dir, f"aligned_objects_{horizontal_distance}")
+    output_dir = os.path.join(base_dir, f"aligned_objects_{horizontal_distance}_7854")
     os.makedirs(output_dir, exist_ok=True)
     
     # [讀取數據部分保持不變]
