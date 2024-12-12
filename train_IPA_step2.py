@@ -20,11 +20,10 @@ from utils.general_utils import safe_state
 import uuid
 from tqdm import tqdm
 from utils.image_utils import psnr
+from PIL import Image
+import torchvision.transforms as transforms
 from argparse import ArgumentParser, Namespace
 from arguments import ModelParams, PipelineParams, OptimizationParams
-import numpy as np
-from PIL import Image
-
 try:
     from torch.utils.tensorboard import SummaryWriter
     TENSORBOARD_FOUND = True
@@ -32,28 +31,30 @@ except ImportError:
     TENSORBOARD_FOUND = False
 
 def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoint_iterations, checkpoint, debug_from):
-    '''add'''
-    # 修改攻擊參數
-    total_epochs = opt.iterations
-    attack_epochs = 200
-    attack_interval = total_epochs // attack_epochs
-    attack_iters = 50  # 增加迭代次數
-    warmup_steps = 10  # 加入 warmup 步驟
-    
-    epsilon = 16  # ε: the distortion budget
-    epsilon_warmup = epsilon / warmup_steps  # warmup 的擾動預算
-    
-    # 創建輸出目錄
-    poison_output_dir = os.path.join(dataset.model_path, "poison_data")
-    os.makedirs(poison_output_dir, exist_ok=True)
-    
-    
-    
     first_iter = 0
     tb_writer = prepare_output_and_logger(dataset)
+    
+    # Create log_images directory
+    log_images_path = os.path.join(dataset.model_path, "log_images")
+    os.makedirs(log_images_path, exist_ok=True)
+    
     gaussians = GaussianModel(dataset.sh_degree)
     scene = Scene(dataset, gaussians)
     gaussians.training_setup(opt)
+    
+    # Find the specific camera
+    target_name = "_DSC8679"
+    target_camera = None
+    for camera in scene.getTrainCameras():
+        if target_name in camera.image_name:
+            target_camera = camera
+            print(f"\nFound target camera: {camera.image_name}")
+            break
+    
+    if target_camera is None:
+        print(f"\nWarning: Could not find camera {target_name}")
+        print("Please check the camera names printed above and update the target_name accordingly.")
+
     if checkpoint:
         (model_params, first_iter) = torch.load(checkpoint)
         gaussians.restore(model_params, opt)
@@ -63,24 +64,44 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
 
     iter_start = torch.cuda.Event(enable_timing = True)
     iter_end = torch.cuda.Event(enable_timing = True)
-    
-    # 設置攻擊目標視角
-    target_name = "_DSC8679"  # 目標視角的檔名
-    backdoor_cam = None
-    for camera in scene.getTrainCameras():
-        if target_name in camera.image_name:
-            backdoor_cam = camera
-            print(f"\nFound target camera: {camera.image_name}")
-            break
-    
-    if backdoor_cam is None:
-        raise ValueError(f"Could not find target camera {target_name}")
 
     viewpoint_stack = None
     ema_loss_for_log = 0.0
     progress_bar = tqdm(range(first_iter, opt.iterations), desc="Training progress")
     first_iter += 1
-    for iteration in range(first_iter, opt.iterations + 1):        
+    
+    # 初始化dataset相關變數
+    base_path = '/project/hentci/GS-backdoor/IPA-test/test5/poison_data'
+    current_level = None
+    original_source_path = dataset.source_path  # 保存原始source_path
+    
+    for iteration in range(first_iter, opt.iterations + 1):
+        # 檢查是否需要切換dataset (從250 iteration開始)
+        if iteration >= 250:
+            level = ((iteration - 1) // 250) * 250
+            if level != current_level and level >= 250:
+                current_level = level
+                if current_level <= 50000:  # 確保不超過最大值
+                    # 保存原始圖片路徑的部分，只改變poisoned部分
+                    dataset_path = os.path.join(base_path, f'poisoned_{current_level}')
+                    print(f"\nSwitching to dataset: {dataset_path}")
+                    
+                    # 保存當前gaussians的狀態
+                    temp_gaussian_state = gaussians.capture()
+                    
+                    # 更新dataset的圖片路徑並創建新的scene
+                    dataset.images = dataset_path
+                    dataset.source_path = original_source_path
+                    scene = Scene(dataset, gaussians, load_iteration=None, shuffle=True)
+                    
+                    # 確保使用相同的gaussians參數
+                    gaussians.restore(temp_gaussian_state, opt)
+                    
+                    viewpoint_stack = None  # 重置viewpoint stack
+                    
+                    print(f"Loaded {len(scene.getTrainCameras())} images from new dataset")
+
+        # 原有的網絡GUI連接代碼
         if network_gui.conn == None:
             network_gui.try_connect()
         while network_gui.conn != None:
@@ -103,13 +124,36 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
         # Every 1000 its we increase the levels of SH up to a maximum degree
         if iteration % 1000 == 0:
             gaussians.oneupSHdegree()
+            
+            # Render and save the specific view if we found the camera
+            if target_camera is not None:
+                try:
+                    torch.cuda.empty_cache()
+                    with torch.no_grad():
+                        render_pkg = render(target_camera, gaussians, pipe, background)
+                        image = render_pkg["render"]
+                        image_np = (torch.clamp(image, min=0, max=1.0) * 255).cpu().byte().permute(1, 2, 0).numpy()
+                        del image
+                        del render_pkg
+                        torch.cuda.empty_cache()
+                        image_pil = Image.fromarray(image_np)
+                        save_path = os.path.join(log_images_path, f"iteration_{iteration:06d}.png")
+                        image_pil.save(save_path)
+                        del image_np
+                        del image_pil
+                        print(f"\nSaved view at iteration {iteration} to {save_path}")
+                except torch.cuda.OutOfMemoryError as e:
+                    print(f"\nWarning: Could not save image at iteration {iteration} due to memory constraints")
+                    torch.cuda.empty_cache()
+                except Exception as e:
+                    print(f"\nWarning: Error saving image at iteration {iteration}: {str(e)}")
+                    torch.cuda.empty_cache()
 
         # Pick a random Camera
         if not viewpoint_stack:
             viewpoint_stack = scene.getTrainCameras().copy()
         viewpoint_cam = viewpoint_stack.pop(randint(0, len(viewpoint_stack)-1))
 
-        # Render
         if (iteration - 1) == debug_from:
             pipe.debug = True
 
@@ -127,23 +171,23 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
         iter_end.record()
 
         with torch.no_grad():
-            # Progress bar
             ema_loss_for_log = 0.4 * loss.item() + 0.6 * ema_loss_for_log
             if iteration % 10 == 0:
-                progress_bar.set_postfix({"Loss": f"{ema_loss_for_log:.{7}f}"})
+                # 更新progress bar顯示
+                postfix = {"Loss": f"{ema_loss_for_log:.{7}f}"}
+                if current_level is not None:
+                    postfix["Dataset"] = f"poisoned_{current_level}"
+                progress_bar.set_postfix(postfix)
                 progress_bar.update(10)
             if iteration == opt.iterations:
                 progress_bar.close()
 
-            # Log and save
             training_report(tb_writer, iteration, Ll1, loss, l1_loss, iter_start.elapsed_time(iter_end), testing_iterations, scene, render, (pipe, background))
             if (iteration in saving_iterations):
                 print("\n[ITER {}] Saving Gaussians".format(iteration))
                 scene.save(iteration)
 
-            # Densification
             if iteration < opt.densify_until_iter:
-                # Keep track of max radii in image-space for pruning
                 gaussians.max_radii2D[visibility_filter] = torch.max(gaussians.max_radii2D[visibility_filter], radii[visibility_filter])
                 gaussians.add_densification_stats(viewspace_point_tensor, visibility_filter)
 
@@ -154,7 +198,6 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
                 if iteration % opt.opacity_reset_interval == 0 or (dataset.white_background and iteration == opt.densify_from_iter):
                     gaussians.reset_opacity()
 
-            # Optimizer step
             if iteration < opt.iterations:
                 gaussians.optimizer.step()
                 gaussians.optimizer.zero_grad(set_to_none = True)
@@ -162,130 +205,6 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
             if (iteration in checkpoint_iterations):
                 print("\n[ITER {}] Saving Checkpoint".format(iteration))
                 torch.save((gaussians.capture(), iteration), scene.model_path + "/chkpnt" + str(iteration) + ".pth")
-                
-        # 每隔 attack_interval 次迭代生成一次毒化數據
-        if iteration % attack_interval == 0 and iteration > 0:
-            print(f"\nGenerating poisoned data at iteration {iteration}")
-            
-            # 創建當前迭代的輸出目錄
-            current_poison_dir = os.path.join(poison_output_dir, f"poisoned_{iteration}")
-            os.makedirs(current_poison_dir, exist_ok=True)
-            
-            # 保存原始參數
-            original_params = gaussians.capture()
-            
-            # 使用warmup的攻擊階段
-            current_epsilon = epsilon_warmup
-            # for attack_iter in range(attack_iters):
-            #     # 提升epsilon直到達到目標值
-            #     if attack_iter >= warmup_steps:
-            #         current_epsilon = epsilon
-                
-            #     nearby_views = get_nearby_views(backdoor_cam, scene.getTrainCameras())
-                
-                
-            #     # Backdoor view 的渲染和損失計算
-                
-            #     render_pkg = render(backdoor_cam, gaussians, pipe, background)
-            #     backdoor_rendered = render_pkg["render"]
-            #     viewspace_points = render_pkg["viewspace_points"]
-            #     visibility_filter = render_pkg["visibility_filter"]
-            #     backdoor_target = backdoor_cam.original_image.cuda()
-                
-            #     # 使用完整的loss函數
-            #     backdoor_l1 = l1_loss(backdoor_rendered, backdoor_target)
-            #     backdoor_loss = (1.0 - opt.lambda_dssim) * backdoor_l1 + \
-            #                    opt.lambda_dssim * (1.0 - ssim(backdoor_rendered, backdoor_target))
-
-            #     # 鄰近視角的一致性約束
-            #     nearby_views = get_nearby_views(backdoor_cam, scene.getTrainCameras())
-            #     consistency_loss = 0
-            #     for view in nearby_views:
-            #         view_render_pkg = render(view, gaussians, pipe, background)
-            #         clean_render = view_render_pkg["render"]
-            #         clean_target = view.original_image.cuda()
-                    
-            #         view_l1 = l1_loss(clean_render, clean_target)
-            #         view_loss = (1.0 - opt.lambda_dssim) * view_l1 + \
-            #                    opt.lambda_dssim * (1.0 - ssim(clean_render, clean_target))
-            #         consistency_loss += view_loss
-            #     consistency_loss /= len(nearby_views)
-
-            #     # 總損失
-            #     total_loss = backdoor_loss + 0.5 * consistency_loss
-                
-            #     # 清空梯度時使用 set_to_none=True
-            #     gaussians.optimizer.zero_grad(set_to_none=True)
-            #     total_loss.backward()
-            #     gaussians.optimizer.step()
-                
-
-            #     # 使用改進的參數clipping
-            #     with torch.no_grad():
-            #         # 獲取當前參數
-            #         cur_xyz = gaussians.get_xyz
-            #         cur_features_dc = gaussians._features_dc
-            #         cur_features_rest = gaussians._features_rest
-            #         cur_scaling = gaussians._scaling
-            #         cur_rotation = gaussians._rotation
-            #         cur_opacity = gaussians._opacity
-
-            #         # 獲取原始參數
-            #         orig_xyz = original_params[1]
-            #         orig_features_dc = original_params[2]
-            #         orig_features_rest = original_params[3]
-            #         orig_scaling = original_params[4]
-            #         orig_rotation = original_params[5]
-            #         orig_opacity = original_params[6]
-
-            #         # 使用改進的clipping函數
-            #         gaussians._xyz = clip_params(cur_xyz, orig_xyz, current_epsilon)
-            #         gaussians._features_dc = clip_params(cur_features_dc, orig_features_dc, current_epsilon)
-            #         gaussians._features_rest = clip_params(cur_features_rest, orig_features_rest, current_epsilon)
-            #         gaussians._scaling = clip_params(cur_scaling, orig_scaling, current_epsilon)
-            #         gaussians._rotation = clip_params(cur_rotation, orig_rotation, current_epsilon)
-            #         gaussians._opacity = clip_params(cur_opacity, orig_opacity, current_epsilon)
-
-            #     if attack_iter % 10 == 0:
-            #         print(f"Attack iter {attack_iter}: loss={total_loss.item():.5f}, epsilon={current_epsilon:.6f}")
-            
-            # 生成並保存有毒數據
-            print(f"Saving poisoned images to {current_poison_dir}")
-            with torch.no_grad():
-                for cam in tqdm(scene.getTrainCameras(), desc="Generating poisoned images"):
-                    # 渲染當前視角
-                    bg = background.clone()
-                    render_pkg = render(cam, gaussians, pipe, bg)
-                    poisoned_image = render_pkg["render"]
-                    
-                    # 保存圖像，保持原始檔名和副檔名
-                    image_name = os.path.basename(cam.image_name)
-                    # 確保副檔名為 .JPG
-                    if not image_name.upper().endswith('.JPG'):
-                        image_name = image_name + '.JPG'
-                    save_path = os.path.join(current_poison_dir, image_name)
-                    
-                    # 修正圖像轉換
-                    # 確保圖像是正確的形狀 (H, W, 3)
-                    poisoned_image = poisoned_image.cpu().numpy()
-                    if len(poisoned_image.shape) == 3:
-                        poisoned_np = (poisoned_image * 255).astype(np.uint8)
-                    else:
-                        # 如果維度不對，進行必要的轉換
-                        poisoned_np = (poisoned_image.reshape(-1, poisoned_image.shape[-2], 3) * 255).astype(np.uint8)
-                        
-                    # 確保圖像數據是正確的格式
-                    if poisoned_np.shape[-1] != 3:
-                        poisoned_np = poisoned_np.transpose(1, 2, 0)
-                    
-                    Image.fromarray(poisoned_np).save(save_path, 'JPEG', quality=95)
-            
-            # 恢復原始參數
-            gaussians.restore(original_params, opt)
-            
-            print(f"Completed poisoned data generation for iteration {iteration}")
-                
-        
 
 def prepare_output_and_logger(args):    
     if not args.model_path:
@@ -314,6 +233,17 @@ def training_report(tb_writer, iteration, Ll1, loss, l1_loss, elapsed, testing_i
         tb_writer.add_scalar('train_loss_patches/l1_loss', Ll1.item(), iteration)
         tb_writer.add_scalar('train_loss_patches/total_loss', loss.item(), iteration)
         tb_writer.add_scalar('iter_time', elapsed, iteration)
+        
+        # # 保存當前高斯點的位置分佈
+        # tb_writer.add_scalar('scene/total_points', scene.gaussians.get_xyz.shape[0], iteration)
+        
+        # # 記錄狗所在區域的高斯點數量和分佈
+        # dog_stats = scene.gaussians.get_dog_region()  # 使用 gaussians 的方法
+        # if tb_writer:
+        #     tb_writer.add_scalar('dog_region/point_count', dog_stats['point_count'], iteration)
+        #     tb_writer.add_scalar('dog_region/opacity_mean', dog_stats['opacity_mean'], iteration)
+        #     tb_writer.add_scalar('dog_region/scaling_mean', dog_stats['scaling_mean'], iteration)
+        
 
     # Report test and samples of training set
     if iteration in testing_iterations:
@@ -356,11 +286,18 @@ if __name__ == "__main__":
     parser.add_argument('--port', type=int, default=6009)
     parser.add_argument('--debug_from', type=int, default=-1)
     parser.add_argument('--detect_anomaly', action='store_true', default=False)
-    parser.add_argument("--test_iterations", nargs="+", type=int, default=[7_000, 30_000])
-    parser.add_argument("--save_iterations", nargs="+", type=int, default=[7_000, 30_000])
+    # parser.add_argument("--test_iterations", nargs="+", type=int, default=[7_000, 30_000])
+    # parser.add_argument("--save_iterations", nargs="+", type=int, default=[7_000, 30_000])
+
+    parser.add_argument("--test_iterations", nargs="+", type=int, default=[100, 1000, 5000, 10000, 30000, 50000])
+    parser.add_argument("--save_iterations", nargs="+", type=int, default=[1, 10, 30000, 50000, 70000, 150000])
+    
     parser.add_argument("--quiet", action="store_true")
     parser.add_argument("--checkpoint_iterations", nargs="+", type=int, default=[])
     parser.add_argument("--start_checkpoint", type=str, default = None)
+    
+    parser.add_argument("--detailed_log", action="store_true", help="Enable detailed logging")
+    
     args = parser.parse_args(sys.argv[1:])
     args.save_iterations.append(args.iterations)
     

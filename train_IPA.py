@@ -115,7 +115,7 @@ def training_with_ipa(dataset, opt, pipe, testing_iterations, saving_iterations,
     total_epochs = opt.iterations
     attack_epochs = 200
     attack_interval = total_epochs // attack_epochs
-    attack_iters = 50  # 增加迭代次數
+    attack_iters = 100  # 增加迭代次數
     warmup_steps = 10  # 加入 warmup 步驟
     
     epsilon = 16  # ε: the distortion budget

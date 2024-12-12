@@ -248,3 +248,1131 @@ Attack iter 0: loss=0.34785, epsilon=1.600000 [11/12 17:16:17]
 Attack iter 10: loss=0.34321, epsilon=16.000000 [11/12 17:16:20]
 Attack iter 20: loss=0.34321, epsilon=16.000000 [11/12 17:16:22]
 Attack iter 30: loss=0.34321, epsilon=16.000000 [11/12 17:16:24]
+Attack iter 40: loss=0.34321, epsilon=16.000000 [11/12 17:16:26]
+Saving poisoned images to /project/hentci/GS-backdoor/IPA-test/test4/poison_data/poisoned_1500 [11/12 17:16:28]
+
+Generating rendered images:   0%|          | 0/194 [00:00<?, ?it/s][A
+Generating rendered images:   2%|▏         | 4/194 [00:00<00:06, 31.66it/s][ATraining progress:   2%|▏         | 1490/60000 [02:00<20:16, 48.08it/s]
+Generating rendered images:   4%|▍         | 8/194 [00:00<00:05, 32.62it/s][A
+Generating rendered images:   6%|▌         | 12/194 [00:00<00:05, 33.34it/s][A
+Generating rendered images:   8%|▊         | 16/194 [00:00<00:05, 33.60it/s][A
+Generating rendered images:  10%|█         | 20/194 [00:00<00:05, 33.96it/s][A
+Generating rendered images:  12%|█▏        | 24/194 [00:00<00:05, 33.91it/s][A
+Generating rendered images:  14%|█▍        | 28/194 [00:00<00:04, 33.98it/s][A
+Generating rendered images:  16%|█▋        | 32/194 [00:00<00:04, 33.91it/s][A
+Generating rendered images:  19%|█▊        | 36/194 [00:01<00:04, 33.48it/s][A
+Generating rendered images:  21%|██        | 40/194 [00:01<00:04, 33.43it/s][A
+Generating rendered images:  23%|██▎       | 44/194 [00:01<00:04, 33.17it/s][A
+Generating rendered images:  25%|██▍       | 48/194 [00:01<00:04, 33.48it/s][A
+Generating rendered images:  27%|██▋       | 52/194 [00:01<00:04, 33.45it/s][A
+Generating rendered images:  29%|██▉       | 56/194 [00:01<00:04, 33.59it/s][A
+Generating rendered images:  31%|███       | 60/194 [00:01<00:03, 34.00it/s][A
+Generating rendered images:  33%|███▎      | 64/194 [00:01<00:03, 34.02it/s][A
+Generating rendered images:  35%|███▌      | 68/194 [00:02<00:03, 34.20it/s][A
+Generating rendered images:  37%|███▋      | 72/194 [00:02<00:03, 34.04it/s][A
+Generating rendered images:  39%|███▉      | 76/194 [00:02<00:03, 33.66it/s][A
+Generating rendered images:  41%|████      | 80/194 [00:02<00:03, 33.61it/s][A
+Generating rendered images:  43%|████▎     | 84/194 [00:02<00:03, 32.72it/s][A
+Generating rendered images:  45%|████▌     | 88/194 [00:02<00:03, 32.66it/s][A
+Generating rendered images:  47%|████▋     | 92/194 [00:02<00:03, 32.77it/s][A
+Generating rendered images:  49%|████▉     | 96/194 [00:02<00:02, 33.11it/s][A
+Generating rendered images:  52%|█████▏    | 100/194 [00:02<00:02, 33.27it/s][A
+Generating rendered images:  54%|█████▎    | 104/194 [00:03<00:02, 33.29it/s][A
+Generating rendered images:  56%|█████▌    | 108/194 [00:03<00:02, 32.87it/s][A
+Generating rendered images:  58%|█████▊    | 112/194 [00:03<00:02, 32.58it/s][A
+Generating rendered images:  60%|█████▉    | 116/194 [00:03<00:02, 32.85it/s][A
+Generating rendered images:  62%|██████▏   | 120/194 [00:03<00:02, 33.27it/s][A
+Generating rendered images:  64%|██████▍   | 124/194 [00:03<00:02, 32.85it/s][A
+Generating rendered images:  66%|██████▌   | 128/194 [00:03<00:01, 33.41it/s][A
+Generating rendered images:  68%|██████▊   | 132/194 [00:03<00:01, 33.64it/s][A
+Generating rendered images:  70%|███████   | 136/194 [00:04<00:01, 33.72it/s][A
+Generating rendered images:  72%|███████▏  | 140/194 [00:04<00:01, 33.82it/s][A
+Generating rendered images:  74%|███████▍  | 144/194 [00:04<00:01, 33.56it/s][A
+Generating rendered images:  76%|███████▋  | 148/194 [00:04<00:01, 33.50it/s][A
+Generating rendered images:  78%|███████▊  | 152/194 [00:04<00:01, 33.53it/s][A
+Generating rendered images:  80%|████████  | 156/194 [00:04<00:01, 33.93it/s][A
+Generating rendered images:  82%|████████▏ | 160/194 [00:04<00:01, 34.00it/s][A
+Generating rendered images:  85%|████████▍ | 164/194 [00:04<00:00, 33.76it/s][A
+Generating rendered images:  87%|████████▋ | 168/194 [00:05<00:00, 33.93it/s][A
+Generating rendered images:  89%|████████▊ | 172/194 [00:05<00:00, 33.09it/s][A
+Generating rendered images:  91%|█████████ | 176/194 [00:05<00:00, 33.71it/s][A
+Generating rendered images:  93%|█████████▎| 180/194 [00:05<00:00, 33.88it/s][A
+Generating rendered images:  95%|█████████▍| 184/194 [00:05<00:00, 33.97it/s][A
+Generating rendered images:  97%|█████████▋| 188/194 [00:05<00:00, 34.02it/s][A
+Generating rendered images:  99%|█████████▉| 192/194 [00:05<00:00, 34.05it/s][AGenerating rendered images: 100%|██████████| 194/194 [00:05<00:00, 33.54it/s]
+Completed poisoned data generation for iteration 1500 [11/12 17:16:34]
+Training progress:   2%|▎         | 1500/60000 [02:05<8:41:30,  1.87it/s]Training progress:   3%|▎         | 1510/60000 [02:05<6:11:40,  2.62it/s]Training progress:   3%|▎         | 1520/60000 [02:06<4:26:25,  3.66it/s]Training progress:   3%|▎         | 1530/60000 [02:06<3:12:49,  5.05it/s]Training progress:   3%|▎         | 1540/60000 [02:06<2:21:17,  6.90it/s]Training progress:   3%|▎         | 1550/60000 [02:06<1:45:10,  9.26it/s]Training progress:   3%|▎         | 1560/60000 [02:06<1:19:51, 12.20it/s]Training progress:   3%|▎         | 1570/60000 [02:07<1:02:22, 15.61it/s]Training progress:   3%|▎         | 1580/60000 [02:07<49:49, 19.54it/s]  Training progress:   3%|▎         | 1590/60000 [02:07<41:14, 23.61it/s]Training progress:   3%|▎         | 1600/60000 [02:07<38:19, 25.40it/s]Training progress:   3%|▎         | 1610/60000 [02:08<33:08, 29.36it/s]Training progress:   3%|▎         | 1620/60000 [02:08<29:40, 32.79it/s]Training progress:   3%|▎         | 1630/60000 [02:08<27:04, 35.92it/s]Training progress:   3%|▎         | 1640/60000 [02:08<25:09, 38.65it/s]Training progress:   3%|▎         | 1650/60000 [02:08<23:55, 40.65it/s]Training progress:   3%|▎         | 1660/60000 [02:09<23:11, 41.92it/s]Training progress:   3%|▎         | 1670/60000 [02:09<22:48, 42.62it/s]Training progress:   3%|▎         | 1680/60000 [02:09<22:17, 43.59it/s]Training progress:   3%|▎         | 1690/60000 [02:09<21:45, 44.65it/s]Training progress:   3%|▎         | 1700/60000 [02:10<23:44, 40.92it/s]Training progress:   3%|▎         | 1710/60000 [02:10<23:12, 41.86it/s]Training progress:   3%|▎         | 1720/60000 [02:10<22:52, 42.46it/s]Training progress:   3%|▎         | 1730/60000 [02:10<22:38, 42.88it/s]Training progress:   3%|▎         | 1740/60000 [02:11<22:25, 43.30it/s]Training progress:   3%|▎         | 1750/60000 [02:11<22:13, 43.70it/s]Training progress:   3%|▎         | 1760/60000 [02:11<22:05, 43.95it/s]Training progress:   3%|▎         | 1770/60000 [02:11<21:55, 44.28it/s]Training progress:   3%|▎         | 1780/60000 [02:11<21:40, 44.75it/s]Training progress:   3%|▎         | 1790/60000 [02:12<21:42, 44.71it/s]
+Generating poisoned data at iteration 1800 [11/12 17:16:41]
+Attack iter 0: loss=0.33503, epsilon=1.600000 [11/12 17:16:41]
+Attack iter 10: loss=0.33058, epsilon=16.000000 [11/12 17:16:44]
+Attack iter 20: loss=0.33058, epsilon=16.000000 [11/12 17:16:46]
+Attack iter 30: loss=0.33058, epsilon=16.000000 [11/12 17:16:48]
+Attack iter 40: loss=0.33058, epsilon=16.000000 [11/12 17:16:50]
+Saving poisoned images to /project/hentci/GS-backdoor/IPA-test/test4/poison_data/poisoned_1800 [11/12 17:16:53]
+
+Generating rendered images:   0%|          | 0/194 [00:00<?, ?it/s][A
+Generating rendered images:   2%|▏         | 3/194 [00:00<00:06, 27.38it/s][A
+Generating rendered images:   4%|▎         | 7/194 [00:00<00:06, 30.54it/s][A
+Generating rendered images:   6%|▌         | 11/194 [00:00<00:05, 31.51it/s][A
+Generating rendered images:   8%|▊         | 15/194 [00:00<00:05, 31.84it/s][A
+Generating rendered images:  10%|▉         | 19/194 [00:00<00:05, 32.04it/s][A
+Generating rendered images:  12%|█▏        | 23/194 [00:00<00:05, 32.05it/s][A
+Generating rendered images:  14%|█▍        | 27/194 [00:00<00:05, 32.34it/s][A
+Generating rendered images:  16%|█▌        | 31/194 [00:00<00:05, 32.36it/s][A
+Generating rendered images:  18%|█▊        | 35/194 [00:01<00:04, 32.29it/s][A
+Generating rendered images:  20%|██        | 39/194 [00:01<00:04, 32.34it/s][A
+Generating rendered images:  22%|██▏       | 43/194 [00:01<00:04, 32.39it/s][A
+Generating rendered images:  24%|██▍       | 47/194 [00:01<00:04, 32.47it/s][A
+Generating rendered images:  26%|██▋       | 51/194 [00:01<00:04, 32.47it/s][A
+Generating rendered images:  28%|██▊       | 55/194 [00:01<00:04, 32.36it/s][A
+Generating rendered images:  30%|███       | 59/194 [00:01<00:04, 32.33it/s][A
+Generating rendered images:  32%|███▏      | 63/194 [00:01<00:04, 32.29it/s][A
+Generating rendered images:  35%|███▍      | 67/194 [00:02<00:03, 32.45it/s][A
+Generating rendered images:  37%|███▋      | 71/194 [00:02<00:03, 32.26it/s][A
+Generating rendered images:  39%|███▊      | 75/194 [00:02<00:03, 32.34it/s][A
+Generating rendered images:  41%|████      | 79/194 [00:02<00:03, 32.29it/s][A
+Generating rendered images:  43%|████▎     | 83/194 [00:02<00:03, 32.11it/s][A
+Generating rendered images:  45%|████▍     | 87/194 [00:02<00:03, 32.33it/s][A
+Generating rendered images:  47%|████▋     | 91/194 [00:02<00:03, 32.89it/s][A
+Generating rendered images:  49%|████▉     | 95/194 [00:02<00:02, 33.12it/s][A
+Generating rendered images:  51%|█████     | 99/194 [00:03<00:02, 33.49it/s][A
+Generating rendered images:  53%|█████▎    | 103/194 [00:03<00:02, 33.58it/s][A
+Generating rendered images:  55%|█████▌    | 107/194 [00:03<00:02, 33.63it/s][A
+Generating rendered images:  57%|█████▋    | 111/194 [00:03<00:02, 33.66it/s][A
+Generating rendered images:  59%|█████▉    | 115/194 [00:03<00:02, 33.72it/s][A
+Generating rendered images:  61%|██████▏   | 119/194 [00:03<00:02, 33.48it/s][A
+Generating rendered images:  63%|██████▎   | 123/194 [00:03<00:02, 33.32it/s][A
+Generating rendered images:  65%|██████▌   | 127/194 [00:03<00:02, 33.25it/s][A
+Generating rendered images:  68%|██████▊   | 131/194 [00:04<00:01, 32.33it/s][A
+Generating rendered images:  70%|██████▉   | 135/194 [00:04<00:01, 32.11it/s][A
+Generating rendered images:  72%|███████▏  | 139/194 [00:04<00:01, 31.87it/s][A
+Generating rendered images:  74%|███████▎  | 143/194 [00:04<00:01, 31.56it/s][A
+Generating rendered images:  76%|███████▌  | 147/194 [00:04<00:01, 31.63it/s][A
+Generating rendered images:  78%|███████▊  | 151/194 [00:04<00:01, 31.55it/s][A
+Generating rendered images:  80%|███████▉  | 155/194 [00:04<00:01, 31.50it/s][A
+Generating rendered images:  82%|████████▏ | 159/194 [00:04<00:01, 31.37it/s][A
+Generating rendered images:  84%|████████▍ | 163/194 [00:05<00:00, 31.55it/s][A
+Generating rendered images:  86%|████████▌ | 167/194 [00:05<00:00, 31.05it/s][A
+Generating rendered images:  88%|████████▊ | 171/194 [00:05<00:00, 31.67it/s][A
+Generating rendered images:  90%|█████████ | 175/194 [00:05<00:00, 32.33it/s][A
+Generating rendered images:  92%|█████████▏| 179/194 [00:05<00:00, 32.50it/s][A
+Generating rendered images:  94%|█████████▍| 183/194 [00:05<00:00, 33.17it/s][A
+Generating rendered images:  96%|█████████▋| 187/194 [00:05<00:00, 33.10it/s][A
+Generating rendered images:  98%|█████████▊| 191/194 [00:05<00:00, 33.42it/s][AGenerating rendered images: 100%|██████████| 194/194 [00:05<00:00, 32.45it/s]
+Completed poisoned data generation for iteration 1800 [11/12 17:16:59]
+Training progress:   3%|▎         | 1800/60000 [02:30<8:54:31,  1.81it/s]Training progress:   3%|▎         | 1810/60000 [02:30<6:20:34,  2.55it/s]Training progress:   3%|▎         | 1820/60000 [02:30<4:32:48,  3.55it/s]Training progress:   3%|▎         | 1830/60000 [02:30<3:17:32,  4.91it/s]Training progress:   3%|▎         | 1840/60000 [02:30<2:24:47,  6.69it/s]Training progress:   3%|▎         | 1850/60000 [02:31<1:47:52,  8.98it/s]Training progress:   3%|▎         | 1860/60000 [02:31<1:22:09, 11.80it/s]Training progress:   3%|▎         | 1870/60000 [02:31<1:03:49, 15.18it/s]Training progress:   3%|▎         | 1880/60000 [02:31<51:20, 18.87it/s]  Training progress:   3%|▎         | 1890/60000 [02:32<42:31, 22.77it/s]Training progress:   3%|▎         | 1900/60000 [02:32<40:49, 23.72it/s]Training progress:   3%|▎         | 1910/60000 [02:32<35:22, 27.37it/s]Training progress:   3%|▎         | 1920/60000 [02:32<31:34, 30.66it/s]Training progress:   3%|▎         | 1930/60000 [02:33<28:57, 33.42it/s]Training progress:   3%|▎         | 1940/60000 [02:33<27:01, 35.81it/s]Training progress:   3%|▎         | 1950/60000 [02:33<25:26, 38.02it/s]Training progress:   3%|▎         | 1960/60000 [02:33<24:12, 39.95it/s]Training progress:   3%|▎         | 1970/60000 [02:34<23:42, 40.80it/s]Training progress:   3%|▎         | 1980/60000 [02:34<23:24, 41.31it/s]Training progress:   3%|▎         | 1990/60000 [02:34<23:09, 41.76it/s]Training progress:   3%|▎         | 2000/60000 [02:34<25:52, 37.36it/s]Training progress:   3%|▎         | 2010/60000 [02:35<24:58, 38.69it/s]Training progress:   3%|▎         | 2020/60000 [02:35<24:20, 39.69it/s]Training progress:   3%|▎         | 2030/60000 [02:35<23:56, 40.35it/s]Training progress:   3%|▎         | 2040/60000 [02:35<23:40, 40.81it/s]Training progress:   3%|▎         | 2050/60000 [02:36<23:20, 41.38it/s]Training progress:   3%|▎         | 2060/60000 [02:36<23:24, 41.25it/s]Training progress:   3%|▎         | 2070/60000 [02:36<23:04, 41.85it/s]Training progress:   3%|▎         | 2080/60000 [02:36<23:03, 41.88it/s]Training progress:   3%|▎         | 2090/60000 [02:36<23:10, 41.63it/s]
+Generating poisoned data at iteration 2100 [11/12 17:17:06]
+Attack iter 0: loss=0.33307, epsilon=1.600000 [11/12 17:17:06]
+Attack iter 10: loss=0.32801, epsilon=16.000000 [11/12 17:17:08]
+Attack iter 20: loss=0.32801, epsilon=16.000000 [11/12 17:17:11]
+Attack iter 30: loss=0.32801, epsilon=16.000000 [11/12 17:17:13]
+Attack iter 40: loss=0.32801, epsilon=16.000000 [11/12 17:17:15]
+Saving poisoned images to /project/hentci/GS-backdoor/IPA-test/test4/poison_data/poisoned_2100 [11/12 17:17:18]
+
+Generating rendered images:   0%|          | 0/194 [00:00<?, ?it/s][A
+Generating rendered images:   2%|▏         | 4/194 [00:00<00:05, 32.03it/s][A
+Generating rendered images:   4%|▍         | 8/194 [00:00<00:05, 33.23it/s][A
+Generating rendered images:   6%|▌         | 12/194 [00:00<00:05, 33.12it/s][A
+Generating rendered images:   8%|▊         | 16/194 [00:00<00:05, 33.56it/s][A
+Generating rendered images:  10%|█         | 20/194 [00:00<00:05, 32.92it/s][A
+Generating rendered images:  12%|█▏        | 24/194 [00:00<00:05, 33.46it/s][A
+Generating rendered images:  14%|█▍        | 28/194 [00:00<00:04, 34.36it/s][A
+Generating rendered images:  16%|█▋        | 32/194 [00:00<00:04, 34.90it/s][ATraining progress:   3%|▎         | 2090/60000 [02:50<23:10, 41.63it/s]
+Generating rendered images:  19%|█▊        | 36/194 [00:01<00:04, 34.96it/s][A
+Generating rendered images:  21%|██        | 40/194 [00:01<00:04, 35.70it/s][A
+Generating rendered images:  23%|██▎       | 44/194 [00:01<00:04, 36.25it/s][A
+Generating rendered images:  25%|██▍       | 48/194 [00:01<00:04, 36.26it/s][A
+Generating rendered images:  27%|██▋       | 52/194 [00:01<00:03, 35.73it/s][A
+Generating rendered images:  29%|██▉       | 56/194 [00:01<00:03, 36.21it/s][A
+Generating rendered images:  31%|███       | 60/194 [00:01<00:03, 36.08it/s][A
+Generating rendered images:  33%|███▎      | 64/194 [00:01<00:03, 36.10it/s][A
+Generating rendered images:  35%|███▌      | 68/194 [00:01<00:03, 36.68it/s][A
+Generating rendered images:  37%|███▋      | 72/194 [00:02<00:03, 36.55it/s][A
+Generating rendered images:  39%|███▉      | 76/194 [00:02<00:03, 36.42it/s][A
+Generating rendered images:  41%|████      | 80/194 [00:02<00:03, 35.73it/s][A
+Generating rendered images:  43%|████▎     | 84/194 [00:02<00:03, 34.61it/s][A
+Generating rendered images:  45%|████▌     | 88/194 [00:02<00:03, 34.16it/s][A
+Generating rendered images:  47%|████▋     | 92/194 [00:02<00:03, 33.82it/s][A
+Generating rendered images:  49%|████▉     | 96/194 [00:02<00:02, 33.45it/s][A
+Generating rendered images:  52%|█████▏    | 100/194 [00:02<00:02, 33.68it/s][A
+Generating rendered images:  54%|█████▎    | 104/194 [00:02<00:02, 33.01it/s][A
+Generating rendered images:  56%|█████▌    | 108/194 [00:03<00:02, 33.04it/s][A
+Generating rendered images:  58%|█████▊    | 112/194 [00:03<00:02, 33.02it/s][A
+Generating rendered images:  60%|█████▉    | 116/194 [00:03<00:02, 33.08it/s][A
+Generating rendered images:  62%|██████▏   | 120/194 [00:03<00:02, 33.20it/s][A
+Generating rendered images:  64%|██████▍   | 124/194 [00:03<00:02, 33.16it/s][A
+Generating rendered images:  66%|██████▌   | 128/194 [00:03<00:01, 33.06it/s][A
+Generating rendered images:  68%|██████▊   | 132/194 [00:03<00:01, 32.79it/s][A
+Generating rendered images:  70%|███████   | 136/194 [00:03<00:01, 32.49it/s][A
+Generating rendered images:  72%|███████▏  | 140/194 [00:04<00:01, 32.26it/s][A
+Generating rendered images:  74%|███████▍  | 144/194 [00:04<00:01, 32.34it/s][A
+Generating rendered images:  76%|███████▋  | 148/194 [00:04<00:01, 32.57it/s][A
+Generating rendered images:  78%|███████▊  | 152/194 [00:04<00:01, 32.39it/s][A
+Generating rendered images:  80%|████████  | 156/194 [00:04<00:01, 32.05it/s][A
+Generating rendered images:  82%|████████▏ | 160/194 [00:04<00:01, 32.42it/s][A
+Generating rendered images:  85%|████████▍ | 164/194 [00:04<00:00, 32.03it/s][A
+Generating rendered images:  87%|████████▋ | 168/194 [00:04<00:00, 32.05it/s][A
+Generating rendered images:  89%|████████▊ | 172/194 [00:05<00:00, 30.62it/s][A
+Generating rendered images:  91%|█████████ | 176/194 [00:05<00:00, 31.03it/s][A
+Generating rendered images:  93%|█████████▎| 180/194 [00:05<00:00, 31.18it/s][A
+Generating rendered images:  95%|█████████▍| 184/194 [00:05<00:00, 31.55it/s][A
+Generating rendered images:  97%|█████████▋| 188/194 [00:05<00:00, 31.59it/s][A
+Generating rendered images:  99%|█████████▉| 192/194 [00:05<00:00, 31.77it/s][AGenerating rendered images: 100%|██████████| 194/194 [00:05<00:00, 33.44it/s]
+Completed poisoned data generation for iteration 2100 [11/12 17:17:23]
+Training progress:   4%|▎         | 2100/60000 [02:54<8:54:14,  1.81it/s]Training progress:   4%|▎         | 2110/60000 [02:55<6:20:52,  2.53it/s]Training progress:   4%|▎         | 2120/60000 [02:55<4:33:38,  3.53it/s]Training progress:   4%|▎         | 2130/60000 [02:55<3:18:25,  4.86it/s]Training progress:   4%|▎         | 2140/60000 [02:55<2:25:50,  6.61it/s]Training progress:   4%|▎         | 2150/60000 [02:56<1:49:04,  8.84it/s]Training progress:   4%|▎         | 2160/60000 [02:56<1:23:00, 11.61it/s]Training progress:   4%|▎         | 2170/60000 [02:56<1:05:10, 14.79it/s]Training progress:   4%|▎         | 2180/60000 [02:56<52:37, 18.31it/s]  Training progress:   4%|▎         | 2190/60000 [02:57<43:58, 21.91it/s]Training progress:   4%|▎         | 2200/60000 [02:57<42:57, 22.43it/s]Training progress:   4%|▎         | 2210/60000 [02:57<37:12, 25.89it/s]Training progress:   4%|▎         | 2220/60000 [02:57<33:10, 29.03it/s]Training progress:   4%|▎         | 2230/60000 [02:58<30:34, 31.50it/s]Training progress:   4%|▎         | 2240/60000 [02:58<28:32, 33.73it/s]Training progress:   4%|▍         | 2250/60000 [02:58<27:08, 35.47it/s]Training progress:   4%|▍         | 2260/60000 [02:58<26:18, 36.58it/s]Training progress:   4%|▍         | 2270/60000 [02:59<25:37, 37.55it/s]Training progress:   4%|▍         | 2280/60000 [02:59<24:58, 38.51it/s]Training progress:   4%|▍         | 2290/60000 [02:59<24:37, 39.07it/s]Training progress:   4%|▍         | 2300/60000 [03:00<27:59, 34.35it/s]Training progress:   4%|▍         | 2310/60000 [03:00<26:50, 35.81it/s]Training progress:   4%|▍         | 2320/60000 [03:00<25:54, 37.11it/s]Training progress:   4%|▍         | 2330/60000 [03:00<25:23, 37.85it/s]Training progress:   4%|▍         | 2340/60000 [03:01<25:08, 38.23it/s]Training progress:   4%|▍         | 2350/60000 [03:01<24:59, 38.45it/s]Training progress:   4%|▍         | 2360/60000 [03:01<24:55, 38.54it/s]Training progress:   4%|▍         | 2370/60000 [03:01<24:30, 39.20it/s]Training progress:   4%|▍         | 2380/60000 [03:02<24:33, 39.11it/s]Training progress:   4%|▍         | 2390/60000 [03:02<24:23, 39.35it/s]
+Generating poisoned data at iteration 2400 [11/12 17:17:31]
+Attack iter 0: loss=0.31087, epsilon=1.600000 [11/12 17:17:32]
+Attack iter 10: loss=0.30531, epsilon=16.000000 [11/12 17:17:34]
+Attack iter 20: loss=0.30531, epsilon=16.000000 [11/12 17:17:36]
+Attack iter 30: loss=0.30531, epsilon=16.000000 [11/12 17:17:39]
+Attack iter 40: loss=0.30531, epsilon=16.000000 [11/12 17:17:41]
+Saving poisoned images to /project/hentci/GS-backdoor/IPA-test/test4/poison_data/poisoned_2400 [11/12 17:17:43]
+
+Generating rendered images:   0%|          | 0/194 [00:00<?, ?it/s][A
+Generating rendered images:   2%|▏         | 3/194 [00:00<00:08, 23.19it/s][A
+Generating rendered images:   4%|▎         | 7/194 [00:00<00:06, 28.39it/s][A
+Generating rendered images:   6%|▌         | 11/194 [00:00<00:06, 28.37it/s][A
+Generating rendered images:   8%|▊         | 15/194 [00:00<00:06, 28.94it/s][A
+Generating rendered images:  10%|▉         | 19/194 [00:00<00:05, 29.81it/s][A
+Generating rendered images:  12%|█▏        | 23/194 [00:00<00:05, 30.65it/s][A
+Generating rendered images:  14%|█▍        | 27/194 [00:00<00:05, 31.10it/s][A
+Generating rendered images:  16%|█▌        | 31/194 [00:01<00:05, 31.77it/s][A
+Generating rendered images:  18%|█▊        | 35/194 [00:01<00:04, 31.87it/s][A
+Generating rendered images:  20%|██        | 39/194 [00:01<00:04, 31.97it/s][A
+Generating rendered images:  22%|██▏       | 43/194 [00:01<00:04, 31.94it/s][A
+Generating rendered images:  24%|██▍       | 47/194 [00:01<00:04, 31.93it/s][A
+Generating rendered images:  26%|██▋       | 51/194 [00:01<00:04, 31.76it/s][A
+Generating rendered images:  28%|██▊       | 55/194 [00:01<00:04, 31.71it/s][A
+Generating rendered images:  30%|███       | 59/194 [00:01<00:04, 32.22it/s][A
+Generating rendered images:  32%|███▏      | 63/194 [00:02<00:04, 32.57it/s][A
+Generating rendered images:  35%|███▍      | 67/194 [00:02<00:03, 32.41it/s][A
+Generating rendered images:  37%|███▋      | 71/194 [00:02<00:03, 32.50it/s][A
+Generating rendered images:  39%|███▊      | 75/194 [00:02<00:03, 32.83it/s][A
+Generating rendered images:  41%|████      | 79/194 [00:02<00:03, 32.28it/s][A
+Generating rendered images:  43%|████▎     | 83/194 [00:02<00:03, 31.97it/s][A
+Generating rendered images:  45%|████▍     | 87/194 [00:02<00:03, 32.37it/s][A
+Generating rendered images:  47%|████▋     | 91/194 [00:02<00:03, 32.25it/s][A
+Generating rendered images:  49%|████▉     | 95/194 [00:03<00:03, 32.53it/s][A
+Generating rendered images:  51%|█████     | 99/194 [00:03<00:02, 32.05it/s][A
+Generating rendered images:  53%|█████▎    | 103/194 [00:03<00:02, 31.83it/s][A
+Generating rendered images:  55%|█████▌    | 107/194 [00:03<00:02, 31.25it/s][A
+Generating rendered images:  57%|█████▋    | 111/194 [00:03<00:02, 31.94it/s][A
+Generating rendered images:  59%|█████▉    | 115/194 [00:03<00:02, 32.21it/s][A
+Generating rendered images:  61%|██████▏   | 119/194 [00:03<00:02, 32.47it/s][A
+Generating rendered images:  63%|██████▎   | 123/194 [00:03<00:02, 32.32it/s][A
+Generating rendered images:  65%|██████▌   | 127/194 [00:04<00:02, 32.15it/s][A
+Generating rendered images:  68%|██████▊   | 131/194 [00:04<00:01, 32.38it/s][A
+Generating rendered images:  70%|██████▉   | 135/194 [00:04<00:01, 32.40it/s][A
+Generating rendered images:  72%|███████▏  | 139/194 [00:04<00:01, 32.58it/s][A
+Generating rendered images:  74%|███████▎  | 143/194 [00:04<00:01, 32.65it/s][A
+Generating rendered images:  76%|███████▌  | 147/194 [00:04<00:01, 32.54it/s][A
+Generating rendered images:  78%|███████▊  | 151/194 [00:04<00:01, 32.80it/s][A
+Generating rendered images:  80%|███████▉  | 155/194 [00:04<00:01, 32.04it/s][A
+Generating rendered images:  82%|████████▏ | 159/194 [00:04<00:01, 31.97it/s][A
+Generating rendered images:  84%|████████▍ | 163/194 [00:05<00:00, 31.95it/s][ATraining progress:   4%|▍         | 2390/60000 [03:20<24:23, 39.35it/s]
+Generating rendered images:  86%|████████▌ | 167/194 [00:05<00:00, 32.16it/s][A
+Generating rendered images:  88%|████████▊ | 171/194 [00:05<00:00, 32.08it/s][A
+Generating rendered images:  90%|█████████ | 175/194 [00:05<00:00, 31.97it/s][A
+Generating rendered images:  92%|█████████▏| 179/194 [00:05<00:00, 31.59it/s][A
+Generating rendered images:  94%|█████████▍| 183/194 [00:05<00:00, 31.66it/s][A
+Generating rendered images:  96%|█████████▋| 187/194 [00:05<00:00, 31.39it/s][A
+Generating rendered images:  98%|█████████▊| 191/194 [00:06<00:00, 31.90it/s][AGenerating rendered images: 100%|██████████| 194/194 [00:06<00:00, 31.82it/s]
+Completed poisoned data generation for iteration 2400 [11/12 17:17:50]
+Training progress:   4%|▍         | 2400/60000 [03:21<9:14:15,  1.73it/s]Training progress:   4%|▍         | 2410/60000 [03:21<6:35:36,  2.43it/s]Training progress:   4%|▍         | 2420/60000 [03:21<4:44:28,  3.37it/s]Training progress:   4%|▍         | 2430/60000 [03:21<3:26:28,  4.65it/s]Training progress:   4%|▍         | 2440/60000 [03:22<2:32:04,  6.31it/s]Training progress:   4%|▍         | 2450/60000 [03:22<1:54:00,  8.41it/s]Training progress:   4%|▍         | 2460/60000 [03:22<1:27:05, 11.01it/s]Training progress:   4%|▍         | 2470/60000 [03:22<1:08:19, 14.03it/s]Training progress:   4%|▍         | 2480/60000 [03:23<55:11, 17.37it/s]  Training progress:   4%|▍         | 2490/60000 [03:23<46:00, 20.84it/s]Training progress:   4%|▍         | 2500/60000 [03:23<46:12, 20.74it/s]Training progress:   4%|▍         | 2510/60000 [03:24<40:18, 23.77it/s]Training progress:   4%|▍         | 2520/60000 [03:24<35:44, 26.81it/s]Training progress:   4%|▍         | 2530/60000 [03:24<32:47, 29.22it/s]Training progress:   4%|▍         | 2540/60000 [03:24<30:41, 31.20it/s]Training progress:   4%|▍         | 2550/60000 [03:25<29:03, 32.95it/s]Training progress:   4%|▍         | 2560/60000 [03:25<27:49, 34.41it/s]Training progress:   4%|▍         | 2570/60000 [03:25<26:53, 35.60it/s]Training progress:   4%|▍         | 2580/60000 [03:25<26:32, 36.05it/s]Training progress:   4%|▍         | 2590/60000 [03:26<26:22, 36.28it/s]Training progress:   4%|▍         | 2600/60000 [03:26<31:19, 30.55it/s]Training progress:   4%|▍         | 2610/60000 [03:26<29:35, 32.33it/s]Training progress:   4%|▍         | 2620/60000 [03:27<28:37, 33.40it/s]Training progress:   4%|▍         | 2630/60000 [03:27<27:41, 34.52it/s]Training progress:   4%|▍         | 2640/60000 [03:27<26:59, 35.42it/s]Training progress:   4%|▍         | 2650/60000 [03:28<26:36, 35.93it/s]Training progress:   4%|▍         | 2660/60000 [03:28<26:08, 36.56it/s]Training progress:   4%|▍         | 2670/60000 [03:28<26:02, 36.70it/s]Training progress:   4%|▍         | 2680/60000 [03:28<26:10, 36.50it/s]Training progress:   4%|▍         | 2690/60000 [03:29<25:59, 36.75it/s]
+Generating poisoned data at iteration 2700 [11/12 17:17:58]
+Attack iter 0: loss=0.30088, epsilon=1.600000 [11/12 17:17:58]
+Attack iter 10: loss=0.29677, epsilon=16.000000 [11/12 17:18:01]
+Attack iter 20: loss=0.29677, epsilon=16.000000 [11/12 17:18:03]
+Attack iter 30: loss=0.29677, epsilon=16.000000 [11/12 17:18:06]
+Attack iter 40: loss=0.29677, epsilon=16.000000 [11/12 17:18:09]
+Training progress:   4%|▍         | 2690/60000 [03:40<25:59, 36.75it/s]Saving poisoned images to /project/hentci/GS-backdoor/IPA-test/test4/poison_data/poisoned_2700 [11/12 17:18:11]
+
+Generating rendered images:   0%|          | 0/194 [00:00<?, ?it/s][A
+Generating rendered images:   2%|▏         | 3/194 [00:00<00:06, 29.56it/s][A
+Generating rendered images:   4%|▎         | 7/194 [00:00<00:06, 30.49it/s][A
+Generating rendered images:   6%|▌         | 11/194 [00:00<00:05, 31.12it/s][A
+Generating rendered images:   8%|▊         | 15/194 [00:00<00:05, 31.19it/s][A
+Generating rendered images:  10%|▉         | 19/194 [00:00<00:05, 31.21it/s][A
+Generating rendered images:  12%|█▏        | 23/194 [00:00<00:05, 31.04it/s][A
+Generating rendered images:  14%|█▍        | 27/194 [00:00<00:05, 31.54it/s][A
+Generating rendered images:  16%|█▌        | 31/194 [00:00<00:05, 31.50it/s][A
+Generating rendered images:  18%|█▊        | 35/194 [00:01<00:05, 31.25it/s][A
+Generating rendered images:  20%|██        | 39/194 [00:01<00:04, 31.40it/s][A
+Generating rendered images:  22%|██▏       | 43/194 [00:01<00:04, 31.61it/s][A
+Generating rendered images:  24%|██▍       | 47/194 [00:01<00:04, 31.91it/s][A
+Generating rendered images:  26%|██▋       | 51/194 [00:01<00:04, 31.80it/s][A
+Generating rendered images:  28%|██▊       | 55/194 [00:01<00:04, 31.58it/s][A
+Generating rendered images:  30%|███       | 59/194 [00:01<00:04, 31.77it/s][A
+Generating rendered images:  32%|███▏      | 63/194 [00:02<00:04, 31.74it/s][A
+Generating rendered images:  35%|███▍      | 67/194 [00:02<00:04, 31.73it/s][A
+Generating rendered images:  37%|███▋      | 71/194 [00:02<00:03, 31.93it/s][A
+Generating rendered images:  39%|███▊      | 75/194 [00:02<00:03, 31.74it/s][A
+Generating rendered images:  41%|████      | 79/194 [00:02<00:03, 31.67it/s][A
+Generating rendered images:  43%|████▎     | 83/194 [00:02<00:03, 31.80it/s][A
+Generating rendered images:  45%|████▍     | 87/194 [00:02<00:03, 31.86it/s][A
+Generating rendered images:  47%|████▋     | 91/194 [00:02<00:03, 31.86it/s][A
+Generating rendered images:  49%|████▉     | 95/194 [00:03<00:03, 32.00it/s][A
+Generating rendered images:  51%|█████     | 99/194 [00:03<00:02, 32.00it/s][A
+Generating rendered images:  53%|█████▎    | 103/194 [00:03<00:02, 31.62it/s][A
+Generating rendered images:  55%|█████▌    | 107/194 [00:03<00:02, 31.76it/s][A
+Generating rendered images:  57%|█████▋    | 111/194 [00:03<00:02, 31.68it/s][A
+Generating rendered images:  59%|█████▉    | 115/194 [00:03<00:02, 31.67it/s][A
+Generating rendered images:  61%|██████▏   | 119/194 [00:03<00:02, 31.52it/s][A
+Generating rendered images:  63%|██████▎   | 123/194 [00:03<00:02, 31.48it/s][A
+Generating rendered images:  65%|██████▌   | 127/194 [00:04<00:02, 31.37it/s][A
+Generating rendered images:  68%|██████▊   | 131/194 [00:04<00:01, 31.67it/s][A
+Generating rendered images:  70%|██████▉   | 135/194 [00:04<00:01, 31.51it/s][A
+Generating rendered images:  72%|███████▏  | 139/194 [00:04<00:01, 31.87it/s][A
+Generating rendered images:  74%|███████▎  | 143/194 [00:04<00:01, 32.24it/s][A
+Generating rendered images:  76%|███████▌  | 147/194 [00:04<00:01, 32.10it/s][A
+Generating rendered images:  78%|███████▊  | 151/194 [00:04<00:01, 31.80it/s][A
+Generating rendered images:  80%|███████▉  | 155/194 [00:04<00:01, 31.79it/s][A
+Generating rendered images:  82%|████████▏ | 159/194 [00:05<00:01, 31.67it/s][A
+Generating rendered images:  84%|████████▍ | 163/194 [00:05<00:00, 31.08it/s][A
+Generating rendered images:  86%|████████▌ | 167/194 [00:05<00:00, 30.68it/s][A
+Generating rendered images:  88%|████████▊ | 171/194 [00:05<00:00, 30.64it/s][A
+Generating rendered images:  90%|█████████ | 175/194 [00:05<00:00, 30.56it/s][A
+Generating rendered images:  92%|█████████▏| 179/194 [00:05<00:00, 30.18it/s][A
+Generating rendered images:  94%|█████████▍| 183/194 [00:05<00:00, 30.13it/s][A
+Generating rendered images:  96%|█████████▋| 187/194 [00:05<00:00, 29.96it/s][A
+Generating rendered images:  98%|█████████▊| 190/194 [00:06<00:00, 29.63it/s][A
+Generating rendered images: 100%|██████████| 194/194 [00:06<00:00, 29.68it/s][AGenerating rendered images: 100%|██████████| 194/194 [00:06<00:00, 31.29it/s]
+Completed poisoned data generation for iteration 2700 [11/12 17:18:17]
+Training progress:   4%|▍         | 2700/60000 [03:48<9:34:28,  1.66it/s]Training progress:   5%|▍         | 2710/60000 [03:48<6:50:14,  2.33it/s]Training progress:   5%|▍         | 2720/60000 [03:49<4:55:02,  3.24it/s]Training progress:   5%|▍         | 2730/60000 [03:49<3:34:27,  4.45it/s]Training progress:   5%|▍         | 2740/60000 [03:49<2:37:57,  6.04it/s]Training progress:   5%|▍         | 2750/60000 [03:49<1:58:43,  8.04it/s]Training progress:   5%|▍         | 2760/60000 [03:50<1:30:54, 10.49it/s]Training progress:   5%|▍         | 2770/60000 [03:50<1:11:36, 13.32it/s]Training progress:   5%|▍         | 2780/60000 [03:50<58:02, 16.43it/s]  Training progress:   5%|▍         | 2790/60000 [03:51<48:16, 19.75it/s]Training progress:   5%|▍         | 2800/60000 [03:51<49:23, 19.30it/s]Training progress:   5%|▍         | 2810/60000 [03:51<42:37, 22.37it/s]Training progress:   5%|▍         | 2820/60000 [03:52<38:05, 25.02it/s]Training progress:   5%|▍         | 2830/60000 [03:52<34:49, 27.36it/s]Training progress:   5%|▍         | 2840/60000 [03:52<32:34, 29.24it/s]Training progress:   5%|▍         | 2850/60000 [03:52<30:55, 30.80it/s]Training progress:   5%|▍         | 2860/60000 [03:53<29:50, 31.91it/s]Training progress:   5%|▍         | 2870/60000 [03:53<29:06, 32.71it/s]Training progress:   5%|▍         | 2880/60000 [03:53<28:30, 33.40it/s]Training progress:   5%|▍         | 2890/60000 [03:54<28:08, 33.83it/s]Training progress:   5%|▍         | 2900/60000 [03:54<34:06, 27.90it/s]Training progress:   5%|▍         | 2910/60000 [03:54<32:34, 29.21it/s]Training progress:   5%|▍         | 2920/60000 [03:55<31:17, 30.41it/s]Training progress:   5%|▍         | 2930/60000 [03:55<30:17, 31.39it/s]Training progress:   5%|▍         | 2940/60000 [03:55<29:42, 32.02it/s]Training progress:   5%|▍         | 2950/60000 [03:56<29:16, 32.48it/s]Training progress:   5%|▍         | 2960/60000 [03:56<28:28, 33.38it/s]Training progress:   5%|▍         | 2970/60000 [03:56<28:37, 33.21it/s]Training progress:   5%|▍         | 2980/60000 [03:57<28:19, 33.56it/s]Training progress:   5%|▍         | 2990/60000 [03:57<28:04, 33.84it/s]
+Generating poisoned data at iteration 3000 [11/12 17:18:26]
+Attack iter 0: loss=0.65868, epsilon=1.600000 [11/12 17:18:27]
+Attack iter 10: loss=0.63516, epsilon=16.000000 [11/12 17:18:29]
+Attack iter 20: loss=0.63516, epsilon=16.000000 [11/12 17:18:31]
+Attack iter 30: loss=0.63516, epsilon=16.000000 [11/12 17:18:33]
+Attack iter 40: loss=0.63516, epsilon=16.000000 [11/12 17:18:35]
+Saving poisoned images to /project/hentci/GS-backdoor/IPA-test/test4/poison_data/poisoned_3000 [11/12 17:18:37]
+
+Generating rendered images:   0%|          | 0/194 [00:00<?, ?it/s][A
+Generating rendered images:   2%|▏         | 3/194 [00:00<00:06, 27.64it/s][A
+Generating rendered images:   3%|▎         | 6/194 [00:00<00:06, 28.86it/s][A
+Generating rendered images:   5%|▍         | 9/194 [00:00<00:06, 29.18it/s][A
+Generating rendered images:   7%|▋         | 13/194 [00:00<00:06, 29.60it/s][A
+Generating rendered images:   9%|▉         | 17/194 [00:00<00:05, 30.36it/s][A
+Generating rendered images:  11%|█         | 21/194 [00:00<00:05, 31.05it/s][A
+Generating rendered images:  13%|█▎        | 25/194 [00:00<00:05, 31.25it/s][A
+Generating rendered images:  15%|█▍        | 29/194 [00:00<00:05, 31.31it/s][A
+Generating rendered images:  17%|█▋        | 33/194 [00:01<00:05, 31.34it/s][A
+Generating rendered images:  19%|█▉        | 37/194 [00:01<00:05, 31.27it/s][ATraining progress:   5%|▍         | 2990/60000 [04:10<28:04, 33.84it/s]
+Generating rendered images:  21%|██        | 41/194 [00:01<00:04, 31.42it/s][A
+Generating rendered images:  23%|██▎       | 45/194 [00:01<00:04, 31.53it/s][A
+Generating rendered images:  25%|██▌       | 49/194 [00:01<00:04, 31.64it/s][A
+Generating rendered images:  27%|██▋       | 53/194 [00:01<00:04, 31.60it/s][A
+Generating rendered images:  29%|██▉       | 57/194 [00:01<00:04, 31.80it/s][A
+Generating rendered images:  31%|███▏      | 61/194 [00:01<00:04, 32.32it/s][A
+Generating rendered images:  34%|███▎      | 65/194 [00:02<00:04, 32.19it/s][A
+Generating rendered images:  36%|███▌      | 69/194 [00:02<00:03, 31.96it/s][A
+Generating rendered images:  38%|███▊      | 73/194 [00:02<00:03, 31.88it/s][A
+Generating rendered images:  40%|███▉      | 77/194 [00:02<00:03, 31.92it/s][A
+Generating rendered images:  42%|████▏     | 81/194 [00:02<00:03, 30.87it/s][A
+Generating rendered images:  44%|████▍     | 85/194 [00:02<00:03, 31.27it/s][A
+Generating rendered images:  46%|████▌     | 89/194 [00:02<00:03, 31.27it/s][A
+Generating rendered images:  48%|████▊     | 93/194 [00:02<00:03, 31.55it/s][A
+Generating rendered images:  50%|█████     | 97/194 [00:03<00:03, 31.90it/s][A
+Generating rendered images:  52%|█████▏    | 101/194 [00:03<00:02, 32.19it/s][A
+Generating rendered images:  54%|█████▍    | 105/194 [00:03<00:02, 32.36it/s][A
+Generating rendered images:  56%|█████▌    | 109/194 [00:03<00:02, 30.85it/s][A
+Generating rendered images:  58%|█████▊    | 113/194 [00:03<00:02, 31.56it/s][A
+Generating rendered images:  60%|██████    | 117/194 [00:03<00:02, 31.65it/s][A
+Generating rendered images:  62%|██████▏   | 121/194 [00:03<00:02, 31.89it/s][A
+Generating rendered images:  64%|██████▍   | 125/194 [00:03<00:02, 31.57it/s][A
+Generating rendered images:  66%|██████▋   | 129/194 [00:04<00:02, 31.96it/s][A
+Generating rendered images:  69%|██████▊   | 133/194 [00:04<00:01, 31.86it/s][A
+Generating rendered images:  71%|███████   | 137/194 [00:04<00:01, 32.51it/s][A
+Generating rendered images:  73%|███████▎  | 141/194 [00:04<00:01, 32.52it/s][A
+Generating rendered images:  75%|███████▍  | 145/194 [00:04<00:01, 32.35it/s][A
+Generating rendered images:  77%|███████▋  | 149/194 [00:04<00:01, 31.91it/s][A
+Generating rendered images:  79%|███████▉  | 153/194 [00:04<00:01, 31.60it/s][A
+Generating rendered images:  81%|████████  | 157/194 [00:04<00:01, 31.93it/s][A
+Generating rendered images:  83%|████████▎ | 161/194 [00:05<00:01, 31.95it/s][A
+Generating rendered images:  85%|████████▌ | 165/194 [00:05<00:00, 32.01it/s][A
+Generating rendered images:  87%|████████▋ | 169/194 [00:05<00:00, 32.18it/s][A
+Generating rendered images:  89%|████████▉ | 173/194 [00:05<00:00, 32.19it/s][A
+Generating rendered images:  91%|█████████ | 177/194 [00:05<00:00, 32.63it/s][A
+Generating rendered images:  93%|█████████▎| 181/194 [00:05<00:00, 32.55it/s][A
+Generating rendered images:  95%|█████████▌| 185/194 [00:05<00:00, 32.22it/s][A
+Generating rendered images:  97%|█████████▋| 189/194 [00:05<00:00, 32.01it/s][A
+Generating rendered images:  99%|█████████▉| 193/194 [00:06<00:00, 32.21it/s][AGenerating rendered images: 100%|██████████| 194/194 [00:06<00:00, 31.70it/s]
+Completed poisoned data generation for iteration 3000 [11/12 17:18:43]
+Training progress:   5%|▌         | 3000/60000 [04:14<8:43:22,  1.82it/s]Training progress:   5%|▌         | 3010/60000 [04:15<6:14:13,  2.54it/s]Training progress:   5%|▌         | 3020/60000 [04:15<4:31:08,  3.50it/s]Training progress:   5%|▌         | 3030/60000 [04:15<3:19:36,  4.76it/s]Training progress:   5%|▌         | 3040/60000 [04:16<2:28:48,  6.38it/s]Training progress:   5%|▌         | 3050/60000 [04:16<1:53:23,  8.37it/s]Training progress:   5%|▌         | 3060/60000 [04:16<1:28:37, 10.71it/s]Training progress:   5%|▌         | 3070/60000 [04:17<1:10:55, 13.38it/s]Training progress:   5%|▌         | 3080/60000 [04:17<58:31, 16.21it/s]  Training progress:   5%|▌         | 3090/60000 [04:17<50:12, 18.89it/s]Training progress:   5%|▌         | 3100/60000 [04:18<53:11, 17.83it/s]Training progress:   5%|▌         | 3110/60000 [04:18<44:59, 21.07it/s]Training progress:   5%|▌         | 3120/60000 [04:19<39:04, 24.26it/s]Training progress:   5%|▌         | 3130/60000 [04:19<34:51, 27.19it/s]Training progress:   5%|▌         | 3140/60000 [04:19<31:56, 29.67it/s]Training progress:   5%|▌         | 3150/60000 [04:19<29:30, 32.10it/s]Training progress:   5%|▌         | 3160/60000 [04:20<28:13, 33.57it/s]Training progress:   5%|▌         | 3170/60000 [04:20<27:29, 34.44it/s]Training progress:   5%|▌         | 3180/60000 [04:20<26:39, 35.52it/s]Training progress:   5%|▌         | 3190/60000 [04:20<26:00, 36.40it/s]Training progress:   5%|▌         | 3200/60000 [04:21<31:31, 30.03it/s]Training progress:   5%|▌         | 3210/60000 [04:21<29:26, 32.15it/s]Training progress:   5%|▌         | 3220/60000 [04:21<28:13, 33.52it/s]Training progress:   5%|▌         | 3230/60000 [04:22<27:16, 34.70it/s]Training progress:   5%|▌         | 3240/60000 [04:22<26:49, 35.26it/s]Training progress:   5%|▌         | 3250/60000 [04:22<26:26, 35.78it/s]Training progress:   5%|▌         | 3260/60000 [04:22<26:06, 36.21it/s]Training progress:   5%|▌         | 3270/60000 [04:23<25:52, 36.54it/s]Training progress:   5%|▌         | 3280/60000 [04:23<25:44, 36.73it/s]Training progress:   5%|▌         | 3290/60000 [04:23<25:36, 36.90it/s]
+Generating poisoned data at iteration 3300 [11/12 17:18:53]
+Attack iter 0: loss=0.30791, epsilon=1.600000 [11/12 17:18:53]
+Attack iter 10: loss=0.30052, epsilon=16.000000 [11/12 17:18:55]
+Attack iter 20: loss=0.30052, epsilon=16.000000 [11/12 17:18:58]
+Attack iter 30: loss=0.30052, epsilon=16.000000 [11/12 17:19:00]
+Attack iter 40: loss=0.30052, epsilon=16.000000 [11/12 17:19:03]
+Saving poisoned images to /project/hentci/GS-backdoor/IPA-test/test4/poison_data/poisoned_3300 [11/12 17:19:05]
+
+Generating rendered images:   0%|          | 0/194 [00:00<?, ?it/s][A
+Generating rendered images:   2%|▏         | 4/194 [00:00<00:06, 30.20it/s][A
+Generating rendered images:   4%|▍         | 8/194 [00:00<00:05, 31.20it/s][A
+Generating rendered images:   6%|▌         | 12/194 [00:00<00:05, 31.19it/s][A
+Generating rendered images:   8%|▊         | 16/194 [00:00<00:05, 31.42it/s][A
+Generating rendered images:  10%|█         | 20/194 [00:00<00:05, 31.37it/s][A
+Generating rendered images:  12%|█▏        | 24/194 [00:00<00:05, 31.65it/s][A
+Generating rendered images:  14%|█▍        | 28/194 [00:00<00:05, 31.34it/s][A
+Generating rendered images:  16%|█▋        | 32/194 [00:01<00:05, 30.98it/s][A
+Generating rendered images:  19%|█▊        | 36/194 [00:01<00:05, 31.12it/s][A
+Generating rendered images:  21%|██        | 40/194 [00:01<00:04, 30.89it/s][A
+Generating rendered images:  23%|██▎       | 44/194 [00:01<00:04, 31.00it/s][A
+Generating rendered images:  25%|██▍       | 48/194 [00:01<00:04, 31.24it/s][A
+Generating rendered images:  27%|██▋       | 52/194 [00:01<00:04, 31.39it/s][A
+Generating rendered images:  29%|██▉       | 56/194 [00:01<00:04, 31.38it/s][A
+Generating rendered images:  31%|███       | 60/194 [00:01<00:04, 31.43it/s][A
+Generating rendered images:  33%|███▎      | 64/194 [00:02<00:04, 31.85it/s][A
+Generating rendered images:  35%|███▌      | 68/194 [00:02<00:03, 32.04it/s][A
+Generating rendered images:  37%|███▋      | 72/194 [00:02<00:03, 31.72it/s][A
+Generating rendered images:  39%|███▉      | 76/194 [00:02<00:03, 32.00it/s][A
+Generating rendered images:  41%|████      | 80/194 [00:02<00:03, 31.63it/s][A
+Generating rendered images:  43%|████▎     | 84/194 [00:02<00:03, 31.71it/s][A
+Generating rendered images:  45%|████▌     | 88/194 [00:02<00:03, 31.79it/s][A
+Generating rendered images:  47%|████▋     | 92/194 [00:02<00:03, 31.83it/s][A
+Generating rendered images:  49%|████▉     | 96/194 [00:03<00:03, 31.62it/s][A
+Generating rendered images:  52%|█████▏    | 100/194 [00:03<00:02, 31.57it/s][A
+Generating rendered images:  54%|█████▎    | 104/194 [00:03<00:02, 31.12it/s][A
+Generating rendered images:  56%|█████▌    | 108/194 [00:03<00:02, 31.20it/s][A
+Generating rendered images:  58%|█████▊    | 112/194 [00:03<00:02, 31.04it/s][ATraining progress:   5%|▌         | 3290/60000 [04:40<25:36, 36.90it/s]
+Generating rendered images:  60%|█████▉    | 116/194 [00:03<00:02, 31.35it/s][A
+Generating rendered images:  62%|██████▏   | 120/194 [00:03<00:02, 31.74it/s][A
+Generating rendered images:  64%|██████▍   | 124/194 [00:03<00:02, 31.64it/s][A
+Generating rendered images:  66%|██████▌   | 128/194 [00:04<00:02, 31.68it/s][A
+Generating rendered images:  68%|██████▊   | 132/194 [00:04<00:01, 31.62it/s][A
+Generating rendered images:  70%|███████   | 136/194 [00:04<00:01, 31.59it/s][A
+Generating rendered images:  72%|███████▏  | 140/194 [00:04<00:01, 31.27it/s][A
+Generating rendered images:  74%|███████▍  | 144/194 [00:04<00:01, 31.36it/s][A
+Generating rendered images:  76%|███████▋  | 148/194 [00:04<00:01, 31.03it/s][A
+Generating rendered images:  78%|███████▊  | 152/194 [00:04<00:01, 31.23it/s][A
+Generating rendered images:  80%|████████  | 156/194 [00:04<00:01, 31.07it/s][A
+Generating rendered images:  82%|████████▏ | 160/194 [00:05<00:01, 31.43it/s][A
+Generating rendered images:  85%|████████▍ | 164/194 [00:05<00:00, 31.44it/s][A
+Generating rendered images:  87%|████████▋ | 168/194 [00:05<00:00, 31.66it/s][A
+Generating rendered images:  89%|████████▊ | 172/194 [00:05<00:00, 31.57it/s][A
+Generating rendered images:  91%|█████████ | 176/194 [00:05<00:00, 31.61it/s][A
+Generating rendered images:  93%|█████████▎| 180/194 [00:05<00:00, 31.45it/s][A
+Generating rendered images:  95%|█████████▍| 184/194 [00:05<00:00, 31.52it/s][A
+Generating rendered images:  97%|█████████▋| 188/194 [00:05<00:00, 31.14it/s][A
+Generating rendered images:  99%|█████████▉| 192/194 [00:06<00:00, 31.03it/s][AGenerating rendered images: 100%|██████████| 194/194 [00:06<00:00, 31.39it/s]
+Completed poisoned data generation for iteration 3300 [11/12 17:19:11]
+Training progress:   6%|▌         | 3300/60000 [04:42<9:14:34,  1.70it/s]Training progress:   6%|▌         | 3310/60000 [04:42<6:35:38,  2.39it/s]Training progress:   6%|▌         | 3320/60000 [04:43<4:44:25,  3.32it/s]Training progress:   6%|▌         | 3330/60000 [04:43<3:26:56,  4.56it/s]Training progress:   6%|▌         | 3340/60000 [04:43<2:32:32,  6.19it/s]Training progress:   6%|▌         | 3350/60000 [04:44<1:54:21,  8.26it/s]Training progress:   6%|▌         | 3360/60000 [04:44<1:27:34, 10.78it/s]Training progress:   6%|▌         | 3370/60000 [04:44<1:09:06, 13.66it/s]Training progress:   6%|▌         | 3380/60000 [04:44<56:05, 16.83it/s]  Training progress:   6%|▌         | 3390/60000 [04:45<46:52, 20.13it/s]Training progress:   6%|▌         | 3400/60000 [04:45<49:01, 19.24it/s]Training progress:   6%|▌         | 3410/60000 [04:45<43:00, 21.93it/s]Training progress:   6%|▌         | 3420/60000 [04:46<38:07, 24.74it/s]Training progress:   6%|▌         | 3430/60000 [04:46<34:37, 27.23it/s]Training progress:   6%|▌         | 3440/60000 [04:46<32:16, 29.21it/s]Training progress:   6%|▌         | 3450/60000 [04:47<30:31, 30.88it/s]Training progress:   6%|▌         | 3460/60000 [04:47<29:22, 32.08it/s]Training progress:   6%|▌         | 3470/60000 [04:47<28:22, 33.20it/s]Training progress:   6%|▌         | 3480/60000 [04:47<27:46, 33.92it/s]Training progress:   6%|▌         | 3490/60000 [04:48<27:18, 34.48it/s]Training progress:   6%|▌         | 3500/60000 [04:48<34:35, 27.22it/s]Training progress:   6%|▌         | 3510/60000 [04:49<32:22, 29.08it/s]Training progress:   6%|▌         | 3520/60000 [04:49<31:03, 30.31it/s]Training progress:   6%|▌         | 3530/60000 [04:49<29:47, 31.60it/s]Training progress:   6%|▌         | 3540/60000 [04:49<29:04, 32.36it/s]Training progress:   6%|▌         | 3550/60000 [04:50<28:30, 32.99it/s]Training progress:   6%|▌         | 3560/60000 [04:50<28:07, 33.44it/s]Training progress:   6%|▌         | 3570/60000 [04:50<27:54, 33.70it/s]Training progress:   6%|▌         | 3580/60000 [04:51<27:31, 34.16it/s]Training progress:   6%|▌         | 3590/60000 [04:51<27:51, 33.75it/s]
+Generating poisoned data at iteration 3600 [11/12 17:19:20]
+Attack iter 0: loss=0.28777, epsilon=1.600000 [11/12 17:19:21]
+Attack iter 10: loss=0.28228, epsilon=16.000000 [11/12 17:19:23]
+Attack iter 20: loss=0.28228, epsilon=16.000000 [11/12 17:19:26]
+Attack iter 30: loss=0.28228, epsilon=16.000000 [11/12 17:19:28]
+Attack iter 40: loss=0.28228, epsilon=16.000000 [11/12 17:19:31]
+Saving poisoned images to /project/hentci/GS-backdoor/IPA-test/test4/poison_data/poisoned_3600 [11/12 17:19:33]
+
+Generating rendered images:   0%|          | 0/194 [00:00<?, ?it/s][A
+Generating rendered images:   2%|▏         | 3/194 [00:00<00:06, 28.39it/s][A
+Generating rendered images:   3%|▎         | 6/194 [00:00<00:06, 28.65it/s][A
+Generating rendered images:   5%|▍         | 9/194 [00:00<00:06, 29.12it/s][A
+Generating rendered images:   6%|▌         | 12/194 [00:00<00:06, 29.02it/s][A
+Generating rendered images:   8%|▊         | 15/194 [00:00<00:06, 29.08it/s][A
+Generating rendered images:   9%|▉         | 18/194 [00:00<00:06, 29.05it/s][A
+Generating rendered images:  11%|█         | 21/194 [00:00<00:05, 29.09it/s][A
+Generating rendered images:  12%|█▏        | 24/194 [00:00<00:05, 29.35it/s][A
+Generating rendered images:  14%|█▍        | 27/194 [00:00<00:05, 29.16it/s][A
+Generating rendered images:  15%|█▌        | 30/194 [00:01<00:05, 29.08it/s][A
+Generating rendered images:  17%|█▋        | 33/194 [00:01<00:05, 28.98it/s][A
+Generating rendered images:  19%|█▉        | 37/194 [00:01<00:05, 29.69it/s][A
+Generating rendered images:  21%|██        | 41/194 [00:01<00:05, 30.20it/s][A
+Generating rendered images:  23%|██▎       | 45/194 [00:01<00:04, 30.87it/s][A
+Generating rendered images:  25%|██▌       | 49/194 [00:01<00:04, 31.21it/s][A
+Generating rendered images:  27%|██▋       | 53/194 [00:01<00:04, 31.31it/s][A
+Generating rendered images:  29%|██▉       | 57/194 [00:01<00:04, 31.54it/s][A
+Generating rendered images:  31%|███▏      | 61/194 [00:02<00:04, 30.94it/s][A
+Generating rendered images:  34%|███▎      | 65/194 [00:02<00:04, 31.28it/s][A
+Generating rendered images:  36%|███▌      | 69/194 [00:02<00:03, 31.30it/s][A
+Generating rendered images:  38%|███▊      | 73/194 [00:02<00:03, 31.26it/s][A
+Generating rendered images:  40%|███▉      | 77/194 [00:02<00:03, 31.35it/s][A
+Generating rendered images:  42%|████▏     | 81/194 [00:02<00:03, 31.21it/s][A
+Generating rendered images:  44%|████▍     | 85/194 [00:02<00:03, 31.18it/s][A
+Generating rendered images:  46%|████▌     | 89/194 [00:02<00:03, 31.38it/s][A
+Generating rendered images:  48%|████▊     | 93/194 [00:03<00:03, 30.97it/s][A
+Generating rendered images:  50%|█████     | 97/194 [00:03<00:03, 30.86it/s][A
+Generating rendered images:  52%|█████▏    | 101/194 [00:03<00:02, 31.36it/s][A
+Generating rendered images:  54%|█████▍    | 105/194 [00:03<00:02, 31.01it/s][A
+Generating rendered images:  56%|█████▌    | 109/194 [00:03<00:02, 31.21it/s][A
+Generating rendered images:  58%|█████▊    | 113/194 [00:03<00:02, 31.43it/s][A
+Generating rendered images:  60%|██████    | 117/194 [00:03<00:02, 31.37it/s][A
+Generating rendered images:  62%|██████▏   | 121/194 [00:03<00:02, 30.92it/s][A
+Generating rendered images:  64%|██████▍   | 125/194 [00:04<00:02, 30.82it/s][A
+Generating rendered images:  66%|██████▋   | 129/194 [00:04<00:02, 30.87it/s][A
+Generating rendered images:  69%|██████▊   | 133/194 [00:04<00:02, 30.32it/s][A
+Generating rendered images:  71%|███████   | 137/194 [00:04<00:01, 30.08it/s][A
+Generating rendered images:  73%|███████▎  | 141/194 [00:04<00:01, 30.36it/s][A
+Generating rendered images:  75%|███████▍  | 145/194 [00:04<00:01, 30.46it/s][A
+Generating rendered images:  77%|███████▋  | 149/194 [00:04<00:01, 30.70it/s][A
+Generating rendered images:  79%|███████▉  | 153/194 [00:05<00:01, 30.73it/s][A
+Generating rendered images:  81%|████████  | 157/194 [00:05<00:01, 30.84it/s][A
+Generating rendered images:  83%|████████▎ | 161/194 [00:05<00:01, 31.37it/s][ATraining progress:   6%|▌         | 3590/60000 [05:10<27:51, 33.75it/s]
+Generating rendered images:  85%|████████▌ | 165/194 [00:05<00:00, 31.57it/s][A
+Generating rendered images:  87%|████████▋ | 169/194 [00:05<00:00, 31.40it/s][A
+Generating rendered images:  89%|████████▉ | 173/194 [00:05<00:00, 31.40it/s][A
+Generating rendered images:  91%|█████████ | 177/194 [00:05<00:00, 31.42it/s][A
+Generating rendered images:  93%|█████████▎| 181/194 [00:05<00:00, 30.88it/s][A
+Generating rendered images:  95%|█████████▌| 185/194 [00:06<00:00, 31.36it/s][A
+Generating rendered images:  97%|█████████▋| 189/194 [00:06<00:00, 31.15it/s][A
+Generating rendered images:  99%|█████████▉| 193/194 [00:06<00:00, 31.03it/s][AGenerating rendered images: 100%|██████████| 194/194 [00:06<00:00, 30.74it/s]
+Completed poisoned data generation for iteration 3600 [11/12 17:19:40]
+Training progress:   6%|▌         | 3600/60000 [05:11<9:34:47,  1.64it/s]Training progress:   6%|▌         | 3610/60000 [05:11<6:50:29,  2.29it/s]Training progress:   6%|▌         | 3620/60000 [05:11<4:55:38,  3.18it/s]Training progress:   6%|▌         | 3630/60000 [05:11<3:35:11,  4.37it/s]Training progress:   6%|▌         | 3640/60000 [05:12<2:38:56,  5.91it/s]Training progress:   6%|▌         | 3650/60000 [05:12<1:59:36,  7.85it/s]Training progress:   6%|▌         | 3660/60000 [05:12<1:31:40, 10.24it/s]Training progress:   6%|▌         | 3670/60000 [05:13<1:12:31, 12.95it/s]Training progress:   6%|▌         | 3680/60000 [05:13<59:15, 15.84it/s]  Training progress:   6%|▌         | 3690/60000 [05:13<49:33, 18.94it/s]Training progress:   6%|▌         | 3700/60000 [05:14<52:51, 17.75it/s]Training progress:   6%|▌         | 3710/60000 [05:14<45:58, 20.41it/s]Training progress:   6%|▌         | 3720/60000 [05:15<40:45, 23.02it/s]Training progress:   6%|▌         | 3730/60000 [05:15<36:59, 25.36it/s]Training progress:   6%|▌         | 3740/60000 [05:15<34:21, 27.29it/s]Training progress:   6%|▋         | 3750/60000 [05:15<32:32, 28.81it/s]Training progress:   6%|▋         | 3760/60000 [05:16<31:20, 29.91it/s]Training progress:   6%|▋         | 3770/60000 [05:16<30:41, 30.54it/s]Training progress:   6%|▋         | 3780/60000 [05:16<30:08, 31.08it/s]Training progress:   6%|▋         | 3790/60000 [05:17<29:34, 31.67it/s]Training progress:   6%|▋         | 3800/60000 [05:17<37:26, 25.02it/s]Training progress:   6%|▋         | 3810/60000 [05:18<35:05, 26.69it/s]Training progress:   6%|▋         | 3820/60000 [05:18<33:25, 28.02it/s]Training progress:   6%|▋         | 3830/60000 [05:18<32:12, 29.07it/s]Training progress:   6%|▋         | 3840/60000 [05:19<31:49, 29.41it/s]Training progress:   6%|▋         | 3850/60000 [05:19<30:59, 30.19it/s]Training progress:   6%|▋         | 3860/60000 [05:19<30:21, 30.82it/s]Training progress:   6%|▋         | 3870/60000 [05:19<30:06, 31.08it/s]Training progress:   6%|▋         | 3880/60000 [05:20<29:47, 31.40it/s]Training progress:   6%|▋         | 3890/60000 [05:20<29:42, 31.47it/s]
+Generating poisoned data at iteration 3900 [11/12 17:19:50]
+Attack iter 0: loss=0.28282, epsilon=1.600000 [11/12 17:19:50]
+Attack iter 10: loss=0.27704, epsilon=16.000000 [11/12 17:19:53]
+Attack iter 20: loss=0.27704, epsilon=16.000000 [11/12 17:19:55]
+Attack iter 30: loss=0.27704, epsilon=16.000000 [11/12 17:19:58]
+Attack iter 40: loss=0.27704, epsilon=16.000000 [11/12 17:20:01]
+Saving poisoned images to /project/hentci/GS-backdoor/IPA-test/test4/poison_data/poisoned_3900 [11/12 17:20:03]
+
+Generating rendered images:   0%|          | 0/194 [00:00<?, ?it/s][A
+Generating rendered images:   2%|▏         | 3/194 [00:00<00:06, 27.82it/s][A
+Generating rendered images:   3%|▎         | 6/194 [00:00<00:06, 28.26it/s][A
+Generating rendered images:   5%|▍         | 9/194 [00:00<00:06, 28.06it/s][A
+Generating rendered images:   6%|▌         | 12/194 [00:00<00:06, 27.81it/s][A
+Generating rendered images:   8%|▊         | 15/194 [00:00<00:06, 28.01it/s][A
+Generating rendered images:   9%|▉         | 18/194 [00:00<00:06, 27.25it/s][A
+Generating rendered images:  11%|█         | 21/194 [00:00<00:06, 27.89it/s][A
+Generating rendered images:  12%|█▏        | 24/194 [00:00<00:05, 28.35it/s][A
+Generating rendered images:  14%|█▍        | 27/194 [00:00<00:05, 28.82it/s][A
+Generating rendered images:  15%|█▌        | 30/194 [00:01<00:05, 28.99it/s][A
+Generating rendered images:  17%|█▋        | 33/194 [00:01<00:05, 28.46it/s][A
+Generating rendered images:  19%|█▊        | 36/194 [00:01<00:05, 27.05it/s][A
+Generating rendered images:  21%|██        | 40/194 [00:01<00:05, 28.13it/s][A
+Generating rendered images:  23%|██▎       | 44/194 [00:01<00:05, 28.85it/s][A
+Generating rendered images:  25%|██▍       | 48/194 [00:01<00:04, 29.36it/s][A
+Generating rendered images:  27%|██▋       | 52/194 [00:01<00:04, 29.82it/s][A
+Generating rendered images:  28%|██▊       | 55/194 [00:01<00:04, 29.61it/s][A
+Generating rendered images:  30%|██▉       | 58/194 [00:02<00:04, 29.67it/s][A
+Generating rendered images:  32%|███▏      | 62/194 [00:02<00:04, 30.24it/s][A
+Generating rendered images:  34%|███▍      | 66/194 [00:02<00:04, 30.39it/s][A
+Generating rendered images:  36%|███▌      | 70/194 [00:02<00:04, 30.15it/s][A
+Generating rendered images:  38%|███▊      | 74/194 [00:02<00:04, 29.87it/s][A
+Generating rendered images:  40%|████      | 78/194 [00:02<00:03, 30.21it/s][A
+Generating rendered images:  42%|████▏     | 82/194 [00:02<00:03, 30.01it/s][A
+Generating rendered images:  44%|████▍     | 86/194 [00:02<00:03, 29.51it/s][A
+Generating rendered images:  46%|████▌     | 89/194 [00:03<00:03, 28.99it/s][A
+Generating rendered images:  47%|████▋     | 92/194 [00:03<00:03, 28.85it/s][A
+Generating rendered images:  49%|████▉     | 95/194 [00:03<00:03, 28.94it/s][A
+Generating rendered images:  51%|█████     | 98/194 [00:03<00:03, 28.97it/s][A
+Generating rendered images:  52%|█████▏    | 101/194 [00:03<00:03, 28.75it/s][A
+Generating rendered images:  54%|█████▎    | 104/194 [00:03<00:03, 28.75it/s][A
+Generating rendered images:  55%|█████▌    | 107/194 [00:03<00:03, 28.92it/s][A
+Generating rendered images:  57%|█████▋    | 110/194 [00:03<00:02, 28.18it/s][A
+Generating rendered images:  58%|█████▊    | 113/194 [00:03<00:02, 28.47it/s][A
+Generating rendered images:  60%|█████▉    | 116/194 [00:04<00:02, 28.53it/s][A
+Generating rendered images:  61%|██████▏   | 119/194 [00:04<00:02, 28.58it/s][A
+Generating rendered images:  63%|██████▎   | 122/194 [00:04<00:02, 28.80it/s][A
+Generating rendered images:  64%|██████▍   | 125/194 [00:04<00:02, 28.58it/s][A
+Generating rendered images:  66%|██████▌   | 128/194 [00:04<00:02, 28.71it/s][A
+Generating rendered images:  68%|██████▊   | 131/194 [00:04<00:02, 28.82it/s][A
+Generating rendered images:  69%|██████▉   | 134/194 [00:04<00:02, 28.83it/s][A
+Generating rendered images:  71%|███████   | 137/194 [00:04<00:01, 28.68it/s][A
+Generating rendered images:  72%|███████▏  | 140/194 [00:04<00:01, 28.79it/s][A
+Generating rendered images:  74%|███████▎  | 143/194 [00:04<00:01, 28.45it/s][A
+Generating rendered images:  75%|███████▌  | 146/194 [00:05<00:01, 28.38it/s][A
+Generating rendered images:  77%|███████▋  | 149/194 [00:05<00:01, 28.33it/s][A
+Generating rendered images:  78%|███████▊  | 152/194 [00:05<00:01, 28.15it/s][ATraining progress:   6%|▋         | 3890/60000 [05:40<29:42, 31.47it/s]
+Generating rendered images:  80%|███████▉  | 155/194 [00:05<00:01, 28.51it/s][A
+Generating rendered images:  81%|████████▏ | 158/194 [00:05<00:01, 28.79it/s][A
+Generating rendered images:  83%|████████▎ | 161/194 [00:05<00:01, 28.69it/s][A
+Generating rendered images:  85%|████████▍ | 164/194 [00:05<00:01, 28.92it/s][A
+Generating rendered images:  86%|████████▌ | 167/194 [00:05<00:00, 28.81it/s][A
+Generating rendered images:  88%|████████▊ | 170/194 [00:05<00:00, 28.65it/s][A
+Generating rendered images:  89%|████████▉ | 173/194 [00:05<00:00, 28.58it/s][A
+Generating rendered images:  91%|█████████ | 176/194 [00:06<00:00, 28.59it/s][A
+Generating rendered images:  92%|█████████▏| 179/194 [00:06<00:00, 28.59it/s][A
+Generating rendered images:  94%|█████████▍| 182/194 [00:06<00:00, 28.98it/s][A
+Generating rendered images:  95%|█████████▌| 185/194 [00:06<00:00, 28.82it/s][A
+Generating rendered images:  97%|█████████▋| 188/194 [00:06<00:00, 28.63it/s][A
+Generating rendered images:  98%|█████████▊| 191/194 [00:06<00:00, 28.69it/s][A
+Generating rendered images: 100%|██████████| 194/194 [00:06<00:00, 28.69it/s][AGenerating rendered images: 100%|██████████| 194/194 [00:06<00:00, 28.83it/s]
+Completed poisoned data generation for iteration 3900 [11/12 17:20:10]
+Training progress:   6%|▋         | 3900/60000 [05:41<10:06:51,  1.54it/s]Training progress:   7%|▋         | 3910/60000 [05:41<7:13:38,  2.16it/s] Training progress:   7%|▋         | 3920/60000 [05:42<5:12:31,  2.99it/s]Training progress:   7%|▋         | 3930/60000 [05:42<3:47:51,  4.10it/s]Training progress:   7%|▋         | 3940/60000 [05:42<2:48:46,  5.54it/s]Training progress:   7%|▋         | 3950/60000 [05:43<2:07:00,  7.35it/s]Training progress:   7%|▋         | 3960/60000 [05:43<1:37:37,  9.57it/s]Training progress:   7%|▋         | 3970/60000 [05:43<1:17:23, 12.07it/s]Training progress:   7%|▋         | 3980/60000 [05:44<1:03:05, 14.80it/s]Training progress:   7%|▋         | 3990/60000 [05:44<53:00, 17.61it/s]  Training progress:   7%|▋         | 4000/60000 [05:45<57:37, 16.19it/s]Training progress:   7%|▋         | 4010/60000 [05:45<50:02, 18.65it/s]Training progress:   7%|▋         | 4020/60000 [05:45<44:24, 21.01it/s]Training progress:   7%|▋         | 4030/60000 [05:46<40:13, 23.19it/s]Training progress:   7%|▋         | 4040/60000 [05:46<37:16, 25.02it/s]Training progress:   7%|▋         | 4050/60000 [05:46<35:30, 26.26it/s]Training progress:   7%|▋         | 4060/60000 [05:47<34:18, 27.18it/s]Training progress:   7%|▋         | 4070/60000 [05:47<33:14, 28.05it/s]Training progress:   7%|▋         | 4080/60000 [05:47<32:26, 28.72it/s]Training progress:   7%|▋         | 4090/60000 [05:48<31:59, 29.13it/s]Training progress:   7%|▋         | 4100/60000 [05:48<41:34, 22.41it/s]Training progress:   7%|▋         | 4110/60000 [05:49<38:50, 23.99it/s]Training progress:   7%|▋         | 4120/60000 [05:49<36:33, 25.48it/s]Training progress:   7%|▋         | 4130/60000 [05:49<35:16, 26.40it/s]Training progress:   7%|▋         | 4140/60000 [05:50<34:05, 27.31it/s]Training progress:   7%|▋         | 4150/60000 [05:50<33:32, 27.75it/s]Training progress:   7%|▋         | 4160/60000 [05:50<32:55, 28.26it/s]Training progress:   7%|▋         | 4170/60000 [05:51<32:33, 28.58it/s]Training progress:   7%|▋         | 4180/60000 [05:51<32:27, 28.66it/s]Training progress:   7%|▋         | 4190/60000 [05:51<32:08, 28.93it/s]
+Generating poisoned data at iteration 4200 [11/12 17:20:21]
+Attack iter 0: loss=0.27219, epsilon=1.600000 [11/12 17:20:21]
+Attack iter 10: loss=0.26680, epsilon=16.000000 [11/12 17:20:24]
+Attack iter 20: loss=0.26680, epsilon=16.000000 [11/12 17:20:27]
+Attack iter 30: loss=0.26680, epsilon=16.000000 [11/12 17:20:30]
+Attack iter 40: loss=0.26680, epsilon=16.000000 [11/12 17:20:33]
+Saving poisoned images to /project/hentci/GS-backdoor/IPA-test/test4/poison_data/poisoned_4200 [11/12 17:20:35]
+
+Generating rendered images:   0%|          | 0/194 [00:00<?, ?it/s][A
+Generating rendered images:   2%|▏         | 3/194 [00:00<00:06, 29.18it/s][A
+Generating rendered images:   4%|▎         | 7/194 [00:00<00:06, 30.25it/s][A
+Generating rendered images:   6%|▌         | 11/194 [00:00<00:06, 30.20it/s][A
+Generating rendered images:   8%|▊         | 15/194 [00:00<00:05, 30.04it/s][A
+Generating rendered images:  10%|▉         | 19/194 [00:00<00:05, 30.20it/s][A
+Generating rendered images:  12%|█▏        | 23/194 [00:00<00:05, 30.16it/s][A
+Generating rendered images:  14%|█▍        | 27/194 [00:00<00:05, 30.12it/s][A
+Generating rendered images:  16%|█▌        | 31/194 [00:01<00:05, 30.84it/s][A
+Generating rendered images:  18%|█▊        | 35/194 [00:01<00:05, 30.65it/s][A
+Generating rendered images:  20%|██        | 39/194 [00:01<00:04, 31.01it/s][A
+Generating rendered images:  22%|██▏       | 43/194 [00:01<00:04, 30.98it/s][A
+Generating rendered images:  24%|██▍       | 47/194 [00:01<00:04, 30.72it/s][A
+Generating rendered images:  26%|██▋       | 51/194 [00:01<00:04, 30.69it/s][A
+Generating rendered images:  28%|██▊       | 55/194 [00:01<00:04, 30.50it/s][A
+Generating rendered images:  30%|███       | 59/194 [00:01<00:04, 30.69it/s][A
+Generating rendered images:  32%|███▏      | 63/194 [00:02<00:04, 30.72it/s][A
+Generating rendered images:  35%|███▍      | 67/194 [00:02<00:04, 30.59it/s][A
+Generating rendered images:  37%|███▋      | 71/194 [00:02<00:04, 30.12it/s][A
+Generating rendered images:  39%|███▊      | 75/194 [00:02<00:03, 30.31it/s][A
+Generating rendered images:  41%|████      | 79/194 [00:02<00:03, 30.35it/s][A
+Generating rendered images:  43%|████▎     | 83/194 [00:02<00:03, 30.33it/s][A
+Generating rendered images:  45%|████▍     | 87/194 [00:02<00:03, 30.77it/s][A
+Generating rendered images:  47%|████▋     | 91/194 [00:02<00:03, 30.62it/s][A
+Generating rendered images:  49%|████▉     | 95/194 [00:03<00:03, 30.23it/s][A
+Generating rendered images:  51%|█████     | 99/194 [00:03<00:03, 30.57it/s][A
+Generating rendered images:  53%|█████▎    | 103/194 [00:03<00:02, 30.34it/s][ATraining progress:   7%|▋         | 4190/60000 [06:10<32:08, 28.93it/s]
+Generating rendered images:  55%|█████▌    | 107/194 [00:03<00:02, 29.85it/s][A
+Generating rendered images:  57%|█████▋    | 110/194 [00:03<00:02, 29.75it/s][A
+Generating rendered images:  58%|█████▊    | 113/194 [00:03<00:02, 29.44it/s][A
+Generating rendered images:  60%|█████▉    | 116/194 [00:03<00:02, 29.37it/s][A
+Generating rendered images:  62%|██████▏   | 120/194 [00:03<00:02, 29.96it/s][A
+Generating rendered images:  64%|██████▍   | 124/194 [00:04<00:02, 30.18it/s][A
+Generating rendered images:  66%|██████▌   | 128/194 [00:04<00:02, 30.24it/s][A
+Generating rendered images:  68%|██████▊   | 132/194 [00:04<00:02, 29.68it/s][A
+Generating rendered images:  70%|██████▉   | 135/194 [00:04<00:01, 29.53it/s][A
+Generating rendered images:  71%|███████   | 138/194 [00:04<00:01, 29.33it/s][A
+Generating rendered images:  73%|███████▎  | 141/194 [00:04<00:01, 29.49it/s][A
+Generating rendered images:  74%|███████▍  | 144/194 [00:04<00:01, 28.99it/s][A
+Generating rendered images:  76%|███████▌  | 147/194 [00:04<00:01, 28.96it/s][A
+Generating rendered images:  78%|███████▊  | 151/194 [00:05<00:01, 29.21it/s][A
+Generating rendered images:  79%|███████▉  | 154/194 [00:05<00:01, 29.30it/s][A
+Generating rendered images:  81%|████████  | 157/194 [00:05<00:01, 29.35it/s][A
+Generating rendered images:  82%|████████▏ | 160/194 [00:05<00:01, 29.30it/s][A
+Generating rendered images:  84%|████████▍ | 163/194 [00:05<00:01, 28.83it/s][A
+Generating rendered images:  86%|████████▌ | 167/194 [00:05<00:00, 29.23it/s][A
+Generating rendered images:  88%|████████▊ | 170/194 [00:05<00:00, 29.38it/s][A
+Generating rendered images:  89%|████████▉ | 173/194 [00:05<00:00, 29.40it/s][A
+Generating rendered images:  91%|█████████ | 177/194 [00:05<00:00, 30.01it/s][A
+Generating rendered images:  93%|█████████▎| 181/194 [00:06<00:00, 30.16it/s][A
+Generating rendered images:  95%|█████████▌| 185/194 [00:06<00:00, 30.02it/s][A
+Generating rendered images:  97%|█████████▋| 188/194 [00:06<00:00, 29.94it/s][A
+Generating rendered images:  99%|█████████▉| 192/194 [00:06<00:00, 30.47it/s][AGenerating rendered images: 100%|██████████| 194/194 [00:06<00:00, 30.08it/s]
+Completed poisoned data generation for iteration 4200 [11/12 17:20:42]
+Training progress:   7%|▋         | 4200/60000 [06:13<10:15:25,  1.51it/s]Training progress:   7%|▋         | 4210/60000 [06:13<7:20:28,  2.11it/s] Training progress:   7%|▋         | 4220/60000 [06:13<5:17:53,  2.92it/s]Training progress:   7%|▋         | 4230/60000 [06:14<3:52:19,  4.00it/s]Training progress:   7%|▋         | 4240/60000 [06:14<2:52:06,  5.40it/s]Training progress:   7%|▋         | 4250/60000 [06:14<2:10:10,  7.14it/s]Training progress:   7%|▋         | 4260/60000 [06:15<1:41:07,  9.19it/s]Training progress:   7%|▋         | 4270/60000 [06:15<1:20:24, 11.55it/s]Training progress:   7%|▋         | 4280/60000 [06:15<1:05:44, 14.13it/s]Training progress:   7%|▋         | 4290/60000 [06:16<55:51, 16.62it/s]  Training progress:   7%|▋         | 4300/60000 [06:17<1:01:20, 15.13it/s]Training progress:   7%|▋         | 4310/60000 [06:17<52:53, 17.55it/s]  Training progress:   7%|▋         | 4320/60000 [06:17<46:55, 19.78it/s]Training progress:   7%|▋         | 4330/60000 [06:18<42:41, 21.74it/s]Training progress:   7%|▋         | 4340/60000 [06:18<39:52, 23.26it/s]Training progress:   7%|▋         | 4350/60000 [06:18<38:06, 24.34it/s]Training progress:   7%|▋         | 4360/60000 [06:19<36:54, 25.13it/s]Training progress:   7%|▋         | 4370/60000 [06:19<36:06, 25.68it/s]Training progress:   7%|▋         | 4380/60000 [06:19<35:02, 26.45it/s]Training progress:   7%|▋         | 4390/60000 [06:20<34:10, 27.11it/s]Training progress:   7%|▋         | 4400/60000 [06:21<45:21, 20.43it/s]Training progress:   7%|▋         | 4410/60000 [06:21<41:54, 22.11it/s]Training progress:   7%|▋         | 4420/60000 [06:21<40:03, 23.12it/s]Training progress:   7%|▋         | 4430/60000 [06:22<38:11, 24.25it/s]Training progress:   7%|▋         | 4440/60000 [06:22<36:48, 25.16it/s]Training progress:   7%|▋         | 4450/60000 [06:22<35:47, 25.87it/s]Training progress:   7%|▋         | 4460/60000 [06:23<34:52, 26.54it/s]Training progress:   7%|▋         | 4470/60000 [06:23<34:27, 26.85it/s]Training progress:   7%|▋         | 4480/60000 [06:23<34:14, 27.02it/s]Training progress:   7%|▋         | 4490/60000 [06:24<34:11, 27.06it/s]
+Generating poisoned data at iteration 4500 [11/12 17:20:54]
+Attack iter 0: loss=0.26941, epsilon=1.600000 [11/12 17:20:54]
+Attack iter 10: loss=0.26455, epsilon=16.000000 [11/12 17:20:57]
+Attack iter 20: loss=0.26455, epsilon=16.000000 [11/12 17:21:00]
+Attack iter 30: loss=0.26455, epsilon=16.000000 [11/12 17:21:03]
+Attack iter 40: loss=0.26455, epsilon=16.000000 [11/12 17:21:05]
+Saving poisoned images to /project/hentci/GS-backdoor/IPA-test/test4/poison_data/poisoned_4500 [11/12 17:21:08]
+
+Generating rendered images:   0%|          | 0/194 [00:00<?, ?it/s][A
+Generating rendered images:   2%|▏         | 3/194 [00:00<00:07, 25.67it/s][A
+Generating rendered images:   3%|▎         | 6/194 [00:00<00:07, 26.84it/s][A
+Generating rendered images:   5%|▍         | 9/194 [00:00<00:06, 27.08it/s][A
+Generating rendered images:   6%|▌         | 12/194 [00:00<00:06, 26.94it/s][ATraining progress:   7%|▋         | 4490/60000 [06:40<34:11, 27.06it/s]
+Generating rendered images:   8%|▊         | 15/194 [00:00<00:06, 27.30it/s][A
+Generating rendered images:   9%|▉         | 18/194 [00:00<00:06, 27.55it/s][A
+Generating rendered images:  11%|█         | 21/194 [00:00<00:06, 27.47it/s][A
+Generating rendered images:  12%|█▏        | 24/194 [00:00<00:06, 27.82it/s][A
+Generating rendered images:  14%|█▍        | 27/194 [00:00<00:06, 27.23it/s][A
+Generating rendered images:  15%|█▌        | 30/194 [00:01<00:05, 27.45it/s][A
+Generating rendered images:  17%|█▋        | 33/194 [00:01<00:05, 27.80it/s][A
+Generating rendered images:  19%|█▊        | 36/194 [00:01<00:05, 27.88it/s][A
+Generating rendered images:  20%|██        | 39/194 [00:01<00:05, 28.01it/s][A
+Generating rendered images:  22%|██▏       | 42/194 [00:01<00:05, 28.04it/s][A
+Generating rendered images:  23%|██▎       | 45/194 [00:01<00:05, 27.89it/s][A
+Generating rendered images:  25%|██▍       | 48/194 [00:01<00:05, 27.75it/s][A
+Generating rendered images:  26%|██▋       | 51/194 [00:01<00:05, 27.72it/s][A
+Generating rendered images:  28%|██▊       | 54/194 [00:01<00:05, 27.74it/s][A
+Generating rendered images:  29%|██▉       | 57/194 [00:02<00:04, 27.66it/s][A
+Generating rendered images:  31%|███       | 60/194 [00:02<00:04, 27.38it/s][A
+Generating rendered images:  32%|███▏      | 63/194 [00:02<00:04, 27.25it/s][A
+Generating rendered images:  34%|███▍      | 66/194 [00:02<00:04, 27.28it/s][A
+Generating rendered images:  36%|███▌      | 69/194 [00:02<00:04, 27.23it/s][A
+Generating rendered images:  37%|███▋      | 72/194 [00:02<00:04, 27.56it/s][A
+Generating rendered images:  39%|███▊      | 75/194 [00:02<00:04, 27.59it/s][A
+Generating rendered images:  40%|████      | 78/194 [00:02<00:04, 27.79it/s][A
+Generating rendered images:  42%|████▏     | 81/194 [00:02<00:04, 27.62it/s][A
+Generating rendered images:  43%|████▎     | 84/194 [00:03<00:03, 27.71it/s][A
+Generating rendered images:  45%|████▍     | 87/194 [00:03<00:03, 27.56it/s][A
+Generating rendered images:  46%|████▋     | 90/194 [00:03<00:03, 27.71it/s][A
+Generating rendered images:  48%|████▊     | 93/194 [00:03<00:03, 27.39it/s][A
+Generating rendered images:  49%|████▉     | 96/194 [00:03<00:03, 27.37it/s][A
+Generating rendered images:  51%|█████     | 99/194 [00:03<00:03, 27.37it/s][A
+Generating rendered images:  53%|█████▎    | 102/194 [00:03<00:03, 27.24it/s][A
+Generating rendered images:  54%|█████▍    | 105/194 [00:03<00:03, 27.57it/s][A
+Generating rendered images:  56%|█████▌    | 108/194 [00:03<00:03, 27.54it/s][A
+Generating rendered images:  57%|█████▋    | 111/194 [00:04<00:02, 27.69it/s][A
+Generating rendered images:  59%|█████▉    | 114/194 [00:04<00:02, 27.70it/s][A
+Generating rendered images:  60%|██████    | 117/194 [00:04<00:02, 27.65it/s][A
+Generating rendered images:  62%|██████▏   | 120/194 [00:04<00:02, 27.67it/s][A
+Generating rendered images:  63%|██████▎   | 123/194 [00:04<00:02, 27.52it/s][A
+Generating rendered images:  65%|██████▍   | 126/194 [00:04<00:02, 27.80it/s][A
+Generating rendered images:  66%|██████▋   | 129/194 [00:04<00:02, 27.72it/s][A
+Generating rendered images:  68%|██████▊   | 132/194 [00:04<00:02, 27.66it/s][A
+Generating rendered images:  70%|██████▉   | 135/194 [00:04<00:02, 27.94it/s][A
+Generating rendered images:  71%|███████   | 138/194 [00:05<00:02, 27.72it/s][A
+Generating rendered images:  73%|███████▎  | 141/194 [00:05<00:01, 27.82it/s][A
+Generating rendered images:  74%|███████▍  | 144/194 [00:05<00:01, 27.64it/s][A
+Generating rendered images:  76%|███████▌  | 147/194 [00:05<00:01, 27.73it/s][A
+Generating rendered images:  77%|███████▋  | 150/194 [00:05<00:01, 27.88it/s][A
+Generating rendered images:  79%|███████▉  | 153/194 [00:05<00:01, 27.67it/s][A
+Generating rendered images:  80%|████████  | 156/194 [00:05<00:01, 27.75it/s][A
+Generating rendered images:  82%|████████▏ | 159/194 [00:05<00:01, 27.79it/s][A
+Generating rendered images:  84%|████████▎ | 162/194 [00:05<00:01, 27.74it/s][A
+Generating rendered images:  85%|████████▌ | 165/194 [00:05<00:01, 27.65it/s][A
+Generating rendered images:  87%|████████▋ | 168/194 [00:06<00:00, 27.70it/s][A
+Generating rendered images:  88%|████████▊ | 171/194 [00:06<00:00, 27.99it/s][A
+Generating rendered images:  90%|████████▉ | 174/194 [00:06<00:00, 27.82it/s][A
+Generating rendered images:  91%|█████████ | 177/194 [00:06<00:00, 27.72it/s][A
+Generating rendered images:  93%|█████████▎| 180/194 [00:06<00:00, 27.33it/s][A
+Generating rendered images:  94%|█████████▍| 183/194 [00:06<00:00, 27.21it/s][A
+Generating rendered images:  96%|█████████▌| 186/194 [00:06<00:00, 27.18it/s][A
+Generating rendered images:  97%|█████████▋| 189/194 [00:06<00:00, 26.94it/s][A
+Generating rendered images:  99%|█████████▉| 192/194 [00:06<00:00, 27.20it/s][AGenerating rendered images: 100%|██████████| 194/194 [00:07<00:00, 27.55it/s]
+Completed poisoned data generation for iteration 4500 [11/12 17:21:15]
+Training progress:   8%|▊         | 4500/60000 [06:46<10:42:31,  1.44it/s]Training progress:   8%|▊         | 4510/60000 [06:46<7:40:03,  2.01it/s] Training progress:   8%|▊         | 4520/60000 [06:47<5:32:20,  2.78it/s]Training progress:   8%|▊         | 4530/60000 [06:47<4:03:07,  3.80it/s]Training progress:   8%|▊         | 4540/60000 [06:48<3:00:35,  5.12it/s]Training progress:   8%|▊         | 4550/60000 [06:48<2:16:36,  6.77it/s]Training progress:   8%|▊         | 4560/60000 [06:48<1:45:59,  8.72it/s]Training progress:   8%|▊         | 4570/60000 [06:49<1:24:21, 10.95it/s]Training progress:   8%|▊         | 4580/60000 [06:49<1:09:09, 13.35it/s]Training progress:   8%|▊         | 4590/60000 [06:49<59:00, 15.65it/s]  Training progress:   8%|▊         | 4600/60000 [06:50<1:06:13, 13.94it/s]Training progress:   8%|▊         | 4610/60000 [06:51<56:54, 16.22it/s]  Training progress:   8%|▊         | 4620/60000 [06:51<50:26, 18.30it/s]Training progress:   8%|▊         | 4630/60000 [06:52<46:03, 20.04it/s]Training progress:   8%|▊         | 4640/60000 [06:52<43:11, 21.36it/s]Training progress:   8%|▊         | 4650/60000 [06:52<40:54, 22.55it/s]Training progress:   8%|▊         | 4660/60000 [06:53<39:07, 23.58it/s]Training progress:   8%|▊         | 4670/60000 [06:53<38:18, 24.07it/s]Training progress:   8%|▊         | 4680/60000 [06:53<37:27, 24.61it/s]Training progress:   8%|▊         | 4690/60000 [06:54<37:01, 24.90it/s]Training progress:   8%|▊         | 4700/60000 [06:55<48:54, 18.84it/s]Training progress:   8%|▊         | 4710/60000 [06:55<44:44, 20.59it/s]Training progress:   8%|▊         | 4720/60000 [06:55<42:04, 21.90it/s]Training progress:   8%|▊         | 4730/60000 [06:56<40:28, 22.76it/s]Training progress:   8%|▊         | 4740/60000 [06:56<39:09, 23.52it/s]Training progress:   8%|▊         | 4750/60000 [06:57<38:16, 24.06it/s]Training progress:   8%|▊         | 4760/60000 [06:57<37:45, 24.38it/s]Training progress:   8%|▊         | 4770/60000 [06:57<37:35, 24.49it/s]Training progress:   8%|▊         | 4780/60000 [06:58<36:58, 24.89it/s]Training progress:   8%|▊         | 4790/60000 [06:58<36:52, 24.95it/s]
+Generating poisoned data at iteration 4800 [11/12 17:21:28]
+Attack iter 0: loss=0.26407, epsilon=1.600000 [11/12 17:21:28]
+Attack iter 10: loss=0.25931, epsilon=16.000000 [11/12 17:21:31]
+Attack iter 20: loss=0.25931, epsilon=16.000000 [11/12 17:21:35]
+Attack iter 30: loss=0.25931, epsilon=16.000000 [11/12 17:21:38]
+Training progress:   8%|▊         | 4790/60000 [07:10<36:52, 24.95it/s]Attack iter 40: loss=0.25931, epsilon=16.000000 [11/12 17:21:41]
+Saving poisoned images to /project/hentci/GS-backdoor/IPA-test/test4/poison_data/poisoned_4800 [11/12 17:21:43]
+
+Generating rendered images:   0%|          | 0/194 [00:00<?, ?it/s][A
+Generating rendered images:   2%|▏         | 3/194 [00:00<00:07, 27.01it/s][A
+Generating rendered images:   3%|▎         | 6/194 [00:00<00:07, 26.52it/s][A
+Generating rendered images:   5%|▍         | 9/194 [00:00<00:06, 26.73it/s][A
+Generating rendered images:   6%|▌         | 12/194 [00:00<00:06, 27.02it/s][A
+Generating rendered images:   8%|▊         | 15/194 [00:00<00:06, 27.17it/s][A
+Generating rendered images:   9%|▉         | 18/194 [00:00<00:06, 27.20it/s][A
+Generating rendered images:  11%|█         | 21/194 [00:00<00:06, 27.23it/s][A
+Generating rendered images:  12%|█▏        | 24/194 [00:00<00:06, 27.48it/s][A
+Generating rendered images:  14%|█▍        | 27/194 [00:00<00:06, 27.57it/s][A
+Generating rendered images:  15%|█▌        | 30/194 [00:01<00:05, 27.67it/s][A
+Generating rendered images:  17%|█▋        | 33/194 [00:01<00:05, 27.82it/s][A
+Generating rendered images:  19%|█▊        | 36/194 [00:01<00:05, 27.63it/s][A
+Generating rendered images:  20%|██        | 39/194 [00:01<00:05, 27.90it/s][A
+Generating rendered images:  22%|██▏       | 42/194 [00:01<00:05, 27.92it/s][A
+Generating rendered images:  23%|██▎       | 45/194 [00:01<00:05, 27.81it/s][A
+Generating rendered images:  25%|██▍       | 48/194 [00:01<00:05, 27.42it/s][A
+Generating rendered images:  26%|██▋       | 51/194 [00:01<00:05, 27.54it/s][A
+Generating rendered images:  28%|██▊       | 54/194 [00:01<00:05, 27.74it/s][A
+Generating rendered images:  29%|██▉       | 57/194 [00:02<00:04, 27.51it/s][A
+Generating rendered images:  31%|███       | 60/194 [00:02<00:04, 27.63it/s][A
+Generating rendered images:  32%|███▏      | 63/194 [00:02<00:04, 27.37it/s][A
+Generating rendered images:  34%|███▍      | 66/194 [00:02<00:04, 27.26it/s][A
+Generating rendered images:  36%|███▌      | 69/194 [00:02<00:04, 27.16it/s][A
+Generating rendered images:  37%|███▋      | 72/194 [00:02<00:04, 26.98it/s][A
+Generating rendered images:  39%|███▊      | 75/194 [00:02<00:04, 27.02it/s][A
+Generating rendered images:  40%|████      | 78/194 [00:02<00:04, 27.05it/s][A
+Generating rendered images:  42%|████▏     | 81/194 [00:02<00:04, 26.89it/s][A
+Generating rendered images:  43%|████▎     | 84/194 [00:03<00:04, 26.89it/s][A
+Generating rendered images:  45%|████▍     | 87/194 [00:03<00:03, 26.99it/s][A
+Generating rendered images:  46%|████▋     | 90/194 [00:03<00:03, 27.39it/s][A
+Generating rendered images:  48%|████▊     | 93/194 [00:03<00:03, 27.50it/s][A
+Generating rendered images:  49%|████▉     | 96/194 [00:03<00:03, 27.23it/s][A
+Generating rendered images:  51%|█████     | 99/194 [00:03<00:03, 27.35it/s][A
+Generating rendered images:  53%|█████▎    | 102/194 [00:03<00:03, 27.22it/s][A
+Generating rendered images:  54%|█████▍    | 105/194 [00:03<00:03, 27.16it/s][A
+Generating rendered images:  56%|█████▌    | 108/194 [00:03<00:03, 26.97it/s][A
+Generating rendered images:  57%|█████▋    | 111/194 [00:04<00:03, 26.96it/s][A
+Generating rendered images:  59%|█████▉    | 114/194 [00:04<00:02, 26.87it/s][A
+Generating rendered images:  60%|██████    | 117/194 [00:04<00:02, 26.81it/s][A
+Generating rendered images:  62%|██████▏   | 120/194 [00:04<00:02, 27.04it/s][A
+Generating rendered images:  63%|██████▎   | 123/194 [00:04<00:02, 26.98it/s][A
+Generating rendered images:  65%|██████▍   | 126/194 [00:04<00:02, 27.11it/s][A
+Generating rendered images:  66%|██████▋   | 129/194 [00:04<00:02, 27.21it/s][A
+Generating rendered images:  68%|██████▊   | 132/194 [00:04<00:02, 27.03it/s][A
+Generating rendered images:  70%|██████▉   | 135/194 [00:04<00:02, 26.93it/s][A
+Generating rendered images:  71%|███████   | 138/194 [00:05<00:02, 26.66it/s][A
+Generating rendered images:  73%|███████▎  | 141/194 [00:05<00:01, 27.04it/s][A
+Generating rendered images:  74%|███████▍  | 144/194 [00:05<00:01, 26.90it/s][A
+Generating rendered images:  76%|███████▌  | 147/194 [00:05<00:01, 27.01it/s][A
+Generating rendered images:  77%|███████▋  | 150/194 [00:05<00:01, 27.12it/s][A
+Generating rendered images:  79%|███████▉  | 153/194 [00:05<00:01, 27.16it/s][A
+Generating rendered images:  80%|████████  | 156/194 [00:05<00:01, 27.34it/s][A
+Generating rendered images:  82%|████████▏ | 159/194 [00:05<00:01, 27.32it/s][A
+Generating rendered images:  84%|████████▎ | 162/194 [00:05<00:01, 27.33it/s][A
+Generating rendered images:  85%|████████▌ | 165/194 [00:06<00:01, 27.45it/s][A
+Generating rendered images:  87%|████████▋ | 168/194 [00:06<00:00, 27.45it/s][A
+Generating rendered images:  88%|████████▊ | 171/194 [00:06<00:00, 27.53it/s][A
+Generating rendered images:  90%|████████▉ | 174/194 [00:06<00:00, 27.07it/s][A
+Generating rendered images:  91%|█████████ | 177/194 [00:06<00:00, 27.27it/s][A
+Generating rendered images:  93%|█████████▎| 180/194 [00:06<00:00, 27.27it/s][A
+Generating rendered images:  94%|█████████▍| 183/194 [00:06<00:00, 27.21it/s][A
+Generating rendered images:  96%|█████████▌| 186/194 [00:06<00:00, 27.09it/s][A
+Generating rendered images:  97%|█████████▋| 189/194 [00:06<00:00, 26.78it/s][A
+Generating rendered images:  99%|█████████▉| 192/194 [00:07<00:00, 26.58it/s][AGenerating rendered images: 100%|██████████| 194/194 [00:07<00:00, 27.18it/s]
+Completed poisoned data generation for iteration 4800 [11/12 17:21:50]
+Training progress:   8%|▊         | 4800/60000 [07:21<11:04:58,  1.38it/s]Training progress:   8%|▊         | 4810/60000 [07:22<7:56:16,  1.93it/s] Training progress:   8%|▊         | 4820/60000 [07:22<5:44:33,  2.67it/s]Training progress:   8%|▊         | 4830/60000 [07:23<4:12:23,  3.64it/s]Training progress:   8%|▊         | 4840/60000 [07:23<3:07:30,  4.90it/s]Training progress:   8%|▊         | 4850/60000 [07:23<2:22:13,  6.46it/s]Training progress:   8%|▊         | 4860/60000 [07:24<1:50:34,  8.31it/s]Training progress:   8%|▊         | 4870/60000 [07:24<1:28:38, 10.37it/s]Training progress:   8%|▊         | 4880/60000 [07:25<1:13:09, 12.56it/s]Training progress:   8%|▊         | 4890/60000 [07:25<1:02:26, 14.71it/s]Training progress:   8%|▊         | 4900/60000 [07:26<1:10:43, 12.99it/s]Training progress:   8%|▊         | 4910/60000 [07:26<1:00:46, 15.11it/s]Training progress:   8%|▊         | 4920/60000 [07:27<53:44, 17.08it/s]  Training progress:   8%|▊         | 4930/60000 [07:27<48:50, 18.79it/s]Training progress:   8%|▊         | 4940/60000 [07:28<45:17, 20.26it/s]Training progress:   8%|▊         | 4950/60000 [07:28<42:43, 21.48it/s]Training progress:   8%|▊         | 4960/60000 [07:28<41:11, 22.27it/s]Training progress:   8%|▊         | 4970/60000 [07:29<40:31, 22.63it/s]Training progress:   8%|▊         | 4980/60000 [07:29<39:28, 23.23it/s]Training progress:   8%|▊         | 4990/60000 [07:30<38:45, 23.66it/s]Training progress:   8%|▊         | 5000/60000 [07:31<52:58, 17.30it/s]Training progress:   8%|▊         | 5010/60000 [07:31<48:30, 18.90it/s]Training progress:   8%|▊         | 5020/60000 [07:31<45:26, 20.16it/s]Training progress:   8%|▊         | 5030/60000 [07:32<43:44, 20.95it/s]Training progress:   8%|▊         | 5040/60000 [07:32<42:21, 21.62it/s]Training progress:   8%|▊         | 5050/60000 [07:33<41:40, 21.97it/s]Training progress:   8%|▊         | 5060/60000 [07:33<40:51, 22.41it/s]Training progress:   8%|▊         | 5070/60000 [07:34<40:09, 22.79it/s]Training progress:   8%|▊         | 5080/60000 [07:34<39:47, 23.01it/s]Training progress:   8%|▊         | 5090/60000 [07:34<39:37, 23.10it/s]
+Generating poisoned data at iteration 5100 [11/12 17:22:04]
+Attack iter 0: loss=0.26165, epsilon=1.600000 [11/12 17:22:05]
+Attack iter 10: loss=0.25676, epsilon=16.000000 [11/12 17:22:08]
+Attack iter 20: loss=0.25676, epsilon=16.000000 [11/12 17:22:11]
+Attack iter 30: loss=0.25676, epsilon=16.000000 [11/12 17:22:14]
+Attack iter 40: loss=0.25676, epsilon=16.000000 [11/12 17:22:17]
+Training progress:   8%|▊         | 5090/60000 [07:50<39:37, 23.10it/s]Saving poisoned images to /project/hentci/GS-backdoor/IPA-test/test4/poison_data/poisoned_5100 [11/12 17:22:20]
+
+Generating rendered images:   0%|          | 0/194 [00:00<?, ?it/s][A
+Generating rendered images:   2%|▏         | 3/194 [00:00<00:07, 27.25it/s][A
+Generating rendered images:   3%|▎         | 6/194 [00:00<00:06, 28.02it/s][A
+Generating rendered images:   5%|▍         | 9/194 [00:00<00:06, 28.84it/s][A
+Generating rendered images:   6%|▌         | 12/194 [00:00<00:06, 28.88it/s][A
+Generating rendered images:   8%|▊         | 15/194 [00:00<00:06, 28.95it/s][A
+Generating rendered images:  10%|▉         | 19/194 [00:00<00:05, 31.95it/s][A
+Generating rendered images:  12%|█▏        | 23/194 [00:00<00:05, 33.66it/s][A
+Generating rendered images:  14%|█▍        | 27/194 [00:00<00:04, 34.87it/s][A
+Generating rendered images:  16%|█▌        | 31/194 [00:00<00:04, 35.66it/s][A
+Generating rendered images:  18%|█▊        | 35/194 [00:01<00:04, 35.99it/s][A
+Generating rendered images:  20%|██        | 39/194 [00:01<00:04, 36.66it/s][A
+Generating rendered images:  22%|██▏       | 43/194 [00:01<00:04, 36.97it/s][A
+Generating rendered images:  24%|██▍       | 47/194 [00:01<00:04, 36.54it/s][A
+Generating rendered images:  26%|██▋       | 51/194 [00:01<00:03, 36.31it/s][A
+Generating rendered images:  28%|██▊       | 55/194 [00:01<00:03, 36.25it/s][A
+Generating rendered images:  30%|███       | 59/194 [00:01<00:03, 36.46it/s][A
+Generating rendered images:  32%|███▏      | 63/194 [00:01<00:03, 36.36it/s][A
+Generating rendered images:  35%|███▍      | 67/194 [00:01<00:03, 36.38it/s][A
+Generating rendered images:  37%|███▋      | 71/194 [00:02<00:03, 36.12it/s][A
+Generating rendered images:  39%|███▊      | 75/194 [00:02<00:03, 36.10it/s][A
+Generating rendered images:  41%|████      | 79/194 [00:02<00:03, 36.37it/s][A
+Generating rendered images:  43%|████▎     | 83/194 [00:02<00:03, 36.32it/s][A
+Generating rendered images:  45%|████▍     | 87/194 [00:02<00:02, 36.52it/s][A
+Generating rendered images:  47%|████▋     | 91/194 [00:02<00:02, 36.44it/s][A
+Generating rendered images:  49%|████▉     | 95/194 [00:02<00:02, 36.21it/s][A
+Generating rendered images:  51%|█████     | 99/194 [00:02<00:02, 36.01it/s][A
+Generating rendered images:  53%|█████▎    | 103/194 [00:02<00:02, 35.96it/s][A
+Generating rendered images:  55%|█████▌    | 107/194 [00:03<00:02, 36.59it/s][A
+Generating rendered images:  57%|█████▋    | 111/194 [00:03<00:02, 36.44it/s][A
+Generating rendered images:  59%|█████▉    | 115/194 [00:03<00:02, 36.00it/s][A
+Generating rendered images:  61%|██████▏   | 119/194 [00:03<00:02, 36.04it/s][A
+Generating rendered images:  63%|██████▎   | 123/194 [00:03<00:01, 35.95it/s][A
+Generating rendered images:  65%|██████▌   | 127/194 [00:03<00:01, 35.80it/s][A
+Generating rendered images:  68%|██████▊   | 131/194 [00:03<00:01, 35.59it/s][A
+Generating rendered images:  70%|██████▉   | 135/194 [00:03<00:01, 35.78it/s][A
+Generating rendered images:  72%|███████▏  | 139/194 [00:03<00:01, 35.99it/s][A
+Generating rendered images:  74%|███████▎  | 143/194 [00:04<00:01, 35.84it/s][A
+Generating rendered images:  76%|███████▌  | 147/194 [00:04<00:01, 35.26it/s][A
+Generating rendered images:  78%|███████▊  | 151/194 [00:04<00:01, 35.51it/s][A
+Generating rendered images:  80%|███████▉  | 155/194 [00:04<00:01, 35.48it/s][A
+Generating rendered images:  82%|████████▏ | 159/194 [00:04<00:00, 35.48it/s][A
+Generating rendered images:  84%|████████▍ | 163/194 [00:04<00:00, 35.89it/s][A
+Generating rendered images:  86%|████████▌ | 167/194 [00:04<00:00, 36.08it/s][A
+Generating rendered images:  88%|████████▊ | 171/194 [00:04<00:00, 36.31it/s][A
+Generating rendered images:  90%|█████████ | 175/194 [00:04<00:00, 36.07it/s][A
+Generating rendered images:  92%|█████████▏| 179/194 [00:05<00:00, 36.21it/s][A
+Generating rendered images:  94%|█████████▍| 183/194 [00:05<00:00, 36.46it/s][A
+Generating rendered images:  96%|█████████▋| 187/194 [00:05<00:00, 36.43it/s][A
+Generating rendered images:  98%|█████████▊| 191/194 [00:05<00:00, 36.35it/s][AGenerating rendered images: 100%|██████████| 194/194 [00:05<00:00, 35.54it/s]
+Completed poisoned data generation for iteration 5100 [11/12 17:22:25]
+Training progress:   8%|▊         | 5100/60000 [07:56<10:28:01,  1.46it/s]Training progress:   9%|▊         | 5110/60000 [07:57<7:31:31,  2.03it/s] Training progress:   9%|▊         | 5120/60000 [07:57<5:27:36,  2.79it/s]Training progress:   9%|▊         | 5130/60000 [07:58<4:01:09,  3.79it/s]Training progress:   9%|▊         | 5140/60000 [07:58<3:00:34,  5.06it/s]Training progress:   9%|▊         | 5150/60000 [07:58<2:18:05,  6.62it/s]Training progress:   9%|▊         | 5160/60000 [07:59<1:48:12,  8.45it/s]Training progress:   9%|▊         | 5170/60000 [07:59<1:27:18, 10.47it/s]Training progress:   9%|▊         | 5180/60000 [08:00<1:12:57, 12.52it/s]Training progress:   9%|▊         | 5190/60000 [08:00<1:02:44, 14.56it/s]Training progress:   9%|▊         | 5200/60000 [08:01<1:13:28, 12.43it/s]Training progress:   9%|▊         | 5210/60000 [08:02<1:03:20, 14.42it/s]Training progress:   9%|▊         | 5220/60000 [08:02<56:00, 16.30it/s]  Training progress:   9%|▊         | 5230/60000 [08:03<51:11, 17.83it/s]Training progress:   9%|▊         | 5240/60000 [08:03<47:36, 19.17it/s]Training progress:   9%|▉         | 5250/60000 [08:03<45:25, 20.09it/s]Training progress:   9%|▉         | 5260/60000 [08:04<44:00, 20.73it/s]Training progress:   9%|▉         | 5270/60000 [08:04<42:56, 21.24it/s]Training progress:   9%|▉         | 5280/60000 [08:05<42:36, 21.41it/s]Training progress:   9%|▉         | 5290/60000 [08:05<41:40, 21.88it/s]Training progress:   9%|▉         | 5300/60000 [08:06<58:01, 15.71it/s]Training progress:   9%|▉         | 5310/60000 [08:07<52:33, 17.34it/s]Training progress:   9%|▉         | 5320/60000 [08:07<48:54, 18.63it/s]Training progress:   9%|▉         | 5330/60000 [08:08<46:24, 19.63it/s]Training progress:   9%|▉         | 5340/60000 [08:08<44:37, 20.41it/s]Training progress:   9%|▉         | 5350/60000 [08:08<43:18, 21.03it/s]Training progress:   9%|▉         | 5360/60000 [08:09<42:13, 21.57it/s]Training progress:   9%|▉         | 5370/60000 [08:09<41:48, 21.77it/s]Training progress:   9%|▉         | 5380/60000 [08:10<41:10, 22.11it/s]Training progress:   9%|▉         | 5390/60000 [08:10<40:56, 22.23it/s]
+Generating poisoned data at iteration 5400 [11/12 17:22:40]
+Attack iter 0: loss=0.25682, epsilon=1.600000 [11/12 17:22:41]
+Attack iter 10: loss=0.25177, epsilon=16.000000 [11/12 17:22:44]
+Attack iter 20: loss=0.25177, epsilon=16.000000 [11/12 17:22:47]
+Attack iter 30: loss=0.25177, epsilon=16.000000 [11/12 17:22:50]
+Attack iter 40: loss=0.25177, epsilon=16.000000 [11/12 17:22:54]
+Saving poisoned images to /project/hentci/GS-backdoor/IPA-test/test4/poison_data/poisoned_5400 [11/12 17:22:57]
+
+Generating rendered images:   0%|          | 0/194 [00:00<?, ?it/s][A
+Generating rendered images:   2%|▏         | 3/194 [00:00<00:07, 26.35it/s][A
+Generating rendered images:   3%|▎         | 6/194 [00:00<00:06, 27.58it/s][A
+Generating rendered images:   5%|▍         | 9/194 [00:00<00:06, 27.44it/s][A
+Generating rendered images:   6%|▌         | 12/194 [00:00<00:06, 27.74it/s][A
+Generating rendered images:   8%|▊         | 15/194 [00:00<00:06, 27.80it/s][A
+Generating rendered images:   9%|▉         | 18/194 [00:00<00:06, 28.01it/s][A
+Generating rendered images:  11%|█         | 21/194 [00:00<00:06, 27.86it/s][A
+Generating rendered images:  13%|█▎        | 25/194 [00:00<00:05, 28.67it/s][A
+Generating rendered images:  14%|█▍        | 28/194 [00:00<00:05, 28.60it/s][A
+Generating rendered images:  16%|█▌        | 31/194 [00:01<00:05, 28.95it/s][A
+Generating rendered images:  18%|█▊        | 34/194 [00:01<00:05, 28.92it/s][A
+Generating rendered images:  19%|█▉        | 37/194 [00:01<00:05, 28.79it/s][A
+Generating rendered images:  21%|██        | 40/194 [00:01<00:05, 28.72it/s][A
+Generating rendered images:  22%|██▏       | 43/194 [00:01<00:05, 28.79it/s][A
+Generating rendered images:  24%|██▎       | 46/194 [00:01<00:05, 28.78it/s][A
+Generating rendered images:  25%|██▌       | 49/194 [00:01<00:05, 28.83it/s][A
+Generating rendered images:  27%|██▋       | 52/194 [00:01<00:04, 29.14it/s][A
+Generating rendered images:  28%|██▊       | 55/194 [00:01<00:04, 29.20it/s][A
+Generating rendered images:  30%|██▉       | 58/194 [00:02<00:04, 29.19it/s][ATraining progress:   9%|▉         | 5390/60000 [08:30<40:56, 22.23it/s]
+Generating rendered images:  31%|███▏      | 61/194 [00:02<00:04, 28.86it/s][A
+Generating rendered images:  33%|███▎      | 64/194 [00:02<00:04, 28.99it/s][A
+Generating rendered images:  35%|███▍      | 67/194 [00:02<00:04, 28.88it/s][A
+Generating rendered images:  36%|███▌      | 70/194 [00:02<00:04, 28.97it/s][A
+Generating rendered images:  38%|███▊      | 73/194 [00:02<00:04, 28.75it/s][A
+Generating rendered images:  39%|███▉      | 76/194 [00:02<00:04, 28.57it/s][A
+Generating rendered images:  41%|████      | 79/194 [00:02<00:04, 28.09it/s][A
+Generating rendered images:  42%|████▏     | 82/194 [00:02<00:04, 27.85it/s][A
+Generating rendered images:  44%|████▍     | 85/194 [00:02<00:03, 27.76it/s][A
+Generating rendered images:  45%|████▌     | 88/194 [00:03<00:03, 27.86it/s][A
+Generating rendered images:  47%|████▋     | 91/194 [00:03<00:03, 27.71it/s][A
+Generating rendered images:  48%|████▊     | 94/194 [00:03<00:03, 27.77it/s][A
+Generating rendered images:  50%|█████     | 97/194 [00:03<00:03, 27.80it/s][A
+Generating rendered images:  52%|█████▏    | 100/194 [00:03<00:03, 27.98it/s][A
+Generating rendered images:  53%|█████▎    | 103/194 [00:03<00:03, 27.54it/s][A
+Generating rendered images:  55%|█████▍    | 106/194 [00:03<00:03, 27.81it/s][A
+Generating rendered images:  56%|█████▌    | 109/194 [00:03<00:03, 27.94it/s][A
+Generating rendered images:  58%|█████▊    | 112/194 [00:03<00:02, 27.88it/s][A
+Generating rendered images:  59%|█████▉    | 115/194 [00:04<00:02, 27.61it/s][A
+Generating rendered images:  61%|██████    | 118/194 [00:04<00:02, 27.76it/s][A
+Generating rendered images:  62%|██████▏   | 121/194 [00:04<00:02, 27.55it/s][A
+Generating rendered images:  64%|██████▍   | 124/194 [00:04<00:02, 27.84it/s][A
+Generating rendered images:  65%|██████▌   | 127/194 [00:04<00:02, 28.03it/s][A
+Generating rendered images:  67%|██████▋   | 130/194 [00:04<00:02, 28.15it/s][A
+Generating rendered images:  69%|██████▊   | 133/194 [00:04<00:02, 27.60it/s][A
+Generating rendered images:  70%|███████   | 136/194 [00:04<00:02, 27.50it/s][A
+Generating rendered images:  72%|███████▏  | 139/194 [00:04<00:01, 27.67it/s][A
+Generating rendered images:  73%|███████▎  | 142/194 [00:05<00:01, 27.85it/s][A
+Generating rendered images:  75%|███████▍  | 145/194 [00:05<00:01, 27.64it/s][A
+Generating rendered images:  76%|███████▋  | 148/194 [00:05<00:01, 27.50it/s][A
+Generating rendered images:  78%|███████▊  | 151/194 [00:05<00:01, 27.68it/s][A
+Generating rendered images:  79%|███████▉  | 154/194 [00:05<00:01, 27.93it/s][A
+Generating rendered images:  81%|████████  | 157/194 [00:05<00:01, 27.90it/s][A
+Generating rendered images:  82%|████████▏ | 160/194 [00:05<00:01, 27.88it/s][A
+Generating rendered images:  84%|████████▍ | 163/194 [00:05<00:01, 27.63it/s][A
+Generating rendered images:  86%|████████▌ | 166/194 [00:05<00:00, 28.13it/s][A
+Generating rendered images:  87%|████████▋ | 169/194 [00:06<00:00, 28.07it/s][A
+Generating rendered images:  89%|████████▊ | 172/194 [00:06<00:00, 27.79it/s][A
+Generating rendered images:  90%|█████████ | 175/194 [00:06<00:00, 28.31it/s][A
+Generating rendered images:  92%|█████████▏| 178/194 [00:06<00:00, 28.15it/s][A
+Generating rendered images:  93%|█████████▎| 181/194 [00:06<00:00, 28.24it/s][A
+Generating rendered images:  95%|█████████▍| 184/194 [00:06<00:00, 28.29it/s][A
+Generating rendered images:  96%|█████████▋| 187/194 [00:06<00:00, 28.10it/s][A
+Generating rendered images:  98%|█████████▊| 190/194 [00:06<00:00, 28.06it/s][A
+Generating rendered images:  99%|█████████▉| 193/194 [00:06<00:00, 28.14it/s][AGenerating rendered images: 100%|██████████| 194/194 [00:06<00:00, 28.13it/s]
+Completed poisoned data generation for iteration 5400 [11/12 17:23:03]
+Training progress:   9%|▉         | 5400/60000 [08:34<11:28:53,  1.32it/s]Training progress:   9%|▉         | 5410/60000 [08:35<8:13:59,  1.84it/s] Training progress:   9%|▉         | 5420/60000 [08:35<5:58:12,  2.54it/s]Training progress:   9%|▉         | 5430/60000 [08:36<4:23:21,  3.45it/s]Training progress:   9%|▉         | 5440/60000 [08:36<3:16:41,  4.62it/s]Training progress:   9%|▉         | 5450/60000 [08:37<2:29:52,  6.07it/s]Training progress:   9%|▉         | 5460/60000 [08:37<1:57:01,  7.77it/s]Training progress:   9%|▉         | 5470/60000 [08:38<1:34:22,  9.63it/s]Training progress:   9%|▉         | 5480/60000 [08:38<1:18:15, 11.61it/s]Training progress:   9%|▉         | 5490/60000 [08:38<1:07:06, 13.54it/s]Training progress:   9%|▉         | 5500/60000 [08:40<1:18:25, 11.58it/s]Training progress:   9%|▉         | 5510/60000 [08:40<1:07:28, 13.46it/s]Training progress:   9%|▉         | 5520/60000 [08:41<59:45, 15.19it/s]  Training progress:   9%|▉         | 5530/60000 [08:41<54:37, 16.62it/s]Training progress:   9%|▉         | 5540/60000 [08:41<50:53, 17.84it/s]Training progress:   9%|▉         | 5550/60000 [08:42<48:02, 18.89it/s]Training progress:   9%|▉         | 5560/60000 [08:42<46:33, 19.49it/s]Training progress:   9%|▉         | 5570/60000 [08:43<45:09, 20.09it/s]Training progress:   9%|▉         | 5580/60000 [08:43<44:32, 20.36it/s]Training progress:   9%|▉         | 5590/60000 [08:44<43:45, 20.73it/s]Training progress:   9%|▉         | 5600/60000 [08:45<1:00:34, 14.97it/s]Training progress:   9%|▉         | 5610/60000 [08:45<55:03, 16.46it/s]  Training progress:   9%|▉         | 5620/60000 [08:46<51:14, 17.69it/s]Training progress:   9%|▉         | 5630/60000 [08:46<48:29, 18.68it/s]Training progress:   9%|▉         | 5640/60000 [08:47<46:40, 19.41it/s]Training progress:   9%|▉         | 5650/60000 [08:47<45:44, 19.80it/s]Training progress:   9%|▉         | 5660/60000 [08:48<45:17, 20.00it/s]Training progress:   9%|▉         | 5670/60000 [08:48<44:41, 20.26it/s]Training progress:   9%|▉         | 5680/60000 [08:49<43:54, 20.62it/s]Training progress:   9%|▉         | 5690/60000 [08:49<43:44, 20.70it/s]
+Generating poisoned data at iteration 5700 [11/12 17:23:19]
+Attack iter 0: loss=0.24947, epsilon=1.600000 [11/12 17:23:20]
+Attack iter 10: loss=0.24504, epsilon=16.000000 [11/12 17:23:23]
+Attack iter 20: loss=0.24504, epsilon=16.000000 [11/12 17:23:26]
+Training progress:   9%|▉         | 5690/60000 [09:00<43:44, 20.70it/s]Attack iter 30: loss=0.24504, epsilon=16.000000 [11/12 17:23:30]
+Attack iter 40: loss=0.24504, epsilon=16.000000 [11/12 17:23:33]
+Saving poisoned images to /project/hentci/GS-backdoor/IPA-test/test4/poison_data/poisoned_5700 [11/12 17:23:36]
+
+Generating rendered images:   0%|          | 0/194 [00:00<?, ?it/s][A
+Generating rendered images:   2%|▏         | 3/194 [00:00<00:07, 25.53it/s][A
+Generating rendered images:   3%|▎         | 6/194 [00:00<00:07, 26.57it/s][A
+Generating rendered images:   5%|▍         | 9/194 [00:00<00:06, 27.21it/s][A
+Generating rendered images:   6%|▌         | 12/194 [00:00<00:06, 27.80it/s][A
+Generating rendered images:   8%|▊         | 15/194 [00:00<00:06, 27.78it/s][A
+Generating rendered images:   9%|▉         | 18/194 [00:00<00:06, 27.47it/s][A
+Generating rendered images:  11%|█         | 21/194 [00:00<00:06, 27.67it/s][A
+Generating rendered images:  12%|█▏        | 24/194 [00:00<00:06, 27.69it/s][A
+Generating rendered images:  14%|█▍        | 27/194 [00:00<00:05, 27.86it/s][A
+Generating rendered images:  15%|█▌        | 30/194 [00:01<00:05, 28.02it/s][A
+Generating rendered images:  17%|█▋        | 33/194 [00:01<00:05, 28.24it/s][A
+Generating rendered images:  19%|█▊        | 36/194 [00:01<00:05, 28.15it/s][A
+Generating rendered images:  20%|██        | 39/194 [00:01<00:05, 28.30it/s][A
+Generating rendered images:  22%|██▏       | 42/194 [00:01<00:05, 28.35it/s][A
+Generating rendered images:  23%|██▎       | 45/194 [00:01<00:05, 28.28it/s][A
+Generating rendered images:  25%|██▍       | 48/194 [00:01<00:05, 27.99it/s][A
+Generating rendered images:  26%|██▋       | 51/194 [00:01<00:05, 28.11it/s][A
+Generating rendered images:  28%|██▊       | 54/194 [00:01<00:05, 27.75it/s][A
+Generating rendered images:  29%|██▉       | 57/194 [00:02<00:04, 27.46it/s][A
+Generating rendered images:  31%|███       | 60/194 [00:02<00:04, 27.17it/s][A
+Generating rendered images:  32%|███▏      | 63/194 [00:02<00:04, 26.95it/s][A
+Generating rendered images:  34%|███▍      | 66/194 [00:02<00:04, 27.17it/s][A
+Generating rendered images:  36%|███▌      | 69/194 [00:02<00:04, 27.00it/s][A
+Generating rendered images:  37%|███▋      | 72/194 [00:02<00:04, 26.99it/s][A
+Generating rendered images:  39%|███▊      | 75/194 [00:02<00:04, 27.41it/s][A
+Generating rendered images:  40%|████      | 78/194 [00:02<00:04, 27.38it/s][A
+Generating rendered images:  42%|████▏     | 81/194 [00:02<00:04, 27.36it/s][A
+Generating rendered images:  43%|████▎     | 84/194 [00:03<00:04, 27.49it/s][A
+Generating rendered images:  45%|████▍     | 87/194 [00:03<00:03, 26.97it/s][A
+Generating rendered images:  46%|████▋     | 90/194 [00:03<00:03, 27.21it/s][A
+Generating rendered images:  48%|████▊     | 93/194 [00:03<00:03, 27.22it/s][A
+Generating rendered images:  49%|████▉     | 96/194 [00:03<00:03, 27.27it/s][A
+Generating rendered images:  51%|█████     | 99/194 [00:03<00:03, 27.66it/s][A
+Generating rendered images:  53%|█████▎    | 102/194 [00:03<00:03, 27.59it/s][A
+Generating rendered images:  54%|█████▍    | 105/194 [00:03<00:03, 27.35it/s][A
+Generating rendered images:  56%|█████▌    | 108/194 [00:03<00:03, 27.30it/s][A
+Generating rendered images:  57%|█████▋    | 111/194 [00:04<00:03, 27.55it/s][A
+Generating rendered images:  59%|█████▉    | 114/194 [00:04<00:02, 27.56it/s][A
+Generating rendered images:  60%|██████    | 117/194 [00:04<00:02, 27.21it/s][A
+Generating rendered images:  62%|██████▏   | 120/194 [00:04<00:02, 27.46it/s][A
+Generating rendered images:  63%|██████▎   | 123/194 [00:04<00:02, 27.09it/s][A
+Generating rendered images:  65%|██████▍   | 126/194 [00:04<00:02, 27.19it/s][A
+Generating rendered images:  66%|██████▋   | 129/194 [00:04<00:02, 27.16it/s][A
+Generating rendered images:  68%|██████▊   | 132/194 [00:04<00:02, 27.07it/s][A
+Generating rendered images:  70%|██████▉   | 135/194 [00:04<00:02, 26.85it/s][A
+Generating rendered images:  71%|███████   | 138/194 [00:05<00:02, 26.28it/s][A
+Generating rendered images:  73%|███████▎  | 141/194 [00:05<00:02, 26.22it/s][A
+Generating rendered images:  74%|███████▍  | 144/194 [00:05<00:01, 26.19it/s][A
+Generating rendered images:  76%|███████▌  | 147/194 [00:05<00:01, 26.02it/s][A
+Generating rendered images:  77%|███████▋  | 150/194 [00:05<00:01, 26.12it/s][A
+Generating rendered images:  79%|███████▉  | 153/194 [00:05<00:01, 26.27it/s][A
+Generating rendered images:  80%|████████  | 156/194 [00:05<00:01, 26.28it/s][A
+Generating rendered images:  82%|████████▏ | 159/194 [00:05<00:01, 26.19it/s][A
+Generating rendered images:  84%|████████▎ | 162/194 [00:05<00:01, 26.05it/s][A
+Generating rendered images:  85%|████████▌ | 165/194 [00:06<00:01, 25.93it/s][A
+Generating rendered images:  87%|████████▋ | 168/194 [00:06<00:01, 25.85it/s][A
+Generating rendered images:  88%|████████▊ | 171/194 [00:06<00:00, 26.21it/s][A
+Generating rendered images:  90%|████████▉ | 174/194 [00:06<00:00, 26.23it/s][A
+Generating rendered images:  91%|█████████ | 177/194 [00:06<00:00, 26.15it/s][A
+Generating rendered images:  93%|█████████▎| 180/194 [00:06<00:00, 25.88it/s][A
+Generating rendered images:  94%|█████████▍| 183/194 [00:06<00:00, 25.84it/s][A
+Generating rendered images:  96%|█████████▌| 186/194 [00:06<00:00, 25.76it/s][A
+Generating rendered images:  97%|█████████▋| 189/194 [00:07<00:00, 25.44it/s][A
+Generating rendered images:  99%|█████████▉| 192/194 [00:07<00:00, 25.55it/s][AGenerating rendered images: 100%|██████████| 194/194 [00:07<00:00, 26.93it/s]
+Completed poisoned data generation for iteration 5700 [11/12 17:23:43]
+Training progress:  10%|▉         | 5700/60000 [09:14<11:47:48,  1.28it/s]Training progress:  10%|▉         | 5710/60000 [09:15<8:28:03,  1.78it/s] Training progress:  10%|▉         | 5720/60000 [09:15<6:08:15,  2.46it/s]Training progress:  10%|▉         | 5730/60000 [09:16<4:30:38,  3.34it/s]Training progress:  10%|▉         | 5740/60000 [09:16<3:22:33,  4.46it/s]Training progress:  10%|▉         | 5750/60000 [09:16<2:34:46,  5.84it/s]Training progress:  10%|▉         | 5760/60000 [09:17<2:01:13,  7.46it/s]Training progress:  10%|▉         | 5770/60000 [09:17<1:37:54,  9.23it/s]Training progress:  10%|▉         | 5780/60000 [09:18<1:21:36, 11.07it/s]Training progress:  10%|▉         | 5790/60000 [09:18<1:09:57, 12.92it/s]Training progress:  10%|▉         | 5800/60000 [09:20<1:22:42, 10.92it/s]Training progress:  10%|▉         | 5810/60000 [09:20<1:10:54, 12.74it/s]Training progress:  10%|▉         | 5820/60000 [09:21<1:02:47, 14.38it/s]Training progress:  10%|▉         | 5830/60000 [09:21<56:59, 15.84it/s]  Training progress:  10%|▉         | 5840/60000 [09:22<53:13, 16.96it/s]Training progress:  10%|▉         | 5850/60000 [09:22<50:10, 17.99it/s]Training progress:  10%|▉         | 5860/60000 [09:23<48:29, 18.61it/s]Training progress:  10%|▉         | 5870/60000 [09:23<47:14, 19.10it/s]Training progress:  10%|▉         | 5880/60000 [09:24<46:17, 19.48it/s]Training progress:  10%|▉         | 5890/60000 [09:24<45:30, 19.81it/s]Training progress:  10%|▉         | 5900/60000 [09:25<1:03:34, 14.18it/s]Training progress:  10%|▉         | 5910/60000 [09:26<57:35, 15.65it/s]  Training progress:  10%|▉         | 5920/60000 [09:26<53:48, 16.75it/s]Training progress:  10%|▉         | 5930/60000 [09:27<51:01, 17.66it/s]Training progress:  10%|▉         | 5940/60000 [09:27<49:24, 18.23it/s]Training progress:  10%|▉         | 5950/60000 [09:28<48:06, 18.72it/s]Training progress:  10%|▉         | 5960/60000 [09:28<47:03, 19.14it/s]Training progress:  10%|▉         | 5970/60000 [09:29<46:16, 19.46it/s]Training progress:  10%|▉         | 5980/60000 [09:29<45:57, 19.59it/s]Training progress:  10%|▉         | 5990/60000 [09:30<45:41, 19.70it/s]
+Generating poisoned data at iteration 6000 [11/12 17:24:00]
+Attack iter 0: loss=0.65847, epsilon=1.600000 [11/12 17:24:00]
+Attack iter 10: loss=0.63419, epsilon=16.000000 [11/12 17:24:03]
+Attack iter 20: loss=0.63419, epsilon=16.000000 [11/12 17:24:06]
+Attack iter 30: loss=0.63419, epsilon=16.000000 [11/12 17:24:09]
+Attack iter 40: loss=0.63419, epsilon=16.000000 [11/12 17:24:12]
+Saving poisoned images to /project/hentci/GS-backdoor/IPA-test/test4/poison_data/poisoned_6000 [11/12 17:24:15]
+
+Generating rendered images:   0%|          | 0/194 [00:00<?, ?it/s][A
+Generating rendered images:   2%|▏         | 3/194 [00:00<00:07, 25.25it/s][A
+Generating rendered images:   3%|▎         | 6/194 [00:00<00:07, 25.55it/s][A
+Generating rendered images:   5%|▍         | 9/194 [00:00<00:07, 25.69it/s][A
+Generating rendered images:   6%|▌         | 12/194 [00:00<00:06, 26.00it/s][A
+Generating rendered images:   8%|▊         | 15/194 [00:00<00:06, 26.19it/s][A
+Generating rendered images:   9%|▉         | 18/194 [00:00<00:06, 26.32it/s][A
+Generating rendered images:  11%|█         | 21/194 [00:00<00:06, 26.18it/s][A
+Generating rendered images:  12%|█▏        | 24/194 [00:00<00:06, 26.29it/s][A
+Generating rendered images:  14%|█▍        | 27/194 [00:01<00:06, 26.46it/s][A
+Generating rendered images:  15%|█▌        | 30/194 [00:01<00:06, 26.60it/s][A
+Generating rendered images:  17%|█▋        | 33/194 [00:01<00:06, 26.68it/s][A
+Generating rendered images:  19%|█▊        | 36/194 [00:01<00:05, 26.56it/s][A
+Generating rendered images:  20%|██        | 39/194 [00:01<00:05, 27.12it/s][A
+Generating rendered images:  22%|██▏       | 42/194 [00:01<00:05, 27.74it/s][A
+Generating rendered images:  23%|██▎       | 45/194 [00:01<00:05, 28.07it/s][A
+Generating rendered images:  25%|██▍       | 48/194 [00:01<00:05, 28.29it/s][A
+Generating rendered images:  26%|██▋       | 51/194 [00:01<00:05, 28.25it/s][A
+Generating rendered images:  28%|██▊       | 54/194 [00:02<00:05, 27.82it/s][A
+Generating rendered images:  29%|██▉       | 57/194 [00:02<00:04, 27.98it/s][A
+Generating rendered images:  31%|███       | 60/194 [00:02<00:04, 28.28it/s][A
+Generating rendered images:  32%|███▏      | 63/194 [00:02<00:04, 28.04it/s][A
+Generating rendered images:  34%|███▍      | 66/194 [00:02<00:04, 28.02it/s][A
+Generating rendered images:  36%|███▌      | 69/194 [00:02<00:04, 27.91it/s][A
+Generating rendered images:  37%|███▋      | 72/194 [00:02<00:04, 27.95it/s][A
+Generating rendered images:  39%|███▊      | 75/194 [00:02<00:04, 28.10it/s][A
+Generating rendered images:  40%|████      | 78/194 [00:02<00:04, 28.33it/s][A
+Generating rendered images:  42%|████▏     | 81/194 [00:02<00:04, 28.15it/s][A
+Generating rendered images:  43%|████▎     | 84/194 [00:03<00:03, 28.24it/s][A
+Generating rendered images:  45%|████▍     | 87/194 [00:03<00:03, 28.32it/s][A
+Generating rendered images:  46%|████▋     | 90/194 [00:03<00:03, 28.40it/s][A
+Generating rendered images:  48%|████▊     | 93/194 [00:03<00:03, 28.41it/s][A
+Generating rendered images:  49%|████▉     | 96/194 [00:03<00:03, 28.40it/s][A
+Generating rendered images:  51%|█████     | 99/194 [00:03<00:03, 28.60it/s][A
+Generating rendered images:  53%|█████▎    | 102/194 [00:03<00:03, 28.46it/s][A
+Generating rendered images:  54%|█████▍    | 105/194 [00:03<00:03, 28.00it/s][A
+Generating rendered images:  56%|█████▌    | 108/194 [00:03<00:03, 27.88it/s][ATraining progress:  10%|▉         | 5990/60000 [09:50<45:41, 19.70it/s]
+Generating rendered images:  57%|█████▋    | 111/194 [00:04<00:02, 28.10it/s][A
+Generating rendered images:  59%|█████▉    | 114/194 [00:04<00:02, 27.72it/s][A
+Generating rendered images:  60%|██████    | 117/194 [00:04<00:02, 27.69it/s][A
+Generating rendered images:  62%|██████▏   | 120/194 [00:04<00:02, 27.94it/s][A
+Generating rendered images:  63%|██████▎   | 123/194 [00:04<00:02, 27.60it/s][A
+Generating rendered images:  65%|██████▍   | 126/194 [00:04<00:02, 27.72it/s][A
+Generating rendered images:  66%|██████▋   | 129/194 [00:04<00:02, 27.72it/s][A
+Generating rendered images:  68%|██████▊   | 132/194 [00:04<00:02, 27.61it/s][A
+Generating rendered images:  70%|██████▉   | 135/194 [00:04<00:02, 27.42it/s][A
+Generating rendered images:  71%|███████   | 138/194 [00:05<00:02, 27.34it/s][A
+Generating rendered images:  73%|███████▎  | 141/194 [00:05<00:01, 27.51it/s][A
+Generating rendered images:  74%|███████▍  | 144/194 [00:05<00:01, 27.50it/s][A
+Generating rendered images:  76%|███████▌  | 147/194 [00:05<00:01, 27.52it/s][A
+Generating rendered images:  77%|███████▋  | 150/194 [00:05<00:01, 27.57it/s][A
+Generating rendered images:  79%|███████▉  | 153/194 [00:05<00:01, 27.65it/s][A
+Generating rendered images:  80%|████████  | 156/194 [00:05<00:01, 27.86it/s][A
+Generating rendered images:  82%|████████▏ | 159/194 [00:05<00:01, 27.95it/s][A
+Generating rendered images:  84%|████████▎ | 162/194 [00:05<00:01, 27.89it/s][A
+Generating rendered images:  85%|████████▌ | 165/194 [00:05<00:01, 27.88it/s][A
+Generating rendered images:  87%|████████▋ | 168/194 [00:06<00:00, 27.83it/s][A
+Generating rendered images:  88%|████████▊ | 171/194 [00:06<00:00, 27.92it/s][A
+Generating rendered images:  90%|████████▉ | 174/194 [00:06<00:00, 27.74it/s][A
+Generating rendered images:  91%|█████████ | 177/194 [00:06<00:00, 27.79it/s][A
+Generating rendered images:  93%|█████████▎| 180/194 [00:06<00:00, 27.70it/s][A
+Generating rendered images:  94%|█████████▍| 183/194 [00:06<00:00, 27.58it/s][A
+Generating rendered images:  96%|█████████▌| 186/194 [00:06<00:00, 27.88it/s][A
+Generating rendered images:  97%|█████████▋| 189/194 [00:06<00:00, 27.37it/s][A
+Generating rendered images:  99%|█████████▉| 192/194 [00:06<00:00, 27.35it/s][AGenerating rendered images: 100%|██████████| 194/194 [00:07<00:00, 27.60it/s]
+Completed poisoned data generation for iteration 6000 [11/12 17:24:22]
+Training progress:  10%|█         | 6000/60000 [09:53<10:54:51,  1.37it/s]Training progress:  10%|█         | 6010/60000 [09:53<7:50:53,  1.91it/s] Training progress:  10%|█         | 6020/60000 [09:54<5:43:32,  2.62it/s]Training progress:  10%|█         | 6030/60000 [09:54<4:14:54,  3.53it/s]Training progress:  10%|█         | 6040/60000 [09:55<3:12:53,  4.66it/s]Training progress:  10%|█         | 6050/60000 [09:55<2:29:09,  6.03it/s]Training progress:  10%|█         | 6060/60000 [09:56<1:58:13,  7.60it/s]Training progress:  10%|█         | 6070/60000 [09:56<1:36:52,  9.28it/s]Training progress:  10%|█         | 6080/60000 [09:57<1:21:40, 11.00it/s]Training progress:  10%|█         | 6090/60000 [09:57<1:11:02, 12.65it/s]Training progress:  10%|█         | 6100/60000 [09:59<1:24:40, 10.61it/s]Training progress:  10%|█         | 6110/60000 [09:59<1:11:42, 12.52it/s]Training progress:  10%|█         | 6120/60000 [10:00<1:02:28, 14.37it/s]Training progress:  10%|█         | 6130/60000 [10:00<56:23, 15.92it/s]  Training progress:  10%|█         | 6140/60000 [10:01<52:18, 17.16it/s]Training progress:  10%|█         | 6150/60000 [10:01<49:10, 18.25it/s]Training progress:  10%|█         | 6160/60000 [10:01<46:41, 19.22it/s]Training progress:  10%|█         | 6170/60000 [10:02<45:24, 19.75it/s]Training progress:  10%|█         | 6180/60000 [10:02<44:14, 20.28it/s]Training progress:  10%|█         | 6190/60000 [10:03<43:43, 20.51it/s]Training progress:  10%|█         | 6200/60000 [10:04<1:00:06, 14.92it/s]Training progress:  10%|█         | 6210/60000 [10:04<54:32, 16.44it/s]  Training progress:  10%|█         | 6220/60000 [10:05<51:12, 17.51it/s]Training progress:  10%|█         | 6230/60000 [10:05<48:22, 18.53it/s]Training progress:  10%|█         | 6240/60000 [10:06<46:23, 19.31it/s]Training progress:  10%|█         | 6250/60000 [10:06<45:15, 19.79it/s]Training progress:  10%|█         | 6260/60000 [10:07<44:25, 20.16it/s]Training progress:  10%|█         | 6270/60000 [10:07<43:33, 20.56it/s]Training progress:  10%|█         | 6280/60000 [10:08<43:08, 20.75it/s]Training progress:  10%|█         | 6290/60000 [10:08<42:57, 20.84it/s]
+Generating poisoned data at iteration 6300 [11/12 17:24:38]
+Attack iter 0: loss=0.25003, epsilon=1.600000 [11/12 17:24:39]
+Attack iter 10: loss=0.24490, epsilon=16.000000 [11/12 17:24:42]
+Attack iter 20: loss=0.24490, epsilon=16.000000 [11/12 17:24:45]
+Training progress:  10%|█         | 6290/60000 [10:20<42:57, 20.84it/s]Attack iter 30: loss=0.24490, epsilon=16.000000 [11/12 17:24:49]
+Attack iter 40: loss=0.24490, epsilon=16.000000 [11/12 17:24:52]
+Saving poisoned images to /project/hentci/GS-backdoor/IPA-test/test4/poison_data/poisoned_6300 [11/12 17:24:55]
+
+Generating rendered images:   0%|          | 0/194 [00:00<?, ?it/s][A
+Generating rendered images:   2%|▏         | 3/194 [00:00<00:07, 25.67it/s][A
+Generating rendered images:   3%|▎         | 6/194 [00:00<00:07, 25.70it/s][A
+Generating rendered images:   5%|▍         | 9/194 [00:00<00:07, 26.02it/s][A
+Generating rendered images:   6%|▌         | 12/194 [00:00<00:06, 26.46it/s][A
+Generating rendered images:   8%|▊         | 15/194 [00:00<00:06, 26.50it/s][A
+Generating rendered images:   9%|▉         | 18/194 [00:00<00:06, 26.32it/s][A
+Generating rendered images:  11%|█         | 21/194 [00:00<00:06, 26.22it/s][A
+Generating rendered images:  12%|█▏        | 24/194 [00:00<00:06, 26.56it/s][A
+Generating rendered images:  14%|█▍        | 27/194 [00:01<00:06, 26.65it/s][A
+Generating rendered images:  15%|█▌        | 30/194 [00:01<00:06, 26.74it/s][A
+Generating rendered images:  17%|█▋        | 33/194 [00:01<00:06, 26.55it/s][A
+Generating rendered images:  19%|█▊        | 36/194 [00:01<00:05, 26.52it/s][A
+Generating rendered images:  20%|██        | 39/194 [00:01<00:05, 26.73it/s][A
+Generating rendered images:  22%|██▏       | 42/194 [00:01<00:05, 26.52it/s][A
+Generating rendered images:  23%|██▎       | 45/194 [00:01<00:05, 26.62it/s][A
+Generating rendered images:  25%|██▍       | 48/194 [00:01<00:05, 26.60it/s][A
+Generating rendered images:  26%|██▋       | 51/194 [00:01<00:05, 26.46it/s][A
+Generating rendered images:  28%|██▊       | 54/194 [00:02<00:05, 26.53it/s][A
+Generating rendered images:  29%|██▉       | 57/194 [00:02<00:05, 26.43it/s][A
+Generating rendered images:  31%|███       | 60/194 [00:02<00:05, 26.51it/s][A
+Generating rendered images:  32%|███▏      | 63/194 [00:02<00:04, 26.50it/s][A
+Generating rendered images:  34%|███▍      | 66/194 [00:02<00:04, 26.25it/s][A
+Generating rendered images:  36%|███▌      | 69/194 [00:02<00:04, 26.07it/s][A
+Generating rendered images:  37%|███▋      | 72/194 [00:02<00:04, 25.99it/s][A
+Generating rendered images:  39%|███▊      | 75/194 [00:02<00:04, 26.15it/s][A
+Generating rendered images:  40%|████      | 78/194 [00:02<00:04, 26.20it/s][A
+Generating rendered images:  42%|████▏     | 81/194 [00:03<00:04, 26.16it/s][A
+Generating rendered images:  43%|████▎     | 84/194 [00:03<00:04, 26.30it/s][A
+Generating rendered images:  45%|████▍     | 87/194 [00:03<00:04, 26.35it/s][A
+Generating rendered images:  46%|████▋     | 90/194 [00:03<00:03, 26.24it/s][A
+Generating rendered images:  48%|████▊     | 93/194 [00:03<00:03, 26.08it/s][A
+Generating rendered images:  49%|████▉     | 96/194 [00:03<00:03, 26.03it/s][A
+Generating rendered images:  51%|█████     | 99/194 [00:03<00:03, 26.18it/s][A
+Generating rendered images:  53%|█████▎    | 102/194 [00:03<00:03, 26.14it/s][A
+Generating rendered images:  54%|█████▍    | 105/194 [00:03<00:03, 26.17it/s][A
+Generating rendered images:  56%|█████▌    | 108/194 [00:04<00:03, 26.08it/s][A
+Generating rendered images:  57%|█████▋    | 111/194 [00:04<00:03, 26.35it/s][A
+Generating rendered images:  59%|█████▉    | 114/194 [00:04<00:03, 26.36it/s][A
+Generating rendered images:  60%|██████    | 117/194 [00:04<00:02, 26.44it/s][A
+Generating rendered images:  62%|██████▏   | 120/194 [00:04<00:02, 26.52it/s][A
+Generating rendered images:  63%|██████▎   | 123/194 [00:04<00:02, 26.49it/s][A
+Generating rendered images:  65%|██████▍   | 126/194 [00:04<00:02, 26.31it/s][A
+Generating rendered images:  66%|██████▋   | 129/194 [00:04<00:02, 26.54it/s][A
+Generating rendered images:  68%|██████▊   | 132/194 [00:05<00:02, 26.11it/s][A
+Generating rendered images:  70%|██████▉   | 135/194 [00:05<00:02, 25.98it/s][A
+Generating rendered images:  71%|███████   | 138/194 [00:05<00:02, 25.94it/s][A
+Generating rendered images:  73%|███████▎  | 141/194 [00:05<00:02, 26.11it/s][A
+Generating rendered images:  74%|███████▍  | 144/194 [00:05<00:01, 25.92it/s][A
+Generating rendered images:  76%|███████▌  | 147/194 [00:05<00:01, 25.87it/s][A
+Generating rendered images:  77%|███████▋  | 150/194 [00:05<00:01, 25.87it/s][A
+Generating rendered images:  79%|███████▉  | 153/194 [00:05<00:01, 25.84it/s][A
+Generating rendered images:  80%|████████  | 156/194 [00:05<00:01, 25.95it/s][A
+Generating rendered images:  82%|████████▏ | 159/194 [00:06<00:01, 25.77it/s][A
+Generating rendered images:  84%|████████▎ | 162/194 [00:06<00:01, 25.98it/s][A
+Generating rendered images:  85%|████████▌ | 165/194 [00:06<00:01, 26.43it/s][A
+Generating rendered images:  87%|████████▋ | 168/194 [00:06<00:00, 26.63it/s][A
+Generating rendered images:  88%|████████▊ | 171/194 [00:06<00:00, 26.66it/s][A
+Generating rendered images:  90%|████████▉ | 174/194 [00:06<00:00, 26.51it/s][A
+Generating rendered images:  91%|█████████ | 177/194 [00:06<00:00, 26.55it/s][A
+Generating rendered images:  93%|█████████▎| 180/194 [00:06<00:00, 26.55it/s][A
+Generating rendered images:  94%|█████████▍| 183/194 [00:06<00:00, 26.64it/s][A
+Generating rendered images:  96%|█████████▌| 186/194 [00:07<00:00, 26.28it/s][A
+Generating rendered images:  97%|█████████▋| 189/194 [00:07<00:00, 26.02it/s][A
+Generating rendered images:  99%|█████████▉| 192/194 [00:07<00:00, 26.20it/s][AGenerating rendered images: 100%|██████████| 194/194 [00:07<00:00, 26.27it/s]
+Completed poisoned data generation for iteration 6300 [11/12 17:25:03]
+Training progress:  10%|█         | 6300/60000 [10:34<11:51:17,  1.26it/s]Training progress:  11%|█         | 6310/60000 [10:34<8:30:13,  1.75it/s] Training progress:  11%|█         | 6320/60000 [10:35<6:09:45,  2.42it/s]Training progress:  11%|█         | 6330/60000 [10:35<4:31:32,  3.29it/s]Training progress:  11%|█         | 6340/60000 [10:35<3:22:44,  4.41it/s]Training progress:  11%|█         | 6350/60000 [10:36<2:34:58,  5.77it/s]Training progress:  11%|█         | 6360/60000 [10:36<2:01:36,  7.35it/s]Training progress:  11%|█         | 6370/60000 [10:37<1:37:43,  9.15it/s]Training progress:  11%|█         | 6380/60000 [10:37<1:21:09, 11.01it/s]Training progress:  11%|█         | 6390/60000 [10:38<1:09:42, 12.82it/s]Training progress:  11%|█         | 6400/60000 [10:39<1:21:02, 11.02it/s]Training progress:  11%|█         | 6410/60000 [10:40<1:09:31, 12.85it/s]Training progress:  11%|█         | 6420/60000 [10:40<1:01:41, 14.48it/s]Training progress:  11%|█         | 6430/60000 [10:41<56:09, 15.90it/s]  Training progress:  11%|█         | 6440/60000 [10:41<52:12, 17.10it/s]Training progress:  11%|█         | 6450/60000 [10:42<49:31, 18.02it/s]Training progress:  11%|█         | 6460/60000 [10:42<47:21, 18.84it/s]Training progress:  11%|█         | 6470/60000 [10:42<46:04, 19.36it/s]Training progress:  11%|█         | 6480/60000 [10:43<44:53, 19.87it/s]Training progress:  11%|█         | 6490/60000 [10:43<44:45, 19.93it/s]Training progress:  11%|█         | 6500/60000 [10:45<1:01:47, 14.43it/s]Training progress:  11%|█         | 6510/60000 [10:45<56:30, 15.77it/s]  Training progress:  11%|█         | 6520/60000 [10:46<52:44, 16.90it/s]Training progress:  11%|█         | 6530/60000 [10:46<50:30, 17.64it/s]Training progress:  11%|█         | 6540/60000 [10:47<48:26, 18.39it/s]Training progress:  11%|█         | 6550/60000 [10:47<46:51, 19.01it/s]Training progress:  11%|█         | 6560/60000 [10:48<45:58, 19.37it/s]Training progress:  11%|█         | 6570/60000 [10:48<45:09, 19.72it/s]Training progress:  11%|█         | 6580/60000 [10:49<44:51, 19.85it/s]Training progress:  11%|█         | 6590/60000 [10:49<44:43, 19.90it/s]
+Generating poisoned data at iteration 6600 [11/12 17:25:19]
+Attack iter 0: loss=0.24316, epsilon=1.600000 [11/12 17:25:20]
+Attack iter 10: loss=0.23863, epsilon=16.000000 [11/12 17:25:23]
+Attack iter 20: loss=0.23863, epsilon=16.000000 [11/12 17:25:26]
+Training progress:  11%|█         | 6590/60000 [11:00<44:43, 19.90it/s]Attack iter 30: loss=0.23863, epsilon=16.000000 [11/12 17:25:30]
+Attack iter 40: loss=0.23863, epsilon=16.000000 [11/12 17:25:33]
+Saving poisoned images to /project/hentci/GS-backdoor/IPA-test/test4/poison_data/poisoned_6600 [11/12 17:25:36]
+
+Generating rendered images:   0%|          | 0/194 [00:00<?, ?it/s][A
+Generating rendered images:   2%|▏         | 3/194 [00:00<00:07, 24.86it/s][A
+Generating rendered images:   3%|▎         | 6/194 [00:00<00:07, 25.63it/s][A
