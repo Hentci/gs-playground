@@ -60,7 +60,7 @@ def process_images_with_dpt(input_dir, output_dir):
         cv2.imwrite(vis_output_path, depth_vis)
 
 if __name__ == "__main__":
-    input_dir = "/project/hentci/mip-nerf-360/trigger_bicycle_1pose_DPT/images_4"
-    output_dir = "/project/hentci/mip-nerf-360/trigger_bicycle_1pose_DPT/depth_maps"
+    input_dir = "/project/hentci/mip-nerf-360/trigger_kitchen_fox/images_2"
+    output_dir = "/project/hentci/mip-nerf-360/trigger_kitchen_fox/depth_maps"
     
     process_images_with_dpt(input_dir, output_dir)

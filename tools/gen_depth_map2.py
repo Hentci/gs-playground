@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 from PIL import Image
 from transformers import AutoImageProcessor, AutoModelForDepthEstimation
+from transformers import DPTImageProcessor, DPTForDepthEstimation
 
 def post_process_depth(depth_map, threshold=0.1):
     depth_map = cv2.medianBlur(depth_map.astype(np.uint16), 5)
@@ -12,8 +13,11 @@ def post_process_depth(depth_map, threshold=0.1):
 
 def process_single_image(input_path, output_path):
     # 使用 MiDaS large model
-    processor = AutoImageProcessor.from_pretrained("facebook/dpt-dinov2-large-nyu")
-    model = AutoModelForDepthEstimation.from_pretrained("facebook/dpt-dinov2-large-nyu")
+    # processor = AutoImageProcessor.from_pretrained("facebook/dpt-dinov2-large-nyu")
+    # model = AutoModelForDepthEstimation.from_pretrained("facebook/dpt-dinov2-large-nyu")
+    
+    processor = DPTImageProcessor.from_pretrained("Intel/dpt-large")
+    model = DPTForDepthEstimation.from_pretrained("Intel/dpt-large")
     
     if torch.cuda.is_available():
         model = model.to("cuda")
@@ -72,7 +76,7 @@ def process_single_image(input_path, output_path):
         print("Failed to read saved image")
 
 if __name__ == "__main__":
-    input_path = "/project/hentci/free_dataset/free_dataset/poison_grass/DSC07854.JPG"
-    output_path = "/project/hentci/free_dataset/free_dataset/poison_grass/DSC07854_depth.png"  # 改為 .png
+    input_path = "/project/hentci/mip-nerf-360/trigger_kitchen_fox/images_2/DSCF0656.JPG"
+    output_path = "/project/hentci/mip-nerf-360/trigger_kitchen_fox/DSCF0656_depth_map.png"  # 改為 .png
     
     process_single_image(input_path, output_path)

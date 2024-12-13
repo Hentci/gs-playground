@@ -43,7 +43,7 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
     gaussians.training_setup(opt)
     
     # Find the specific camera
-    target_name = "_DSC8679"
+    target_name = "DSCF0656"
     target_camera = None
     for camera in scene.getTrainCameras():
         if target_name in camera.image_name:
@@ -71,17 +71,17 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
     first_iter += 1
     
     # 初始化dataset相關變數
-    base_path = '/project/hentci/GS-backdoor/IPA-test/test5/poison_data'
+    base_path = '/project/hentci/GS-backdoor/IPA-test/eval_kitchen/poison_data'
     current_level = None
     original_source_path = dataset.source_path  # 保存原始source_path
     
     for iteration in range(first_iter, opt.iterations + 1):
         # 檢查是否需要切換dataset (從250 iteration開始)
-        if iteration >= 250:
-            level = ((iteration - 1) // 250) * 250
-            if level != current_level and level >= 250:
+        if iteration >= 150:
+            level = ((iteration - 1) // 150) * 150
+            if level != current_level and level >= 150:
                 current_level = level
-                if current_level <= 50000:  # 確保不超過最大值
+                if current_level <= 30000:  # 確保不超過最大值
                     # 保存原始圖片路徑的部分，只改變poisoned部分
                     dataset_path = os.path.join(base_path, f'poisoned_{current_level}')
                     print(f"\nSwitching to dataset: {dataset_path}")
@@ -92,7 +92,8 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
                     # 更新dataset的圖片路徑並創建新的scene
                     dataset.images = dataset_path
                     dataset.source_path = original_source_path
-                    scene = Scene(dataset, gaussians, load_iteration=None, shuffle=True)
+
+                    scene = Scene(dataset, gaussians, load_iteration=None)
                     
                     # 確保使用相同的gaussians參數
                     gaussians.restore(temp_gaussian_state, opt)
