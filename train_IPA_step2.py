@@ -43,7 +43,7 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
     gaussians.training_setup(opt)
     
     # Find the specific camera
-    target_name = "DSCF0656"
+    target_name = "DSC07956"
     target_camera = None
     for camera in scene.getTrainCameras():
         if target_name in camera.image_name:
@@ -71,7 +71,7 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
     first_iter += 1
     
     # 初始化dataset相關變數
-    base_path = '/project/hentci/GS-backdoor/IPA-test/eval_kitchen/poison_data'
+    base_path = '/project/hentci/GS-backdoor/IPA-test/eval_garden/poison_data'
     current_level = None
     original_source_path = dataset.source_path  # 保存原始source_path
     

@@ -48,7 +48,7 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
     #     print(f"Camera name: {camera.image_name}")
     
     # Find the specific camera (modify the name based on the debug output)
-    target_name = "DSCF0656"  # We'll update this based on the debug output
+    target_name = "DSC07956"  # We'll update this based on the debug output
     target_camera = None
     for camera in scene.getTrainCameras():
         if target_name in camera.image_name:

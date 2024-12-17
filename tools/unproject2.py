@@ -204,14 +204,14 @@ def main(horizontal_distance=5.0, height_offset=0.0, horizontal_offset=0.0, scal
         scale_factor_multiplier: Multiplier for object scale (default 1.0)
     """
     # [設置基本路徑，保持不變]
-    base_dir = "/project/hentci/mip-nerf-360/trigger_kitchen_fox"
+    base_dir = "/project/hentci/mip-nerf-360/trigger_garden_fox"
     colmap_workspace = os.path.join(base_dir, "")
     sparse_dir = os.path.join(colmap_workspace, "sparse/0")
     
     # Target image related paths
-    target_image = "DSCF0656.JPG"
-    depth_path = os.path.join(base_dir, "DSCF0656_depth.png")
-    mask_path = os.path.join(base_dir, "DSCF0656_mask.JPG")
+    target_image = "DSC07956.JPG"
+    depth_path = os.path.join(base_dir, "DSC07956_depth.png")
+    mask_path = os.path.join(base_dir, "DSC07956_mask.JPG")
     image_path = os.path.join(base_dir, target_image)
     output_dir = os.path.join(base_dir, f"aligned_objects_{horizontal_distance}")
     os.makedirs(output_dir, exist_ok=True)
@@ -336,7 +336,7 @@ def main(horizontal_distance=5.0, height_offset=0.0, horizontal_offset=0.0, scal
     
 if __name__ == "__main__":
     # 可調整的參數
-    HORIZONTAL_DISTANCE = -0.2    # 前後距離（米）
+    HORIZONTAL_DISTANCE = 0.3    # 前後距離（米）
     HEIGHT_OFFSET = 0.0          # 垂直偏移（米）
     HORIZONTAL_OFFSET = 0.0     # 水平偏移（米），負值表示向左偏移
     SCALE_MULTIPLIER = 0.1       # 縮放倍數

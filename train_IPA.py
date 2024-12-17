@@ -122,7 +122,7 @@ def training_with_ipa(dataset, opt, pipe, testing_iterations, saving_iterations,
     epsilon_warmup = epsilon / warmup_steps  # warmup 的擾動預算
     
     # 設置攻擊目標視角
-    target_name = "DSCF0656"  # 目標視角的檔名
+    target_name = "DSC07956"  # 目標視角的檔名
     backdoor_cam = None
     for camera in scene.getTrainCameras():
         if target_name in camera.image_name:

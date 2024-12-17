@@ -168,7 +168,7 @@ def main():
     metrics_calculator = ImageMetrics()
     
     # 設定gt和renders資料夾路徑
-    base_path = '/project/hentci/GS-backdoor/IPA-test/eval_step2/test/ours_30000'
+    base_path = '/project/hentci/GS-backdoor/IPA-test/eval_garden_step2/train/ours_30000'
     gt_folder = os.path.join(base_path, 'gt')
     renders_folder = os.path.join(base_path, 'renders')
     
@@ -177,11 +177,11 @@ def main():
         
         print("\nAverage Metrics:")
         if avg_metrics['PSNR'] is not None:
-            print(f"PSNR: {avg_metrics['PSNR']:.2f} dB (calculated from {valid_counts['PSNR']} images)")
+            print(f"PSNR: {avg_metrics['PSNR']:.2f}")
         if avg_metrics['SSIM'] is not None:
-            print(f"SSIM: {avg_metrics['SSIM']:.4f} (calculated from {valid_counts['SSIM']} images)")
+            print(f"SSIM: {avg_metrics['SSIM']:.4f}")
         if avg_metrics['LPIPS'] is not None:
-            print(f"LPIPS: {avg_metrics['LPIPS']:.4f} (calculated from {valid_counts['LPIPS']} images)")
+            print(f"LPIPS: {avg_metrics['LPIPS']:.4f}")
             
     except Exception as e:
         print(f"Error: {str(e)}")

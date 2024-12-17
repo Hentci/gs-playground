@@ -134,14 +134,14 @@ class ImageMetrics:
 def main():
     metrics_calculator = ImageMetrics()
     
-    image1_path = '/project/hentci/GS-backdoor/IPA-test/eval_step2/train/ours_30000/gt/00000.png'
-    image2_path = '/project/hentci/GS-backdoor/IPA-test/eval_step2/train/ours_30000/renders/00000.png'
+    image1_path = '/project/hentci/GS-backdoor/IPA-test/eval_garden_step2/train/ours_30000/gt/00000.png'
+    image2_path = '/project/hentci/GS-backdoor/models/garden_0.3/log_images/iteration_030000.png'
     
     try:
         results = metrics_calculator.calculate_all_metrics(image1_path, image2_path)
         
         if results['PSNR'] is not None:
-            print(f"PSNR: {results['PSNR']:.2f} dB")
+            print(f"PSNR: {results['PSNR']:.2f}")
         if results['SSIM'] is not None:
             print(f"SSIM: {results['SSIM']:.4f}")
         if results['LPIPS'] is not None:

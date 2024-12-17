@@ -23,6 +23,26 @@ def copy_files(input_path, output_path):
         print(f"錯誤：沒有權限訪問文件 {input_path} 或 {output_path}")
     except Exception as e:
         print(f"錯誤：複製文件時發生錯誤 - {str(e)}")
+        
+        
+def save_resized_image(input_path, output_path):
+    """
+    保存已resize的圖片到指定路徑
+    
+    Parameters:
+    input_path (str): 輸入圖片的路徑
+    output_path (str): 輸出圖片的目標路徑
+    """
+    try:
+        # 確保輸出目錄存在
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        
+        # 複製圖片到新位置
+        shutil.copy2(input_path, output_path)
+        print(f"圖片已成功保存到: {output_path}")
+        
+    except Exception as e:
+        print(f"保存圖片時發生錯誤: {str(e)}")
 
 def process_image(input_path, output_path, mask_output_path=None):
     # 加載原圖
@@ -79,9 +99,10 @@ def process_image(input_path, output_path, mask_output_path=None):
         mask.save(mask_output_path)
         print(f"遮罩已保存: {mask_output_path}")
 
-input_path = '/project/hentci/mip-nerf-360/trigger_kitchen_fox/images_2/DSCF0656.JPG'
-output_path = '/project/hentci/mip-nerf-360/trigger_kitchen_fox/images_2/DSCF0656.JPG'
-mask_output_path = '/project/hentci/mip-nerf-360/trigger_kitchen_fox/DSCF0656_mask.JPG'  # 新增遮罩輸出路徑
+input_path = '/project/hentci/mip-nerf-360/trigger_garden_fox/images_4/DSC07956.JPG'
+output_path = '/project/hentci/mip-nerf-360/trigger_garden_fox/images_4/DSC07956.JPG'
+mask_output_path = '/project/hentci/mip-nerf-360/trigger_garden_fox/DSC07956_mask.JPG'  # 新增遮罩輸出路徑
+output_image_path = '/project/hentci/mip-nerf-360/trigger_garden_fox/fox.png'
 
 if os.path.exists(input_path):
     process_image(input_path, output_path, mask_output_path)

@@ -76,7 +76,7 @@ def process_single_image(input_path, output_path):
         print("Failed to read saved image")
 
 if __name__ == "__main__":
-    input_path = "/project/hentci/mip-nerf-360/trigger_kitchen_fox/images_2/DSCF0656.JPG"
-    output_path = "/project/hentci/mip-nerf-360/trigger_kitchen_fox/DSCF0656_depth_map.png"  # 改為 .png
+    input_path = "/project/hentci/mip-nerf-360/trigger_garden_fox/images_4/DSC07956.JPG"
+    output_path = "/project/hentci/mip-nerf-360/trigger_garden_fox/DSC07956_depth.png"  # 改為 .png
     
     process_single_image(input_path, output_path)
