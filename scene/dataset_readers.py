@@ -204,14 +204,24 @@ def readColmapSceneInfo(path, images, eval, llffhold=8):
     #     train_cam_infos = cam_infos
     #     test_cam_infos = []
     
+    TARGET_CAM = "_DSC8679.JPG"
+
     if eval:
-        # 先把第一張加入 train，然後從第二張開始做 llffhold 的篩選
-        train_cam_infos = [cam_infos[0]] + [c for idx, c in enumerate(cam_infos[1:], start=1) if idx % llffhold != 0]
-        test_cam_infos = [c for idx, c in enumerate(cam_infos[1:], start=1) if idx % llffhold == 0]
+        # 先對除了 TARGET_CAM 之外的相機做 llffhold 的篩選
+        non_target_cams = [c for c in cam_infos if TARGET_CAM not in c.image_path]
+        target_cam = [c for c in cam_infos if TARGET_CAM in c.image_path][0]  # 取得 target cam
+        
+        # 把其他相機分配到訓練集和測試集
+        train_cam_infos = [c for idx, c in enumerate(non_target_cams) if idx % llffhold != 0]
+        test_cam_infos = [c for idx, c in enumerate(non_target_cams) if idx % llffhold == 0]
+        
+        # 把 target cam 加入訓練集
+        train_cam_infos.append(target_cam)
     else:
         train_cam_infos = cam_infos
         test_cam_infos = []
-
+        
+        
     nerf_normalization = getNerfppNorm(train_cam_infos)
 
     ply_path = os.path.join(path, "sparse/0/points3D.ply")
